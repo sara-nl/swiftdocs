@@ -21,18 +21,10 @@ Welcome to the documentation for using the SWIFT storage service at `SURFsara`_.
 	Do you need help with this? We are more than willing to assist! Just contact us at helpdesk@surfsara.nl.
 
 
-=======
-General
-=======
-
 .. toctree::
    :maxdepth: 1
    
    Pages/General/about_swift
-   Pages/General/national_grid
-   Pages/General/life_science_grid
-   Pages/General/grid_services
-   Pages/General/grant_access.rst
    
 
 * :ref:`search`

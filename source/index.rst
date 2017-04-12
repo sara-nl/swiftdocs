@@ -6,7 +6,8 @@
 
 .. _contents:
 
-.. image:: /Image/openstack.png
+.. image:: /Images/openstack.png
+           :align: right
 
 ******************
 SWIFT documentation

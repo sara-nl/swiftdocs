@@ -28,7 +28,7 @@ General
 .. toctree::
    :maxdepth: 1
    
-   Pages/General/about_the_grid
+   Pages/General/about_swift
    Pages/General/national_grid
    Pages/General/life_science_grid
    Pages/General/grid_services

@@ -6,10 +6,11 @@
 
 .. _contents:
 
+.. image:: /Image/openstack.png
+
 ******************
 SWIFT documentation
 ******************
-.. image:: /Image/openstack.png
 
 .. image:: https://www.swiftstack.com/sites/default/files/swift-bird.png
 	   :width: 200px

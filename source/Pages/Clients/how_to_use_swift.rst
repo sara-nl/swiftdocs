@@ -1,4 +1,4 @@
-.. _how_to_use_swift:
+.. _how-to-use-swift:
 
 ****************
 How to use SWIFT

@@ -5,6 +5,7 @@
 
 
 .. _contents:
+   :depth: 4
 
 .. image:: /Images/openstack.png
            :align: right
@@ -27,6 +28,7 @@ Welcome to the documentation for using the SWIFT storage service at `SURFsara`_.
    :maxdepth: 1
    
    Pages/General/about_swift
+   Pages/Clients/how_to_use_swift
    
 
 * :ref:`search`

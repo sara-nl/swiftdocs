@@ -11,8 +11,8 @@ SWIFT documentation
 ******************
 .. image:: /Image/openstack.png
 
-.. image:: /Images/swift.png
-	   :width 200px
+.. image:: https://www.swiftstack.com/sites/default/files/swift-bird.png
+	   :width: 200px
 
 Welcome to the documentation for using the SWIFT storage service at `SURFsara`_. The information on these pages will help you get started with SWIFT. We welcome your comments at helpdesk@surfsara.nl or your :ref:`contribution <doc-howto>` to help us improve the documentation.
 

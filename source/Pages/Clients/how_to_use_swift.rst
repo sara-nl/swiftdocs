@@ -9,11 +9,14 @@ In this page you will find documentation about the different SWIFT clients that 
 .. contents:: 
     :depth: 4
 
+=======
+Clients
+=======
+
+There is a swift commandline client written in python. You may find more information about this at: `swift python client`: https://www.swiftstack.com/docs/integration/python-swiftclient.html
 
 .. Links:
 
 .. _`SURFsara helpdesk`: https://www.surf.nl/en/about-surf/contact/helpdesk-surfsara-services/index.html
-
-.. _`Access Grid`: https://www.surf.nl/en/services-and-products/grid/access/index.html
 
 .. _`SURFsara application form`: https://e-infra.surfsara.nl/

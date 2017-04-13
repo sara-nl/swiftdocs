@@ -1,4 +1,4 @@
-.. _grant-access:
+.. _getting-access-to-swift:
 
 *****************
 How to get access

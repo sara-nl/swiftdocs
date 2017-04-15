@@ -1,8 +1,8 @@
-.. _how-to-use-swift:
+.. _python-swift-client:
 
-****************
-How to use SWIFT
-****************
+*******************
+Python SWIFT client
+*******************
 
 In this page you will find documentation about the different SWIFT clients that are available.
 
@@ -21,11 +21,6 @@ If you want to know more about all options of the *swift* command. Just type in 
 .. code-block:: console
 
 	swift help
-
-Here are some examples on how to use the python_swift_client_.
-
-.. _python_swift_client:
-
 
 
 

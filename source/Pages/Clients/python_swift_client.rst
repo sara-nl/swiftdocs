@@ -40,7 +40,7 @@ A container can be created by the following command:
 ===============================
 Upload an object to a container
 ===============================
-.. image:: /Images/upload.png
+.. image:: /Images/upload.jpg
            :width: 300px
 
 

@@ -4,23 +4,23 @@
 Python SWIFT client
 *******************
 
-In this page you will find documentation about the different SWIFT clients that are available.
+In this page you will find documentation about the Python SWIFT client that are available.
 
 .. contents:: 
     :depth: 4
 
-=======
-Clients
-=======
+=============
+Authorisation
+=============
 
-Swift Command line client
--------------------------
-There is a swift commandline client written in python. You may find more information about this at: https://www.swiftstack.com/docs/integration/python-swiftclient.html. This page will provide information on how to install the client and how to use it.
-If you want to know more about all options of the *swift* command. Just type in the command
+The following environment variables are usefull to set if you don't want them to provide them all the time on the command line.
 
 .. code-block:: console
 
-	swift help
+         export ST_AUTH=https://proxy.swift.surfsara.nl/auth/v1.0
+         export ST_USER=<my user name>
+         export ST_KEY=<my password>
+
 
 
 

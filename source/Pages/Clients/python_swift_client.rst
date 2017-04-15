@@ -20,6 +20,7 @@ The following environment variables are usefull to set if you don't want them to
 .. image:: /Images/auth.jpg
            :align: right
            :width: 300px
+           :height: 225px
 
 .. code-block:: console
 

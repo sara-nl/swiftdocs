@@ -32,9 +32,23 @@ Create a container
            :width: 316px
 
 
+A container can be created by the following command:
 .. code-block:: console
 
          swift post mycontainer
+
+===============================
+Upload an object to a container
+===============================
+.. image:: /Images/upload.png
+           :width: 300px
+
+
+.. code-block:: console
+
+         swift upload mycontainer myobject
+
+If the container **mycontainer** does not exist yet, then it will be created.
 
 .. Links:
 

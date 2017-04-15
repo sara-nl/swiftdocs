@@ -77,6 +77,34 @@ Object metadata can be obtained by the following command:
 **Content Length** is the size in bytes and 
 **ETag** is the md5 checksum of the object.
 
+============================
+List contents of a container
+============================
+
+The objects in a container can be listed like:
+
+.. code-block:: console
+
+         swift list mycontainer
+
+===================================
+Throwing containers and object away
+===================================
+
+.. image:: /Images/delete_container.png
+
+Delete one object from a container:
+
+.. code-block:: console
+
+         swift delete mycontainer myobject
+
+
+Delete a container with all objects in it:
+
+.. code-block:: console
+
+         swift delete mycontainer
 
 
 .. Links:

@@ -65,17 +65,17 @@ Container metadata can be obtained in the following manner:
 .. image:: /Images/stat_container.png
            :width: 600px
 
-    **Bytes** is the total number of bytes of all object in the container
-    **Objects** is the number of objects in the container
-    **X-Storage-Policy** is the storage policy
+    Bytes is the total number of bytes of all object in the container
+    Objects is the number of objects in the container
+    X-Storage-Policy is the storage policy
 
 Object metadata can be obtained by the following command:
 
 .. image:: /Images/stat_object.png
            :width: 600px
 
-    **Content Length** is the size in bytes.
-    **ETag** is the md5 checksum of the object
+    Content Length is the size in bytes.
+    ETag is the md5 checksum of the object
 
 
 

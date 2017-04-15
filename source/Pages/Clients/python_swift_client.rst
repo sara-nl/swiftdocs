@@ -87,9 +87,9 @@ The objects in a container can be listed like:
 
          swift list mycontainer
 
-===================================
-Throwing containers and object away
-===================================
+====================================
+Throwing containers and objects away
+====================================
 
 .. image:: /Images/delete_container.png
 

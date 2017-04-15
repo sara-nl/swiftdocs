@@ -22,7 +22,7 @@ If you want to know more about all options of the *swift* command. Just type in 
 
 	swift help
 
-Here are some examples on how to use the python-swift-client_.
+Here are some examples on how to use the python_swift_client_.
 
 
 

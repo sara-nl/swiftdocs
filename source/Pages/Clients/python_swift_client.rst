@@ -15,7 +15,7 @@ Authorisation
 
 The following environment variables are usefull to set if you don't want them to provide them all the time on the command line.
 
-.. image:: /Images.auth.jpg
+.. image:: /Images/auth.jpg
            :align: right
            :width: 300px
 

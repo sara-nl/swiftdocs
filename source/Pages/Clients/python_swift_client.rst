@@ -28,6 +28,7 @@ The following environment variables are useful to set if you don't want them to 
 ==================
 Create a container
 ==================
+
 .. image:: /Images/make_container.png
            :width: 316px
 
@@ -41,6 +42,7 @@ A container can be created by the following command:
 ===============================
 Upload an object to a container
 ===============================
+
 .. image:: /Images/upload.jpg
            :width: 300px
 
@@ -50,6 +52,22 @@ Upload an object to a container
          swift upload mycontainer myobject
 
 If the container **mycontainer** does not exist yet, then it will be created.
+
+================
+Getting metadata
+================
+
+.. image:: /Images/metadata.jpg
+           :width: 600px
+
+Container metadata can be obtained in the following manner:
+
+.. image:: /Images/stat_container.png
+           :width: 600px
+
+
+
+
 
 .. Links:
 

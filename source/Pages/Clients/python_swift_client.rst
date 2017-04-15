@@ -13,11 +13,11 @@ In this page you will find documentation about the Python SWIFT client that are 
 Authorisation
 =============
 
-The following environment variables are usefull to set if you don't want them to provide them all the time on the command line.
-
 .. image:: /Images/auth.jpg
            :width: 300px
            :height: 225px
+
+The following environment variables are useful to set if you don't want them to provide them all the time on the command line.
 
 .. code-block:: console
 

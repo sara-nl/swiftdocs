@@ -24,6 +24,24 @@ If you want to know more about all options of the *swift* command. Just type in 
 
 Here are some examples on how to use the :ref:`Python SWIFT client <python-swift-client>`.
 
+Curl
+----
+
+API
+---
+
+S3 clients
+----------
+
+Duplicity
+---------
+
+Rclone
+------
+
+Owncloud/Nextcloud
+------------------
+
 
 .. Links:
 

@@ -25,6 +25,8 @@ The following environment variables are usefull to set if you don't want them to
          export ST_USER=<my user name>
          export ST_KEY=<my password>
 
+
+
 ==================
 Create a container
 ==================

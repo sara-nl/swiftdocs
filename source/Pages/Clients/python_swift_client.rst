@@ -28,6 +28,9 @@ The following environment variables are useful to set if you don't want them to 
 ==================
 Create a container
 ==================
+.. image:: /Images/make_container.jpg
+           :width: 316px
+
 
 .. code-block:: console
 

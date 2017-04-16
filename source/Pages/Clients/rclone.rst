@@ -16,7 +16,7 @@ Apart from being an rsync-type tool for cloud storage, it has the following feat
 * `Check <https://rclone.org/commands/rclone_check/>`_ mode to check for file hash equality
 * Can sync to and from network, eg two different cloud accounts
 * Optional encryption ( `Crypt <https://rclone.org/crypt/>`_ )
-* Optional FUSE mount ( `rclone mount` <https://rclone.org/commands/rclone_mount/>`_ )
+* Optional FUSE mount ( `rclone mount <https://rclone.org/commands/rclone_mount/>`_ )
 
 .. contents:: 
     :depth: 4
@@ -25,7 +25,6 @@ Apart from being an rsync-type tool for cloud storage, it has the following feat
 Authorisation
 =============
 
-Rclone needs some variables set in order to work. You can set these in a **.rclone.conf** file in your home directory
 Rclone needs some variables set in order to work. You can set these in a **.rclone.conf** file in your home directory. This file can have the following contents:
 
 .. code-block:: console
@@ -42,9 +41,38 @@ Rclone needs some variables set in order to work. You can set these in a **.rclo
     storage_url = https://proxy.swift.surfsara.nl/v1/<account>
     auth_version =
 
-The name of your account can be found using the command:
+Here **<account>** is the name of your account that can be found using the command:
 
 .. code-block:: console
 
     curl -i -s -H "X-Auth-User: <user name>" -H "X-Auth-Key: <password>" https://proxy.swift.surfsara.nl/auth/v1.0  | grep X-Storage-Url | sed -e 's/.*\/AUTH/AUTH/'
 
+==============================================
+Copy source directory to destination container
+==============================================
+
+.. code-block:: console
+
+    rclone copy /my/folder swift:mycontainer
+
+Copy the source to the destination. Doesn’t transfer unchanged files, testing by size and modification time or MD5SUM. Doesn’t delete files from the destination.
+
+If **mycontainer** doesn’t exist, it is created and the contents of **/my/folder** go there.
+
+================================================
+Sync source directory with destination container
+================================================
+
+.. code-block:: console
+
+    rclone sync /my/folder swift:mycontainer
+
+Sync the source to the destination, changing the destination only. Doesn’t transfer unchanged files, testing by size and modification time or MD5SUM. Destination is updated to match source, including deleting files if necessary.
+
+.. role:: red
+
+**Important:** Since this can cause data loss, test first with the :red:`--dry-run` flag to see exactly what would be copied and deleted.
+
+Note that files in the destination won’t be deleted if there were any errors at any point.
+
+If **mycontainer** doesn’t exist, it is created and the contents of **/my/folder** go there.

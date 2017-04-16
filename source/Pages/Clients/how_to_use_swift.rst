@@ -58,10 +58,3 @@ It features:
 
 Owncloud/Nextcloud
 ------------------
-
-
-.. Links:
-
-.. _`SURFsara helpdesk`: https://www.surf.nl/en/about-surf/contact/helpdesk-surfsara-services/index.html
-
-.. _`SURFsara application form`: https://e-infra.surfsara.nl/

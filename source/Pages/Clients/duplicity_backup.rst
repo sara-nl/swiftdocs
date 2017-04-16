@@ -1,4 +1,4 @@
-.. _duplicity:
+.. _duplicity-backup:
 
 *********
 duplicity

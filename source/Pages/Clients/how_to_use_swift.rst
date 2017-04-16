@@ -36,12 +36,12 @@ S3 clients
 Duplicity
 ---------
 
-Duplicity is a backup tool that amongst others supports cloud storage systems. More information about this can be found at :ref:`rclone <rclone>`.
+Duplicity is a backup tool that amongst others supports cloud storage systems. More information about this can be found at :ref:`duplicity <duplicity>`.
 
 Rclone
 ------
 
-Rclone is the rsync for cloud storage. Here is more information on how to use :ref:`rclone <backup>`.
+Rclone is the rsync for cloud storage. Here is more information on how to use :ref:`rclone <rclone>`.
 
 It features:
 

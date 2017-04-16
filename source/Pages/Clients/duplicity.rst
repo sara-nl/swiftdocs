@@ -30,4 +30,4 @@ Duplicity requires some environment variables to be set, see below:
 Automatic backups
 =================
 
-For information on how to do automatic backups with duplicity, we refer to: https://www.digitalocean.com/community/tutorials/how-to-use-duplicity-with-gpg-to-securely-automate-backups-on-ubuntu
+For information on how to do automatic backups with duplicity, we refer to: https://www.digitalocean.com/community/tutorials/how-to-use-duplicity-with-gpg-to-securely-automate-backups-on-ubuntu.

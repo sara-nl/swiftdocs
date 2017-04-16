@@ -1,8 +1,8 @@
 .. _rclone:
 
-*******************
+******
 rclone
-*******************
+******
 
 In this page you will find documentation about rclone. Rclone is the rsync for cloud storage. Information on how to install rclone and other things may be found at: https://rclone.org. More swift related information is available at: https://rclone.org/swift.
 

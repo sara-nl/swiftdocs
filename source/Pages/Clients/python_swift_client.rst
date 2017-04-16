@@ -138,9 +138,3 @@ Script to verify MD5 checksums of local and remote copy
     fi
 
     exit 0
-
-.. Links:
-
-.. _`SURFsara helpdesk`: https://www.surf.nl/en/about-surf/contact/helpdesk-surfsara-services/index.html
-
-.. _`SURFsara application form`: https://e-infra.surfsara.nl/

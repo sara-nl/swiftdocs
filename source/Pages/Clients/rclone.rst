@@ -11,10 +11,12 @@ Apart from being an rsync-type tool for cloud storage, it has the following feat
 * MD5/SHA1 hashes checked at all times for file integrity
 * Timestamps preserved on files
 * Partial syncs supported on a whole file basis
-* Copy mode to just copy new/changed files
-* Sync (one way) mode to make a directory identical
-* Check mode to check for file hash equality
+* `Copy <https://rclone.org/commands/rclone_copy/>`_ mode to just copy new/changed files
+* `Sync <https://rclone.org/commands/rclone_copy/>`_ (one way) mode to make a directory identical
+* `Check <https://rclone.org/commands/rclone_check/>`_ mode to check for file hash equality
 * Can sync to and from network, eg two different cloud accounts
+* Optional encryption ( `Crypt <https://rclone.org/crypt/>`_ )
+* Optional FUSE mount ( `rclone mount` <https://rclone.org/commands/rclone_mount/>`_ )
 
 .. contents:: 
     :depth: 4

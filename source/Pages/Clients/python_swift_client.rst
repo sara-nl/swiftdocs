@@ -114,7 +114,7 @@ Script to verify MD5 checksums of local and remote copy
 
 .. code-block:: console
 
-    #!/bin/sh
+    \#!/bin/sh
 
     container=$1
     shift
@@ -133,7 +133,7 @@ Script to verify MD5 checksums of local and remote copy
     fi
 
     if [ "${md5}" != "${ETag}" ]; then
-        >&2 echo "The local and remote copy of ${object} don't have the save checksum"
+        >&2 echo "The local and remote copy of ${object} don't have the same checksum"
         exit 10
     fi
 

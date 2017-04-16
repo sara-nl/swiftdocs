@@ -75,3 +75,13 @@ Sync the source to the destination, changing the destination only. Doesn’t tra
 Note that files in the destination won’t be deleted if there were any errors at any point.
 
 If **mycontainer** doesn’t exist, it is created and the contents of **/my/folder** go there.
+
+==================================================
+Check if files in the source and destination match
+==================================================
+
+.. code-block:: console
+
+    rclone check /my/folder swift:mycontainer
+
+Checks the files in the source and destination match. It compares sizes and hashes (MD5 or SHA1) and logs a report of files which don’t match. It doesn’t alter the source or destination.

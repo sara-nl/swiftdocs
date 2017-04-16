@@ -114,7 +114,7 @@ Script to verify MD5 checksums of local and remote copy
 
 .. code-block:: console
 
-    \#!/bin/sh
+    &#35;!/bin/sh
 
     container=$1
     shift

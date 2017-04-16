@@ -7,7 +7,7 @@ How to use SWIFT
 In this page you will find documentation about the different SWIFT clients that are available.
 
 .. contents:: 
-    :depth: 4
+    :depth: 10
 
 =======
 Clients

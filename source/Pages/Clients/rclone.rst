@@ -69,9 +69,8 @@ Sync source directory with destination container
 
 Sync the source to the destination, changing the destination only. Doesn’t transfer unchanged files, testing by size and modification time or MD5SUM. Destination is updated to match source, including deleting files if necessary.
 
-.. role:: red
 
-**Important:** Since this can cause data loss, test first with the :red:`--dry-run` flag to see exactly what would be copied and deleted.
+.. note:: **Important:** Since this can cause data loss, test first with the --dry-run flag to see exactly what would be copied and deleted.
 
 Note that files in the destination won’t be deleted if there were any errors at any point.
 

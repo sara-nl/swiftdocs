@@ -1,4 +1,4 @@
-.. _blah:
+.. _dupl:
 
 *********
 Duplicity

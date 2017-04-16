@@ -14,8 +14,7 @@ Authorisation
 =============
 
 .. image:: /Images/auth.jpg
-           :width: 300px
-           :height: 225px
+           :width: 600px
 
 The following environment variables are useful to set if you don't want them to provide them all the time on the command line.
 
@@ -30,7 +29,7 @@ Create a container
 ==================
 
 .. image:: /Images/make_container.png
-           :width: 316px
+           :width: 600px
 
 
 A container can be created by the following command:
@@ -44,7 +43,7 @@ Upload an object to a container
 ===============================
 
 .. image:: /Images/upload.jpg
-           :width: 300px
+           :width: 600px
 
 
 .. code-block:: console
@@ -80,6 +79,9 @@ Object metadata can be obtained by the following command:
 ============================
 List contents of a container
 ============================
+
+.. image:: /Images/contents-container.jpg
+           :width: 600px
 
 The objects in a container can be listed like:
 

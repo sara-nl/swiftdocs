@@ -41,7 +41,7 @@ Duplicity is a backup tool that amongst others supports cloud storage systems. M
 Rclone
 ------
 
-Rclone is the rsync for cloud storage. Here is more information on how to use :ref:`rclone <rclone>`.
+Rclone is the rsync for cloud storage. Here is more information on how to use :ref:`rclone <backup>`.
 
 It features:
 

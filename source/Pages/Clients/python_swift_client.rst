@@ -108,6 +108,36 @@ Delete a container with all objects in it:
 
          swift delete mycontainer
 
+=======================================================
+Script to verify MD5 checksums of local and remote copy
+=======================================================
+
+.. code-block:: console
+
+    #!/bin/sh
+
+    container=$1
+    shift
+    object=$1
+
+    ETag=`swift stat ${container} ${object} | grep ETag | awk '{print $2}'`
+    if [ "${ETag}" = "" ]; then
+        >&2 echo "Unable to get ETag"
+        exit 1
+    fi
+
+    md5=`md5sum ${object} | awk '{print $1}'`
+    if [ "${md5}" = "" ]; then
+        >&2 echo "Unable to get MD5"
+        exit 2
+    fi
+
+    if [ "${md5}" != "${ETag}" ]; then
+        >&2 echo "The local and remote copy of ${object} don't have the save checksum"
+        exit 10
+    fi
+
+    exit 0
 
 .. Links:
 

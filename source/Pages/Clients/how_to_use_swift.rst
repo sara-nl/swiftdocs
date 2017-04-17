@@ -42,6 +42,11 @@ API
 
 SWIFT offers a REST API. Information about this API and some examples are described at the :ref:`API page <api>`.
 
+Cloudfuse
+---------
+
+It is possible to mount SWIFT object storage as a file system. The :ref:`cloudfuse page <cloudfuse>` has more information.
+
 Duplicity
 ---------
 

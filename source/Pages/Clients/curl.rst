@@ -19,4 +19,4 @@ Here we refer to the man pages of **curl**.
 Authentication
 ==============
 
-Under construction
+

@@ -47,6 +47,12 @@ Here **<account>** is the name of your account that can be found using the comma
 
     curl -i -s -H "X-Auth-User: <user name>" -H "X-Auth-Key: <password>" https://proxy.swift.surfsara.nl/auth/v1.0  | grep X-Storage-Url | sed -e 's/.*\/AUTH/AUTH/'
 
+Don't for get to:
+
+.. code-block:: console
+
+    chmod 600 ${HOME}/.rclone.conf
+
 ==============================================
 Copy source directory to destination container
 ==============================================

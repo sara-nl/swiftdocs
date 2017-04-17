@@ -30,6 +30,8 @@ S3 clients
 Curl
 ----
 
+Information about accessing SWIFT through the **curl** command is given on the :ref:`curl pages <curl>`.
+
 Libraries
 ---------
 

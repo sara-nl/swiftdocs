@@ -26,6 +26,7 @@ Here are some examples about how to use the :ref:`Python SWIFT client <python-sw
 
 S3 clients
 ----------
+TBD
 
 Curl
 ----
@@ -34,6 +35,7 @@ Information about accessing SWIFT through the **curl** command is given on the :
 
 Libraries
 ---------
+TBD
 
 API
 ---
@@ -65,3 +67,5 @@ It features:
 
 Owncloud/Nextcloud
 ------------------
+
+TBD

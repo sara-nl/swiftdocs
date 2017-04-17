@@ -20,7 +20,7 @@ If you want to know more about all options of the *swift* command. Just type in 
 
 .. code-block:: console
 
-	swift help
+	swift --help
 
 Here are some examples about how to use the :ref:`Python SWIFT client <python-swift-client>`.
 

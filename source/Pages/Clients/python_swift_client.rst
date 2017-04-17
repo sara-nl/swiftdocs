@@ -112,8 +112,8 @@ Delete a container with all objects in it:
 Set and get your own metadata for containers and objects
 ========================================================
 
-Set your own metadata for a container
--------------------------------------
+Set and get your own metadata for a container
+---------------------------------------------
 
 .. image:: /Images/metadata_container.png
 

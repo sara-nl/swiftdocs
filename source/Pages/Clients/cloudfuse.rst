@@ -9,17 +9,15 @@ In this page you will find documentation on how to mount SWIFT object storage as
 .. contents:: 
     :depth: 4
 
-=========
-Cloudfuse
-=========
-
+============
 Installation
-------------
+============
 
 Documentation on how to install cloudfuse can be found at: https://www.cloudvps.com/customer-service/knowledge-base/cloudfuse-mount-your-object-store-in-linux for CentOS/Redhat based distro's or for both Redhat-type and Debian-type distro's have a look at: https://knowledgelayer.softlayer.com/learning/how-mount-object-storage. 
 
+============
 Configuration
--------------
+============
 
 1. Create a file ${HOME}/.cloudfuse with the following content:
 

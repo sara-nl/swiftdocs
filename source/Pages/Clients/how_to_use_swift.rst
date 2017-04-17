@@ -24,14 +24,19 @@ If you want to know more about all options of the *swift* command. Just type in 
 
 Here are some examples about how to use the :ref:`Python SWIFT client <python-swift-client>`.
 
+S3 clients
+----------
+
 Curl
 ----
+
+Libraries
+---------
 
 API
 ---
 
-S3 clients
-----------
+SWIFT offers a REST API. Information about this API and some examples are described at the :ref:`API page <api>`.
 
 Duplicity
 ---------

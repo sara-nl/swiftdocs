@@ -38,14 +38,14 @@ Rclone needs some variables set in order to work. You can set these in a **.rclo
     tenant = 
     tenant_domain = 
     region = 
-    storage_url = https://proxy.swift.surfsara.nl/v1/<account>
+    storage_url = <storage url>
     auth_version =
 
-Here **<account>** is the name of your account that can be found using the command:
+Here **<storage url>** is the url of the storage system that can be found using the command:
 
 .. code-block:: console
 
-    curl -i -s -H "X-Auth-User: <user name>" -H "X-Auth-Key: <password>" https://proxy.swift.surfsara.nl/auth/v1.0  | grep X-Storage-Url | sed -e 's/.*\/AUTH/AUTH/'
+    curl -i -s -H "X-Auth-User: <user name>" -H "X-Auth-Key: <password>" https://proxy.swift.surfsara.nl/auth/v1.0  | grep X-Storage-Url
 
 Don't for get to:
 

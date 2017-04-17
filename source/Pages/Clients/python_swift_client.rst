@@ -108,13 +108,25 @@ Delete a container with all objects in it:
 
          swift delete mycontainer
 
+==============================================
+Set and get metadata on containers and objects
+==============================================
+
+Set metadata for a container
+----------------------------
+
+.. image:: /Images/metadata.png
+
+Setting and getting metadata for an object works in an identical fashion.
+
+
 =======================================================
 Script to verify MD5 checksums of local and remote copy
 =======================================================
 
-.. code-block:: console
+.. code-block:: bash
 
-    &#35;!/bin/sh
+    #!/bin/sh
 
     container=$1
     shift

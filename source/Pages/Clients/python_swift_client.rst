@@ -9,6 +9,18 @@ In this page you will find documentation about the Python SWIFT client that are 
 .. contents:: 
     :depth: 4
 
+=====
+Usage
+=====
+
+Now the usage of the **swift** commandline tools is like:
+
+.. code-block:: console
+
+         swift [options] <command> [--help] [<command options>]
+
+More details and examples are provided below.
+
 =============
 Authorisation
 =============
@@ -23,6 +35,22 @@ The following environment variables are useful to set if you don't want them to 
          export ST_AUTH=https://proxy.swift.surfsara.nl/auth/v1.0
          export ST_USER=<my user name>
          export ST_KEY=<my password>
+
+Apart from using your user name and password, it is also possible to generate a token that is valid for 24 hours. This may be handy if you running the script elsewhere on a batch system and you don't want to send you username and password with your batch job. You can use this token to access your data in SWIFT.
+
+You can get a token in the following way:
+
+.. image:: /Images/token.png
+
+What you need is the **StorageURL** and the **Auth Token**. You can use these two to run the swift commands for the next 24 hours without supplying your user name and password.
+
+.. code-block:: console
+
+         swift --os-auth-token <TOKEN> --os-storage-url <STORAGE URL> [options] <command> [--help] [<command options>]
+
+For example:
+        
+.. image:: /Images/list_token.png
 
 ==================
 Create a container

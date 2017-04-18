@@ -150,7 +150,6 @@ Setting and getting metadata for an object works in an identical fashion.
 ============================
 Uploading large files (>5GB)
 ============================
-TBD
 
 =======================================================
 Script to verify MD5 checksums of local and remote copy

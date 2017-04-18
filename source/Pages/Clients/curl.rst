@@ -125,7 +125,7 @@ For containers we have:
 
     curl -s -S -X POST -H "X-Auth-Token: <token>" -H "X-Container-Meta-mymetadata: mystuff" <storage url>/mycontainer
 
-.. note:: **Important:** The header which denotes the meta data item has to be of the form *X-Container-Meta-<name>* for containers.
+.. note:: **Important:** The header which denotes the metadata item has to be of the form *X-Container-Meta-<name>* for containers.
 
 For objects we have:
 
@@ -133,7 +133,7 @@ For objects we have:
 
     curl -s -S -X POST -H "X-Auth-Token: <token>" -H "X-Object-Meta-mymetadata: mystuff" <storage url>/mycontainer/myobject
 
-.. note:: **Important:** The header which denotes the meta data item has to be of the form *X-Object-Meta-<name>* for objects.
+.. note:: **Important:** The header which denotes the metadata item has to be of the form *X-Object-Meta-<name>* for objects.
 
 Get the metadata for containers:
 
@@ -141,27 +141,27 @@ Get the metadata for containers:
 
     curl -s -S --head -H "X-Auth-Token: <token>" <storage url>/mycontainer
 
-which lists only the meta data. Or:
+which lists only the metadata. Or:
 
 .. code-block:: console
 
     curl -i -X GET -H "X-Auth-Token: <token>" <storage url>/mycontainer
 
-which shows container meta data and lists objects. 
+which shows container metadata and lists objects. 
 
-Get the meta data for objects:
+Get the metadata for objects:
 
 .. code-block:: console
 
     curl -s -S --head -H "X-Auth-Token: <token>" <storage url>/mycontainer/myobject
 
-which lists only the meta data. Or:
+which lists only the metadata. Or:
 
 .. code-block:: console
 
     curl -i -X GET -H "X-Auth-Token: <token>" <storage url>/mycontainer/myobject
 
-which shows container meta data and gets the object data.
+which shows container metadata and gets the object data.
 
 ============================
 Uploading large files (>5GB)

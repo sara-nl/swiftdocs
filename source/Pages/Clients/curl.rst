@@ -56,3 +56,20 @@ Upload an object to a container
 
     curl -i -T myobject -X PUT -H "X-Auth-Token: <token>" <storage url>/mycontainer/myobject
 
+
+================
+Getting metadata
+================
+
+for containers
+.. code-block:: console
+
+    curl -i --head -H "X-Auth-Token: <token>" <storage url>/mycontainer
+
+
+for objects
+.. code-block:: console
+
+    curl -i --head -H "X-Auth-Token: <token>" <storage url>/mycontainer/myobject
+
+

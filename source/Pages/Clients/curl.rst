@@ -18,7 +18,9 @@ Here we refer to the man pages of **curl**. But we do like to point out the foll
 :manpage:`curl(1)`
 
        -i, --include		Include the HTTP-header in the output. The HTTP-header includes things like server-name, date of the document, HTTP-version  and more...
+
        -S, --show-error		When used with -s, --silent, it makes curl show an error message if it fails.
+
        -s, --silent		Silent or quiet mode. Don't show progress meter  or  error  messages.   Makes  Curl mute. It will still output the data you ask for, potentially even to the terminal/stdout unless you redirect it.
 
 ==============

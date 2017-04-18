@@ -80,9 +80,9 @@ Upload an object to a container
 
 If the container **mycontainer** does not exist yet, then it will be created.
 
-================
+=================
 Getting metadata
-================
+=================
 
 .. image:: /Images/metadata.jpg
            :width: 600px
@@ -103,6 +103,16 @@ Object metadata can be obtained by the following command:
 
 **Content Length** is the size in bytes and 
 **ETag** is the md5 checksum of the object.
+
+=================================
+List the containers in an account
+=================================
+
+The containers in an account can be listed like:
+
+.. code-block:: console
+
+         swift list
 
 ============================
 List contents of a container
@@ -140,8 +150,7 @@ Delete a container with all objects in it:
 Set and get your own metadata for containers and objects
 ========================================================
 
-Set and get your own metadata for a container
----------------------------------------------
+To set and get metadata for an container goes in the following manner:
 
 .. image:: /Images/metadata_container.png
 
@@ -150,6 +159,8 @@ Setting and getting metadata for an object works in an identical fashion.
 ============================
 Uploading large files (>5GB)
 ============================
+
+It is only possible to upload objects with the size of at most 5GB in one go to SWIFT. It is possible to up and download larger objects. For this we refer to the documentation on large objects at: https://docs.openstack.org/developer/swift/overview_large_objects.html
 
 =======================================================
 Script to verify MD5 checksums of local and remote copy

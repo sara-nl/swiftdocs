@@ -21,11 +21,9 @@ Here we refer to the man pages of **curl**. But we do like to point out the foll
               Include  the HTTP-header in the output. The HTTP-header includes
               things like server-name, date of the document, HTTP-version  and
               more...
- 
        -S, --show-error
               When used with -s, --silent, it makes curl show an error message
               if it fails.
-
        -s, --silent
               Silent or quiet mode. Don't show progress meter  or  error  mes‐
               sages.   Makes  Curl mute. It will still output the data you ask

@@ -61,15 +61,83 @@ Upload an object to a container
 Getting metadata
 ================
 
-for containers
+Information about containers can be obtained by:
+
 .. code-block:: console
 
     curl -i --head -H "X-Auth-Token: <token>" <storage url>/mycontainer
 
 
-for objects
+Information about an object can be retrieved through:
+
 .. code-block:: console
 
     curl -i --head -H "X-Auth-Token: <token>" <storage url>/mycontainer/myobject
 
+================================
+List the container of an account
+================================
 
+.. code-block:: console
+
+    curl -s -S -X GET -H "X-Auth-Token: <token>" <storage url>
+
+================================
+List the contents of a container
+================================
+
+.. code-block:: console
+
+    curl -s -S -X GET -H "X-Auth-Token: <token>" <storage url>/mycontainer
+
+==================
+Delete a container
+==================
+
+.. code-block:: console
+
+    curl -s -S -X DELETE -H "X-Auth-Token: <token>" <storage url>/mycontainer
+
+.. note:: **Important:** You can only delete an empty container. If you try to delete a non empty container, then you get the error message: "There was a conflict when trying to complete your request."
+
+================
+Delete an object
+================
+
+.. code-block:: console
+
+    curl -s -S -X DELETE -H "X-Auth-Token: <token>" <storage url>/mycontainer/myobject
+
+========================================================
+Set and get your own metadata for containers and objects
+========================================================
+
+For containers we have:
+
+.. code-block:: console
+
+    curl -s -S -X POST -H "X-Auth-Token: <token>" -H "X-Container-Meta-mymetadata: mystuff" <storage url>/mycontainer
+
+.. note:: **Important:** The header which denotes the meta data item has to be of the form *X-Container-Meta-<name>* for containers.
+
+For objects we have:
+
+.. code-block:: console
+
+    curl -s -S -X POST -H "X-Auth-Token: <token>" -H "X-Object-Meta-mymetadata: mystuff" <storage url>/mycontainer/myobject
+
+.. note:: **Important:** The header which denotes the meta data item has to be of the form *X-Object-Meta-<name>* for objects.
+
+Get the metadata for containers:
+
+.. code-block:: console
+
+    curl -s -S --head -H "X-Auth-Token: <token>" <storage url>/mycontainer
+
+which lists only the meta data. Or:
+
+.. code-block:: console
+
+    curl -s -S -X GET -H "X-Auth-Token: <token>" <storage url>/mycontainer
+
+which shows container meta data and lists objects. 

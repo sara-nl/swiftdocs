@@ -48,4 +48,11 @@ Create a container
 
     curl -i -X PUT -H "X-Auth-Token: <token>" <storage url>/mycontainer
 
-TBD
+===============================
+Upload an object to a container
+===============================
+
+.. code-block:: console
+
+    curl -i -T myobject -X PUT -H "X-Auth-Token: <token>" <storage url>/mycontainer/myobject
+

@@ -18,7 +18,7 @@ Here we refer to the man pages of **curl**. But we do like to point out the foll
 :manpage:`curl(1)`
 
 -i	Include the HTTP-header in the output. The HTTP-header includes things like server-name, date of the document, HTTP-version  and more...
--s	Silent or quiet mode. Don't show progress meter  or  error  messages.   Makes  Curl mute. It will still output the data you ask for, potentially even to the terminal/stdout unless you redirect it.
+-s	Silent or quiet mode. Don't show progress meter  or  error  messages.   Makes  curl mute. It will still output the data you ask for, potentially even to the terminal/stdout unless you redirect it.
 -S	When used with -s, it makes curl show an error message if it fails.
 
 
@@ -145,6 +145,27 @@ which lists only the meta data. Or:
 
 .. code-block:: console
 
-    curl -s -S -X GET -H "X-Auth-Token: <token>" <storage url>/mycontainer
+    curl -i -X GET -H "X-Auth-Token: <token>" <storage url>/mycontainer
 
 which shows container meta data and lists objects. 
+
+Get the meta data for objects:
+
+.. code-block:: console
+
+    curl -s -S --head -H "X-Auth-Token: <token>" <storage url>/mycontainer/myobject
+
+which lists only the meta data. Or:
+
+.. code-block:: console
+
+    curl -i -X GET -H "X-Auth-Token: <token>" <storage url>/mycontainer/myobject
+
+which shows container meta data and gets the object data.
+
+============================
+Uploading large files (>5GB)
+============================
+
+It is only possible to upload objects with the size of at most 5GB in one go to SWIFT. It is possible to up and download larger objects. For this we refer to the documentation on large objects at: https://docs.openstack.org/developer/swift/overview_large_objects.html
+For this case we refer to the documentation on 

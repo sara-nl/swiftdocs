@@ -175,11 +175,11 @@ Bulk operations
 
 You can upload a tarball which will be extracted by SWIFT.
 
-.. image /Images/bulk_upload.png
+.. image:: /Images/bulk_upload.png
 
 It is possible to do a bulk deletion. First you create a text file with all the containers and objects to be deleted. After that everything goes as follows:
 
-.. image /Images/bulk_deletion.png
+.. image:: /Images/bulk_deletion.png
 
 =================
 Object versioning

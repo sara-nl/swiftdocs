@@ -171,7 +171,7 @@ Setting and getting metadata for an object works in an identical fashion.
 Uploading large files (>5GB)
 ============================
 
-It is only possible to upload objects with the size of at most 5GB in one go to SWIFT. It is possible to up and download larger objects. For the python SWIFT client you can upload an object larger than 5GB in the following way:
+It is only possible to upload objects with the size of at most 5GB in one go to SWIFT. It is possible to up and download larger objects when the large object is uploaded in chunks. For the python SWIFT client you can upload an object larger than 5GB in the following way:
 
 .. code-block:: console
 

@@ -56,7 +56,7 @@ What you can do is for example:
 
 .. image:: /Images/auth.png
 
-and run:
+and do the exports and run:
 
 .. code-block:: console
 

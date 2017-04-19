@@ -66,9 +66,9 @@ A container can be created by the following command:
 
          swift post mycontainer
 
-===============================
-Upload an object to a container
-===============================
+=============================================
+Upload/Download an object to/from a container
+=============================================
 
 .. image:: /Images/upload.jpg
            :width: 600px
@@ -78,7 +78,18 @@ Upload an object to a container
 
          swift upload mycontainer myobject
 
-If the container **mycontainer** does not exist yet, then it will be created.
+If the container **mycontainer** does not exist yet, then it will be created. Downloading an object from a container goes as follows:
+
+.. code-block:: console
+
+         swift download mycontainer myobject
+
+Downloading the whole content of a container is done by:
+
+.. code-block:: console
+
+         swift download mycontainer
+
 
 =================
 Getting metadata
@@ -160,7 +171,13 @@ Setting and getting metadata for an object works in an identical fashion.
 Uploading large files (>5GB)
 ============================
 
-It is only possible to upload objects with the size of at most 5GB in one go to SWIFT. It is possible to up and download larger objects. For this we refer to the documentation on large objects at: https://docs.openstack.org/developer/swift/overview_large_objects.html
+It is only possible to upload objects with the size of at most 5GB in one go to SWIFT. It is possible to up and download larger objects. For the python SWIFT client you can upload an object larger than 5GB in the following way:
+
+.. code-block:: bash
+
+    swift upload -S <chunk size in bytes> mycontainer mybigobject
+
+For downloading you can just proceed as usual. For more information on this we refer to the documentation on large objects at: https://docs.openstack.org/developer/swift/overview_large_objects.html
 
 =======================================================
 Script to verify MD5 checksums of local and remote copy

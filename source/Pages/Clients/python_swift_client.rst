@@ -179,6 +179,11 @@ It is only possible to upload objects with the size of at most 5GB in one go to 
 
 For downloading you can just proceed as usual. For more information on this we refer to the documentation on large objects at: https://docs.openstack.org/developer/swift/overview_large_objects.html
 
+=================
+Object versioning
+=================
+TBD
+
 =======================================================
 Script to verify MD5 checksums of local and remote copy
 =======================================================

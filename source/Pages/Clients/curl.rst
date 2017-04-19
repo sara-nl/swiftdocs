@@ -55,14 +55,21 @@ Create a container
 
     curl -i -X PUT -H "X-Auth-Token: <token>" <storage url>/mycontainer
 
-===============================
-Upload an object to a container
-===============================
+===========================================
+Upload/Download an object to/from container
+===========================================
+
+Uploading an object:
 
 .. code-block:: console
 
     curl -i -T myobject -X PUT -H "X-Auth-Token: <token>" <storage url>/mycontainer/myobject
 
+Downloading an object:
+
+.. code-block:: console
+
+    curl -s -S -X GET -H "X-Auth-Token: <token>" <storage url>/mycontainer/myobject -O
 
 ================
 Getting metadata

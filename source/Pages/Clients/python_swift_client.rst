@@ -52,6 +52,15 @@ For example:
         
 .. image:: /Images/list_token.png
 
+What you can do is for example:
+
+.. image:: /Images/auth.png
+
+and run:
+.. code-block:: console
+
+         swift --os-auth-token ${OS_AUTH_TOKEN} --os-storage-url ${OS_STORAGE_URL} [options] <command> [--help] [<command options>]
+
 ==================
 Create a container
 ==================

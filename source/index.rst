@@ -8,6 +8,7 @@
    :depth: 4
 
 .. image:: /Images/OpenStack-Logo-Horizontal.png
+           :width: 300px
            :align: right
 
 ******************

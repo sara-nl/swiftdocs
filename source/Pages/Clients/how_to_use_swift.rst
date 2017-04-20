@@ -16,17 +16,12 @@ Clients
 Swift Command line client
 -------------------------
 There is a swift commandline client written in python. You may find more information about this at: https://www.swiftstack.com/docs/integration/python-swiftclient.html. This page will provide information on how to install the client and how to use it.
-If you want to know more about all options of the *swift* command. Just type in the command
 
-.. code-block:: console
-
-	swift --help
-
-Here are some examples about how to use the :ref:`Python SWIFT client <python-swift-client>`.
+On this page there are some examples about how to use the :ref:`Python SWIFT client <python-swift-client>`.
 
 S3 clients
 ----------
-TBD
+S3curl can be downloaded from https://github.com/rtdp/s3curl.
 
 Curl
 ----

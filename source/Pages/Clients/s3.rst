@@ -13,4 +13,46 @@ In this page you will find documentation about the S3 clients.
 S3curl
 ======
 
+Authentication
+--------------
+Make sure that in the same directory where the s3curl.pl script is that there is also a file callen **.s3curl** with a content like:
 
+.. code-block:: console
+
+       %awsSecretAccessKeys = (
+       # personal account
+       AUTH_<user name> => {
+           id => '<user name',
+           key => '<s3 api key>'
+       }
+   );
+
+Further, on line 37 of **s3curl.pl** there is a line like:
+
+.. code-block:: perl
+
+       my @endpoints = ( '<my endpoint>');
+
+where you have to fill in the endpoint which is ***proxy.swift.surfsara.nl** in our case. 
+
+Create a bucket
+---------------
+
+.. code-block:: console
+
+    ./s3curl.pl --id=AUTH_<user name> --createBucket -- https://proxy.swift.surfsara.nl/mybucket
+
+Upload/Download an object to/from a bucket
+------------------------------------------
+
+You can upload an object to a bucket by:
+
+.. code-block:: console
+
+    ./s3curl.pl --id=AUTH_<user name> --put=<file name> -- https://proxy.swift.surfsara.nl/mybucket/myobject
+
+An object can be downloaded by:
+
+.. code-block:: console
+
+    ./s3curl.pl --id=AUTH_<user name> -- https://proxy.swift.surfsara.nl/mybucket/myobject

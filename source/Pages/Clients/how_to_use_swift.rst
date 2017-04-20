@@ -23,6 +23,8 @@ S3 clients
 ----------
 S3curl can be downloaded from https://github.com/rtdp/s3curl.
 
+More information on S3 clients may be found at the :ref:`S3 page <s3>`.
+
 Curl
 ----
 

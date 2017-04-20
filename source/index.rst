@@ -7,7 +7,7 @@
 .. _contents:
    :depth: 4
 
-.. image:: /Images/openstack.png
+.. image:: /Images/OpenStack-Logo-Horizontal.png
            :align: right
 
 ******************

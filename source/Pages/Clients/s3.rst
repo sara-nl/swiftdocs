@@ -62,9 +62,9 @@ Getting metadata
 
 You can get an objects metadata by:
 
-.. image:: /Image/s3getmetadata.png
+.. image:: /Images/s3getmetadata.png
 
 List buckets in an account
 --------------------------
 
-.. image:: /Image/s3listbuckets.png
+.. image:: /Images/s3listbuckets.png

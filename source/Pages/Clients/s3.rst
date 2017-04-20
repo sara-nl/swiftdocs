@@ -33,7 +33,7 @@ Further, on line 37 of **s3curl.pl** there is a line like:
 
        my @endpoints = ( '<my endpoint>');
 
-where you have to fill in the endpoint which is ***proxy.swift.surfsara.nl** in our case. 
+where you have to fill in the endpoint which is **proxy.swift.surfsara.nl** in our case. 
 
 Create a bucket
 ---------------
@@ -55,4 +55,11 @@ An object can be downloaded by:
 
 .. code-block:: console
 
-    ./s3curl.pl --id=AUTH_<user name> -- https://proxy.swift.surfsara.nl/mybucket/myobject
+    ./s3curl.pl --id=AUTH_<user name> -- -O https://proxy.swift.surfsara.nl/mybucket/myobject
+
+Getting metadata
+----------------
+
+You can get an objects metadata by:
+
+.. image:: /Image/s3getmetadata.png

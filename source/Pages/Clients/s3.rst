@@ -72,3 +72,7 @@ List buckets in an account
 .. image:: /Images/s3listbuckets.png
 
 This command provides output in xml. Here **xmllint** is used to get some nicer formatting. Don't take the creation date too serious.
+
+If you are allergic to xml you can always do:
+
+.. image:: /Images/s3listbuckets2.png

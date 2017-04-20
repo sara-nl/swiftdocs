@@ -64,7 +64,11 @@ You can get an objects metadata by:
 
 .. image:: /Images/s3getmetadata.png
 
+Here **Content-Length** is the size in bytes and **ETag** is the md5 checksum of the object.
+
 List buckets in an account
 --------------------------
 
 .. image:: /Images/s3listbuckets.png
+
+This command provides output in xml. Here **xmllint** is used to get some nicer formatting.

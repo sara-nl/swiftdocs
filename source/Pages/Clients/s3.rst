@@ -76,3 +76,10 @@ This command provides output in xml. Here **xmllint** is used to get some nicer 
 If you are allergic to xml you can always do:
 
 .. image:: /Images/s3listbuckets2.png
+
+List objects in a bucket
+------------------------
+
+Listing the objects in a bucket:
+
+.. image:: /Images/s3listobjects.png

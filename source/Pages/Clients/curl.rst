@@ -176,6 +176,14 @@ Uploading large files (>5GB)
 
 It is only possible to upload objects with the size of at most 5GB in one go to SWIFT. It is possible to up and download larger objects. For this we refer to the documentation on large objects at: https://docs.openstack.org/developer/swift/overview_large_objects.html
 
+==============
+Copy an object
+==============
+
+.. code-block:: console
+
+    curl -i -X COPY -H "X-Auth-Token: <token>" -H "Destination: anothercontainer/myobject" <storage url>/mycontainer/myobject
+
 ===============
 Bulk operations
 ===============

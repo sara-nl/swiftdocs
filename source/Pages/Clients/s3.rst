@@ -100,3 +100,8 @@ Throwing away a bucket:
     s3curl.pl --id=AUTH_<user name> --delete -- -s -S https://proxy.swift.surfsara.nl/mybucket
 
 .. note:: **Important:** You can only delete an empty bucket.
+
+Get and set your own metadata for buckets and objects
+-----------------------------------------------------
+
+

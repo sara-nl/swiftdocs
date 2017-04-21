@@ -83,3 +83,20 @@ List objects in a bucket
 Listing the objects in a bucket:
 
 .. image:: /Images/s3listobjects.png
+
+Throwing buckets and objects away
+---------------------------------
+
+Throwing away an object:
+
+.. code-block:: console
+
+    s3curl.pl --id=AUTH_<user name> --delete -- -s -S https://proxy.swift.surfsara.nl/mybucket/myobject
+
+Throwing away a bucket:
+
+.. code-block:: console
+
+    s3curl.pl --id=AUTH_<user name> --delete -- -s -S https://proxy.swift.surfsara.nl/mybucket
+
+.. note:: **Important:** You can only delete an empty bucket.

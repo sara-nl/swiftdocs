@@ -30,6 +30,11 @@ Curl
 
 Information about accessing SWIFT through the **curl** command is given on the :ref:`curl pages <curl>`.
 
+Cyberduck
+---------
+
+Information about accessing SWIFT through Cyberduck is provided on the :ref:`cyberduck pages <cyberduck>`.
+
 Libraries
 ---------
 TBD

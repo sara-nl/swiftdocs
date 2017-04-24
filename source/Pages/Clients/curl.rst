@@ -184,8 +184,8 @@ Create a container for the big file and a separate container for the segments:
 
 .. code-block:: console
 
-    curl -i -X PUT -H "x-auth-token: ${OS_AUTH_TOKEN}" ${OS_STORAGE_URL}/mybigfilescontainer
-    curl -i -X PUT -H "x-auth-token: ${OS_AUTH_TOKEN}" ${OS_STORAGE_URL}/mybigfilescontainer_segments
+    curl -i -X PUT -H "x-auth-token: ${<token>}" ${<storage url>}/mybigfilescontainer
+    curl -i -X PUT -H "x-auth-token: ${<token>}" ${<storage url>}/mybigfilescontainer_segments
 
 Split the big file into 40MB chunks
 
@@ -206,9 +206,9 @@ Upload the three segments to the segments container:
 
 .. code-block:: console
 
-    curl -i -X PUT -H "x-auth-token: ${OS_AUTH_TOKEN}" ${OS_STORAGE_URL}/mybigfilescontainer_segments/xaa --data-binary @xaa
-    curl -i -X PUT -H "x-auth-token: ${OS_AUTH_TOKEN}" ${OS_STORAGE_URL}/mybigfilescontainer_segments/xab --data-binary @xab
-    curl -i -X PUT -H "x-auth-token: ${OS_AUTH_TOKEN}" ${OS_STORAGE_URL}/mybigfilescontainer_segments/xac --data-binary @xac
+    curl -i -X PUT -H "x-auth-token: ${<token>}" ${<storage url>}/mybigfilescontainer_segments/xaa --data-binary @xaa
+    curl -i -X PUT -H "x-auth-token: ${<token>}" ${<storage url>}/mybigfilescontainer_segments/xab --data-binary @xab
+    curl -i -X PUT -H "x-auth-token: ${<token>}" ${<storage url>}/mybigfilescontainer_segments/xac --data-binary @xac
 
 Create the manifest file:
 
@@ -218,8 +218,8 @@ Create the manifest file:
 
     for sp in /mybigfilescontainer_segments/xaa /mybigfilescontainer_segments/xab /mybigfilescontainer_segments/xac; do
 
-        ETAG=$(curl -I -s -H "X-Auth-Token: ${OS_AUTH_TOKEN}" "${OS_STORAGE_URL}$sp" | perl -ane '/Etag:/ and print $F[1];');
-        SIZE=$(curl -I -s -H "X-Auth-Token: ${OS_AUTH_TOKEN}" "${OS_STORAGE_URL}$sp" | perl -ane '/Content-Length:/ and print $F[1];');
+        ETAG=$(curl -I -s -H "X-Auth-Token: ${<token>}" "${<storage url>}$sp" | perl -ane '/Etag:/ and print $F[1];');
+        SIZE=$(curl -I -s -H "X-Auth-Token: ${<token>}" "${<storage url>}$sp" | perl -ane '/Content-Length:/ and print $F[1];');
         SEGMENT="{\"path\":\"$sp\",\"etag\":\"$ETAG\",\"size_bytes\":$SIZE}";
         [ "$MANIFEST" != "[" ] && MANIFEST="$MANIFEST,";   MANIFEST="$MANIFEST$SEGMENT";
 
@@ -245,10 +245,26 @@ Then upload the manifest file like this:
 
 .. code-block:: console
 
-    curl -i -X PUT -H "X-Auth-Token: ${OS_AUTH_TOKEN}" ${OS_STORAGE_URL}/mybigfilescontainer/file?multipart-manifest=put --data-binary "$MANIFEST"
+    curl -i -X PUT -H "X-Auth-Token: ${<token>}" ${<storage url>}/mybigfilescontainer/file?multipart-manifest=put --data-binary "$MANIFEST"
 
 After this you can download the file as normal.
+
+The **ETag** of the whole file can be computed as:
+
+.. code-block:: console
+
+    echo -n 'etagoffirstsegmenteetagofsecondsegmentetagofthirdsegment...' | md5sum
+
+So in this case this would be:
+
+.. image:: /Images/bigfilesmd5sum.png
+
+Run the following command to throw away the file, the segments and the manifest file:
     
+.. code-block:: console
+
+    curl -i -X DELETE -H "X-Auth-Token: ${<token>}" ${<storage url>}/mybigfilescontainer/file?multipart-manifest=delete
+
 ==============
 Copy an object
 ==============

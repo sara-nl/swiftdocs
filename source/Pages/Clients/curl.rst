@@ -176,6 +176,49 @@ Uploading large files (>5GB)
 
 It is only possible to upload objects with the size of at most 5GB in one go to SWIFT. It is possible to up and download larger objects. For this we refer to the documentation on large objects at: https://docs.openstack.org/developer/swift/overview_large_objects.html. 
 
+There are dynamic large objects and static large objects. 
+
+This page: https://docs.openstack.org/developer/swift/api/large_objects.html#comparison-of-static-and-dynamic-large-objects gives an overview of the difference between dynamic large objects and static large objects.
+
+Dynamic Large Objects
+---------------------
+
+Suppose we have a 100MB file, called **file**,  that is uploaded in three chunks or segments.
+Create a container for the big file:
+
+.. code-block:: console
+
+    curl -i -X PUT -H "x-auth-token: ${<token>}" ${<storage url>}/mybigfilescontainer
+
+Split the big file into 40MB chunks
+
+.. code-block:: console
+
+    split -b 40000 file
+
+The file is now split up in three files called **xaa**, **xab**, **xac**. Upload the three chunks to the segments container:
+
+.. code-block:: console
+
+    -rw-r--r-- 1 ron ron 100000000 apr 24 18:21 file
+    -rw-r--r-- 1 ron ron  40000000 apr 24 18:39 xaa
+    -rw-r--r-- 1 ron ron  40000000 apr 24 18:39 xab
+    -rw-r--r-- 1 ron ron  20000000 apr 24 18:39 xac
+
+.. code-block:: console
+
+    curl -i -X PUT -H "X-Auth-Token: ${OS_AUTH_TOKEN}" ${OS_STORAGE_URL}/mybigfilescontainer/file/001 --data-binary @xaa
+    curl -i -X PUT -H "X-Auth-Token: ${OS_AUTH_TOKEN}" ${OS_STORAGE_URL}/mybigfilescontainer/file/002 --data-binary @xab
+    curl -i -X PUT -H "X-Auth-Token: ${OS_AUTH_TOKEN}" ${OS_STORAGE_URL}/mybigfilescontainer/file/003 --data-binary @xac
+
+Upload the manifest file:
+
+.. code-block:: console
+
+    curl -i -X PUT -H "X-Auth-Token: ${OS_AUTH_TOKEN}" -H 'X-Object-Manifest: mybigfilescontainer/file/' ${OS_STORAGE_URL}/mybigfilescontainer/file --data-binary ''
+
+Now you can download the file normally.
+
 Static Large Objects
 --------------------
 
@@ -253,7 +296,7 @@ The **ETag** of the whole file can be computed as:
 
 .. code-block:: console
 
-    echo -n 'etagoffirstsegmenteetagofsecondsegmentetagofthirdsegment...' | md5sum
+    echo -n 'etagoffirstsegmentetagofsecondsegmentetagofthirdsegment...' | md5sum
 
 So in this case this would be:
 

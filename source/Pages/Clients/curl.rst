@@ -176,6 +176,83 @@ Uploading large files (>5GB)
 
 It is only possible to upload objects with the size of at most 5GB in one go to SWIFT. It is possible to up and download larger objects. For this we refer to the documentation on large objects at: https://docs.openstack.org/developer/swift/overview_large_objects.html
 
+Static Large Objects
+--------------------
+
+Suppose we have a 100MB file, called **file**,  that is uploaded in three chunks.
+Create a container for the big file and a separate container for the segments:
+
+.. code-block:: console
+
+    curl -i -X PUT -H "x-auth-token: ${OS_AUTH_TOKEN}" ${OS_STORAGE_URL}/mybigfilescontainer
+    curl -i -X PUT -H "x-auth-token: ${OS_AUTH_TOKEN}" ${OS_STORAGE_URL}/mybigfilescontainer_segments
+
+Split the big file into 40MB chunks
+
+.. code-block:: console
+
+    split -b 40000 file
+
+The file is now split up in three files called **xaa**, **xab**, **xac**. Upload the three chunks to the segments container:
+
+.. code-block:: console
+
+    -rw-r--r-- 1 ron ron 100000000 apr 24 18:21 file
+    -rw-r--r-- 1 ron ron  40000000 apr 24 18:39 xaa
+    -rw-r--r-- 1 ron ron  40000000 apr 24 18:39 xab
+    -rw-r--r-- 1 ron ron  20000000 apr 24 18:39 xac
+
+Upload the three segments to the segments container:
+
+    curl -i -X PUT -H "x-auth-token: ${OS_AUTH_TOKEN}" ${OS_STORAGE_URL}/mybigfilescontainer_segments/xaa --data-binary @xaa
+    curl -i -X PUT -H "x-auth-token: ${OS_AUTH_TOKEN}" ${OS_STORAGE_URL}/mybigfilescontainer_segments/xab --data-binary @xab
+    curl -i -X PUT -H "x-auth-token: ${OS_AUTH_TOKEN}" ${OS_STORAGE_URL}/mybigfilescontainer_segments/xac --data-binary @xac
+
+Compute the md5 checksum of the three chunks:
+
+.. code-block:: console
+
+    48e9a108a3ec623652e7988af2f88867  xaa
+    48e9a108a3ec623652e7988af2f88867  xab
+    10e4462c9d0b08e7f0b304c4fbfeafa3  xac
+
+Create the manifest file:
+
+.. code-block:: console
+
+    MANIFEST="["
+
+    for sp in /mybigfilescontainer_segments/xaa /mybigfilescontainer_segments/xab /mybigfilescontainer_segments/xac; do
+
+        ETAG=$(curl -I -s -H "X-Auth-Token: ${OS_AUTH_TOKEN}" "${OS_STORAGE_URL}$sp" | perl -ane '/Etag:/ and print $F[1];');
+        SIZE=$(curl -I -s -H "X-Auth-Token: ${OS_AUTH_TOKEN}" "${OS_STORAGE_URL}$sp" | perl -ane '/Content-Length:/ and print $F[1];');
+        SEGMENT="{\"path\":\"$sp\",\"etag\":\"$ETAG\",\"size_bytes\":$SIZE}";
+        [ "$MANIFEST" != "[" ] && MANIFEST="$MANIFEST,";   MANIFEST="$MANIFEST$SEGMENT";
+
+    done
+    
+    MANIFEST="${MANIFEST}]"
+
+This generates a manifest file like this:
+
+.. code-block:: console
+
+    [{"path":"/mybigfilescontainer_segments/xaa",
+      "etag":"48e9a108a3ec623652e7988af2f88867",
+      "size_bytes":40000000},
+     {"path":"/mybigfilescontainer_segments/xab",
+      "etag":"48e9a108a3ec623652e7988af2f88867",
+      "size_bytes":40000000},
+     {"path":"/mybigfilescontainer_segments/xac",
+      "etag":"10e4462c9d0b08e7f0b304c4fbfeafa3",
+      "size_bytes":20000000}]
+
+Then upload the manifest file like this:
+
+.. code-block:: console
+
+    curl -i -X PUT -H "X-Auth-Token: ${OS_AUTH_TOKEN}" ${OS_STORAGE_URL}/mybigfilescontainer/file?multipart-manifest=put --data-binary "$MANIFEST"
+    
 ==============
 Copy an object
 ==============

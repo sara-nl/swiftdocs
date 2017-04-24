@@ -174,7 +174,7 @@ which shows container metadata and gets the object data.
 Uploading large files (>5GB)
 ============================
 
-It is only possible to upload objects with the size of at most 5GB in one go to SWIFT. It is possible to up and download larger objects. For this we refer to the documentation on large objects at: https://docs.openstack.org/developer/swift/overview_large_objects.html
+It is only possible to upload objects with the size of at most 5GB in one go to SWIFT. It is possible to up and download larger objects. For this we refer to the documentation on large objects at: https://docs.openstack.org/developer/swift/overview_large_objects.html. 
 
 Static Large Objects
 --------------------
@@ -204,21 +204,15 @@ The file is now split up in three files called **xaa**, **xab**, **xac**. Upload
 
 Upload the three segments to the segments container:
 
+.. code-block:: console
+
     curl -i -X PUT -H "x-auth-token: ${OS_AUTH_TOKEN}" ${OS_STORAGE_URL}/mybigfilescontainer_segments/xaa --data-binary @xaa
     curl -i -X PUT -H "x-auth-token: ${OS_AUTH_TOKEN}" ${OS_STORAGE_URL}/mybigfilescontainer_segments/xab --data-binary @xab
     curl -i -X PUT -H "x-auth-token: ${OS_AUTH_TOKEN}" ${OS_STORAGE_URL}/mybigfilescontainer_segments/xac --data-binary @xac
 
-Compute the md5 checksum of the three chunks:
-
-.. code-block:: console
-
-    48e9a108a3ec623652e7988af2f88867  xaa
-    48e9a108a3ec623652e7988af2f88867  xab
-    10e4462c9d0b08e7f0b304c4fbfeafa3  xac
-
 Create the manifest file:
 
-.. code-block:: console
+.. code-block:: bash
 
     MANIFEST="["
 
@@ -252,6 +246,8 @@ Then upload the manifest file like this:
 .. code-block:: console
 
     curl -i -X PUT -H "X-Auth-Token: ${OS_AUTH_TOKEN}" ${OS_STORAGE_URL}/mybigfilescontainer/file?multipart-manifest=put --data-binary "$MANIFEST"
+
+After this you can download the file as normal.
     
 ==============
 Copy an object

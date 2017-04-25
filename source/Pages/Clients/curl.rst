@@ -333,4 +333,5 @@ It is possible to do a bulk deletion. First you create a text file with all the 
 =================
 Object versioning
 =================
-TBD
+
+Is not turned on at the moment

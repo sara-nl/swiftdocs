@@ -190,7 +190,8 @@ For downloading you can just proceed as usual. For more information on this we r
 =================
 Object versioning
 =================
-TBD
+
+Object versioning is not turned on at the moment.
 
 =======================================================
 Script to verify MD5 checksums of local and remote copy

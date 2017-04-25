@@ -209,15 +209,15 @@ The file is now split up in three files called **xaa**, **xab**, **xac**. Upload
 
 .. code-block:: console
 
-    curl -i -X PUT -H "X-Auth-Token: ${OS_AUTH_TOKEN}" ${OS_STORAGE_URL}/mybigfilescontainer/file/001 --data-binary @xaa
-    curl -i -X PUT -H "X-Auth-Token: ${OS_AUTH_TOKEN}" ${OS_STORAGE_URL}/mybigfilescontainer/file/002 --data-binary @xab
-    curl -i -X PUT -H "X-Auth-Token: ${OS_AUTH_TOKEN}" ${OS_STORAGE_URL}/mybigfilescontainer/file/003 --data-binary @xac
+    curl -i -X PUT -H "X-Auth-Token: ${<token>}" ${<storage url>}/mybigfilescontainer/file/001 --data-binary @xaa
+    curl -i -X PUT -H "X-Auth-Token: ${<token>}" ${<storage url>}/mybigfilescontainer/file/002 --data-binary @xab
+    curl -i -X PUT -H "X-Auth-Token: ${<token>}" ${<storage url>}/mybigfilescontainer/file/003 --data-binary @xac
 
 Upload the manifest file:
 
 .. code-block:: console
 
-    curl -i -X PUT -H "X-Auth-Token: ${OS_AUTH_TOKEN}" -H 'X-Object-Manifest: mybigfilescontainer/file/' ${OS_STORAGE_URL}/mybigfilescontainer/file --data-binary ''
+    curl -i -X PUT -H "X-Auth-Token: ${<token>}" -H 'X-Object-Manifest: mybigfilescontainer/file/' ${<storage url>}/mybigfilescontainer/file --data-binary ''
 
 Now you can download the file normally.
 

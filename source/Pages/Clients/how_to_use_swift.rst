@@ -23,17 +23,17 @@ S3 clients
 ----------
 S3curl can be downloaded from https://github.com/rtdp/s3curl.
 
-More information on S3 clients may be found at the :ref:`S3 page <s3>`.
+More information on S3 clients may be found at the :ref:`S3 <s3>` page.
 
 Curl
 ----
 
-Information about accessing SWIFT through the **curl** command is given on the :ref:`curl pages <curl>`.
+Information about accessing SWIFT through the **curl** command is given on the :ref:`curl <curl>` page.
 
 Cyberduck
 ---------
 
-Information about accessing SWIFT through Cyberduck is provided on the :ref:`cyberduck pages <cyberduck>`.
+Information about accessing SWIFT through Cyberduck is provided on the :ref:`cyberduck <cyberduck>` page.
 
 Libraries
 ---------
@@ -42,22 +42,22 @@ TBD
 API
 ---
 
-SWIFT offers a REST API. Information about this API and some examples are described at the :ref:`API page <api>`.
+SWIFT offers a REST API. Information about this API and some examples are described at the :ref:`API <api>` page.
 
 Cloudfuse
 ---------
 
-It is possible to mount SWIFT object storage as a file system. The :ref:`cloudfuse page <cloudfuse>` has more information.
+It is possible to mount SWIFT object storage as a file system. The :ref:`cloudfuse <cloudfuse>` page has more information.
 
 Duplicity
 ---------
 
-Duplicity is a backup tool that amongst others supports cloud storage systems. More information about this can be found at the :ref:`duplicity page <dupl>`.
+Duplicity is a backup tool that amongst others supports cloud storage systems. More information about this can be found at the :ref:`duplicity <dupl>` page.
 
 Rclone
 ------
 
-Rclone is the rsync for cloud storage. Here is more information on how to use rclone on the :ref:`rclone page <rclone>`.
+Rclone is the rsync for cloud storage. Here is more information on how to use rclone on the :ref:`rclone <rclone>` page.
 
 It features:
 

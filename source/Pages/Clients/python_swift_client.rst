@@ -199,6 +199,8 @@ There are Dynamic Large Objects and Static Large Objects when it comes to large 
 Object versioning
 =================
 
+You can store multiple versions of your content so that you can recover from unintended overwrites. Object versioning is an easy way to implement version control, which you can use with any type of content.
+
 The first thing you have to do is create a container where old versions of objects are stored.
 
 .. code-block:: console

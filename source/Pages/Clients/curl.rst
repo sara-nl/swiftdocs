@@ -334,4 +334,28 @@ It is possible to do a bulk deletion. First you create a text file with all the 
 Object versioning
 =================
 
-Object versioning is not turned on at the moment.
+You can store multiple versions of your content so that you can recover from unintended overwrites. Object versioning is an easy way to implement version control, which you can use with any type of content.
+
+First you need to create a container to store older versions of the objects:
+
+.. code-block:: console
+
+    curl -i -X PUT -H "X-Auth-Token: <token>" <storage url>/mycontainer_versions
+
+Then create a container for the latest version of the objects:
+
+.. code-block:: console
+
+    curl -i -X PUT -H "X-Auth-Token: <token>" -H "X-Versions-Location: mycontainer_versions" <storage url>/mycontainer
+
+If you upload an object to a container and after that upload a newer version of an object to the same container. The older version of the object is placed an a separate container. In this case that container would be **maersk_versions** under a name like:
+
+.. code-block:: console
+
+    <hexadecimal length of object name><object name><timestamp>
+
+If you throw the latest version of the object away, the second latest version of the object is placed back into the container.
+
+Here below is an example:
+
+.. image:: /Images/curl_object_versioning.png

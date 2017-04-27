@@ -88,9 +88,9 @@ Information about an object can be retrieved through:
 
     curl -i --head -H "X-Auth-Token: <token>" <storage url>/mycontainer/myobject
 
-================================
-List the container of an account
-================================
+=================================
+List the containers of an account
+=================================
 
 .. code-block:: console
 
@@ -342,13 +342,13 @@ First you need to create a container to store older versions of the objects:
 
     curl -i -X PUT -H "X-Auth-Token: <token>" <storage url>/mycontainer_versions
 
-Then create a container for the latest version of the objects:
+Then create a container for the latest version of the objects and tell SWIFT where to store the older versions of the object:
 
 .. code-block:: console
 
     curl -i -X PUT -H "X-Auth-Token: <token>" -H "X-Versions-Location: mycontainer_versions" <storage url>/mycontainer
 
-If you upload an object to a container and after that upload a newer version of an object to the same container. The older version of the object is placed an a separate container. In this case that container would be **maersk_versions** under a name like:
+If you upload an object to a container and after that, upload a newer version of an object to the same container. The older version of the object is placed an a separate container. In this case that container would be **maersk_versions** under a name like:
 
 .. code-block:: console
 

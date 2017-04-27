@@ -199,7 +199,7 @@ The first thing you have to do is create a container where old versions of objec
 
     swift post maersk_versions
 
-Then you have to create a container where to store the latest version of the objects
+Then you have to create a container where to store the latest version of the objects and tell swift where to store the older versions:
 
 .. code-block:: console
 

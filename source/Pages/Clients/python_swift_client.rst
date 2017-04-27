@@ -205,13 +205,13 @@ Then you have to create a container where to store the latest version of the obj
 
     swift post maersk -H "X-Versions-Location:maersk_versions"
 
-If you upload an object to a container and after that upload a newer version of an object to the same container. The older version of the object is placed an a separate container. In this case that container would be **maersk_versions** unthe the name:
+If you upload an object to a container and after that upload a newer version of an object to the same container. The older version of the object is placed an a separate container. In this case that container would be **maersk_versions** under a name like:
 
 .. code-block:: console
 
     <hexadecimal length of object name><object name><timestamp>
 
-If you throw the latest version of the object away, the second latest version of the object is placed bakc into the container.
+If you throw the latest version of the object away, the second latest version of the object is placed back into the container.
 
 Here below is an example:
 

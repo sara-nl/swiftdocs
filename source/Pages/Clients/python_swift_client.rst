@@ -88,7 +88,7 @@ Upload/Download an object to/from a container
 
          swift upload mycontainer myobject
 
-If the container **mycontainer** does not exist yet, then it will be created. Downloading an object from a container goes as follows:
+If the container **mycontainer** does not exist yet, then it will be created. By default, the client will verify the checksum during the upload. Downloading an object from a container goes as follows:
 
 .. code-block:: console
 

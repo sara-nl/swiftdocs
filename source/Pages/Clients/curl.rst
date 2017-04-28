@@ -359,3 +359,11 @@ If you throw the latest version of the object away, the second latest version of
 Here below is an example:
 
 .. image:: /Images/curl_object_versioning.png
+
+====
+ACLs
+====
+
+There are account ACLs and container ACLs. With account ACLs you can grant different levels of access to all containers in an account. More information on this can be found at: https://www.swiftstack.com/docs/cookbooks/swift_usage/account_acl.html
+
+There are also container ACLs. Using container ACLs you grant different levels of access to individual containers. More information on this is available at: https://www.swiftstack.com/docs/cookbooks/swift_usage/container_acl.html.

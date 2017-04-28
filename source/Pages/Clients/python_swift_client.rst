@@ -225,3 +225,8 @@ Here below is an example:
 
 .. image:: /Images/object_versioning.png
 
+====
+ACLs
+====
+
+You can set ACLs on containers. Using container ACLs you grant different levels of access to individual containers. More information on this is available at: https://www.swiftstack.com/docs/cookbooks/swift_usage/container_acl.html.

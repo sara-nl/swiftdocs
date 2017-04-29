@@ -254,3 +254,8 @@ ACLs
 You can set ACLs on containers. Using container ACLs you grant different levels of access to individual containers. More information on this is available at: https://www.swiftstack.com/docs/cookbooks/swift_usage/container_acl.html.
 
 
+=================
+Object expiration
+=================
+
+You can set object to expire. This means that object will be automatically deleted after a certain period of time. More information on this may be found at: https://docs.openstack.org/user-guide/cli-swift-set-object-expiration.html.

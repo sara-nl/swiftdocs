@@ -177,6 +177,28 @@ To set and get metadata for an container goes in the following manner:
 
 Setting and getting metadata for an object works in an identical fashion.
 
+===============
+Copying objects
+===============
+
+It is possible to copy objects. This goes as follows:
+
+.. code-block:: console
+
+    swift copy -- destination /newcontainer/newobject oldcontainer oldobject
+
+Also the object's metadata will be copied, unless you use the **--fresh-metadata** flag. 
+
+
+===============================
+Renaming containers and objects
+===============================
+
+.. note:: **Important:** It is NOT possible to rename a container. This means that you have to think really well about naming containers before you upload a PB of data. 
+
+It is possible to rename an object but not in the classical sense. First you need to copy an object using, for example, the method above and then throw the original object away.
+
+
 ============================
 Uploading large files (>5GB)
 ============================
@@ -230,3 +252,5 @@ ACLs
 ====
 
 You can set ACLs on containers. Using container ACLs you grant different levels of access to individual containers. More information on this is available at: https://www.swiftstack.com/docs/cookbooks/swift_usage/container_acl.html.
+
+

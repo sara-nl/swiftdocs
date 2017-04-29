@@ -19,16 +19,16 @@ There is a swift commandline client written in python. You may find more informa
 
 On this page there are some examples about how to use the :ref:`Python SWIFT client <python-swift-client>`.
 
+Curl
+----
+
+Information about accessing SWIFT through the **curl** command is given on the :ref:`curl <curl>` page.
+
 S3 clients
 ----------
 S3curl can be downloaded from https://github.com/rtdp/s3curl.
 
 More information on S3 clients may be found at the :ref:`S3 <s3>` page.
-
-Curl
-----
-
-Information about accessing SWIFT through the **curl** command is given on the :ref:`curl <curl>` page.
 
 Cyberduck
 ---------

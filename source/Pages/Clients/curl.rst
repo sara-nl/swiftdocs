@@ -367,3 +367,9 @@ ACLs
 There are account ACLs and container ACLs. With account ACLs you can grant different levels of access to all containers in an account. More information on this can be found at: https://www.swiftstack.com/docs/cookbooks/swift_usage/account_acl.html
 
 There are also container ACLs. Using container ACLs you grant different levels of access to individual containers. More information on this is available at: https://www.swiftstack.com/docs/cookbooks/swift_usage/container_acl.html.
+
+=================
+Object expiration
+=================
+
+You can set object to expire. This means that object will be automatically deleted after a certain period of time. More information on this may be found at: https://docs.openstack.org/user-guide/cli-swift-set-object-expiration.html. This web page holds information about the swift commandline client. But it is straight forward to set the X-Delete-At and X-Delete-After headers in a curl command.

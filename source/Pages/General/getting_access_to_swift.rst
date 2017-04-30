@@ -9,7 +9,7 @@ In this page you will find general information about getting access to the SWIFT
 .. contents:: 
     :depth: 4
 
-If you are interested to use the SWIFT storage cluster, please contact the `SURFsara helpdesk`_ helpdesk@surfsara.nl.
+If you are interested to use the SWIFT storage cluster, please contact the `SURFsara helpdesk`_ (helpdesk@surfsara.nl).
 
 
 .. Links:

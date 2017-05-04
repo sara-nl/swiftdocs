@@ -35,10 +35,10 @@ Cyberduck
 
 Information about accessing SWIFT through Cyberduck is provided on the :ref:`cyberduck <cyberduck>` page.
 
-Libraries
----------
+Python Library
+--------------
 
-The :ref:`library <library>` page gives you information on the python-swiftclient library.
+The :ref:`pythonlibrary <python library>` page gives you information on the python-swiftclient library.
 
 API
 ---

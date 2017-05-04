@@ -1,8 +1,8 @@
-.. _library:
+.. _pythonlibrary:
 
-*******
-Library
-*******
+**************
+Python Library
+**************
 
 In this page you will find documentation about the python **swiftclient** library you can use to access swift.
 

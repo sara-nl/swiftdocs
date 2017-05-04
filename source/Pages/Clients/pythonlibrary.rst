@@ -32,11 +32,11 @@ One example of **stat** is given below:
 
 First you need to set some environment variables for the authentication:
 
-.. Image:: /Images/stat_service_api_auth.png
+.. image:: /Images/stat_service_api_auth.png
 
 Having done this you can run your script to do a **stat** on an object in a container.
 
-.. Image:: /Images/stat_service_api.png
+.. image:: /Images/stat_service_api.png
 
 ==============
 Connection API
@@ -46,7 +46,17 @@ A low level API that provides methods for authentication and methods that corres
 
 For usage details see the client docs: `swiftclient.client`_.
 
+A more detailed description and examples of the API is at the `Connection API`_ page. 
+
 One example of **stat** is given below:
+
+The script looks like this:
+
+.. image:: /Images/stat_connection_api_script.png
+
+Running this, you would get:
+
+.. image:: /Images/stat_connection_api.png
 
 .. Links:
 

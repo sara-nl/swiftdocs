@@ -32,9 +32,13 @@ The following environment variables are useful to set if you don't want them to 
 
 .. code-block:: console
 
-         export ST_AUTH=https://proxy.swift.surfsara.nl/auth/v1.0
-         export ST_USER=<my user name>
-         export ST_KEY=<my password>
+    export OS_PROJECT_DOMAIN_NAME=Default
+    export OS_USER_DOMAIN_NAME=Default
+    export OS_PROJECT_NAME=<my project>
+    export OS_USERNAME=<user name>
+    export OS_PASSWORD=<password>
+    export OS_AUTH_URL=https://proxy.swift.surfsara.nl:5000/v3
+    export OS_IDENTITY_API_VERSION=3
 
 Apart from using your user name and password, it is also possible to generate a token that is valid for 24 hours. This may be handy if you running the script elsewhere on a batch system and you don't want to send you username and password with your batch job. You can use this token to access your data in SWIFT.
 

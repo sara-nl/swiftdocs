@@ -11,4 +11,4 @@ In this page you will find documentation about the coupling of SWIFT to an Owncl
 
 .. raw:: html
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/RW9Fp_LfYIQ" frameborder="0" allowfullscreen></iframe>
+    <iframe width="1120" height="630" src="https://www.youtube.com/embed/RW9Fp_LfYIQ" frameborder="0" allowfullscreen></iframe>

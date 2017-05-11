@@ -21,10 +21,10 @@ Duplicity requires some environment variables to be set, see below:
 
 .. code-block:: console
 
-    export SWIFT_USERNAME="user name"
+    export SWIFT_USERNAME="project name:user name"
     export SWIFT_PASSWORD="password"
-    export SWIFT_AUTHURL="https://proxy.swift.surfsara.nl/auth/v1.0"
-    export SWIFT_AUTHVERSION="1"
+    export SWIFT_AUTHURL="https://proxy.swift.surfsara.nl/auth/v3"
+    export SWIFT_AUTHVERSION="3"
 
 =================
 Automatic backups

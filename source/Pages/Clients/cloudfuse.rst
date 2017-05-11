@@ -24,8 +24,9 @@ Configuration
 .. code-block:: console
 
     username=<user name>
+    tenant=<project name>
     password=<password>
-    authurl=https://proxy.swift.surfsara.nl/auth/v1.0
+    authurl=https://proxy.swift.surfsara.nl/auth/v2.0
     verify_ssl=True
 
 Don't forget:

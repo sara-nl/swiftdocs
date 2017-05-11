@@ -32,14 +32,20 @@ Rclone needs some variables set in order to work. You can set these in a **.rclo
     [swift]
     type = swift
     user = <user name>
-    key = <password>
-    auth = https://proxy.swift.surfsara.nl/auth/v1.0
+    key = <passwurd>
+    auth = https://proxy.swift.surfsara.nl:5000/v3
     domain = default
-    tenant = 
-    tenant_domain = 
-    region = 
-    storage_url = <storage url>
-    auth_version =
+    tenant = <project name>
+    tenant_domain = default
+    region = RegionOne
+    storage_url = https://proxy.swift.surfsara.nl/v1/KEY_05b2aafab5a745eab2726d88649d95fe
+    auth_version = 3
+
+This file can be generated interactively by running the command:
+
+.. code-block:: console
+
+    rclone config
 
 Here **<storage url>** is the url of the storage system that can be found using the command:
 

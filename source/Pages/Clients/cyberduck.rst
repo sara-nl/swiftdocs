@@ -19,4 +19,4 @@ The video below shows you how to set things up.
 
 .. raw:: html
 
-    <iframe width="1280" height="720" src="https://www.youtube.com/embed/c-rnLF6PLCw" frameborder="0" allowfullscreen></iframe>
+    <iframe width="1120" height="630" src="https://www.youtube.com/embed/Dk1-l6yROes" frameborder="0" allowfullscreen></iframe>

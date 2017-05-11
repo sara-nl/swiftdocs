@@ -37,7 +37,7 @@ The following environment variables are useful to set if you don't want them to 
     export OS_AUTH_URL=https://proxy.swift.surfsara.nl:5000/v3
     export OS_IDENTITY_API_VERSION=3
 
-Apart from using your user name and password, it is also possible to generate a token that is valid for 24 hours. This may be handy if you running the script elsewhere on a batch system and you don't want to send you username and password with your batch job. You can use this token to access your data in SWIFT.
+Apart from using your user name and password, it is also possible to generate a token that is valid for 24 hours. This may be handy if you are running the script elsewhere on a batch system and you don't want to send you username and password with your batch job. You can use this token to access your data in SWIFT.
 
 You can get a token in the following way:
 

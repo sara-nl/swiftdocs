@@ -25,8 +25,7 @@ More details and examples are provided below.
 Authorisation
 =============
 
-.. image:: /Images/auth.jpg
-           :width: 600px
+.. image:: /Images/stat.png
 
 The following environment variables are useful to set if you don't want them to provide them all the time on the command line.
 

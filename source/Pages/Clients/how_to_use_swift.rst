@@ -71,7 +71,7 @@ It features:
 * Optional FUSE mount (rclone mount)
 
 
-==================
-Owncloud/Nextcloud
-==================
+===============================
+Owncloud and Nextcloud coupling
+===============================
 It is possible to connect SWIFT to an Owncloud or Nextcloud sync-and-share service as external storage. How you can do this is described at the :ref:`Owncloud/Nextcloud <owncloudnextcloud>` page.

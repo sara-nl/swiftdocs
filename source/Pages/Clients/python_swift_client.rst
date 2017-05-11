@@ -102,7 +102,6 @@ Getting metadata
 Container metadata can be obtained in the following manner:
 
 .. image:: /Images/stat_container.png
-           :width: 600px
 
 **Bytes** is the total number of bytes of all object in the container, 
 **Objects** is the number of objects in the container and 
@@ -111,7 +110,6 @@ Container metadata can be obtained in the following manner:
 Object metadata can be obtained by the following command:
 
 .. image:: /Images/stat_object.png
-           :width: 600px
 
 **Content Length** is the size in bytes and 
 **ETag** is the md5 checksum of the object.

@@ -25,8 +25,6 @@ More details and examples are provided below.
 Authorisation
 =============
 
-.. image:: /Images/stat.png
-
 The following environment variables are useful to set if you don't want them to provide them all the time on the command line.
 
 .. code-block:: console
@@ -43,7 +41,7 @@ Apart from using your user name and password, it is also possible to generate a 
 
 You can get a token in the following way:
 
-.. image:: /Images/token.png
+.. image:: /Images/stat.png
 
 What you need is the **StorageURL** and the **Auth Token**. You can use these two to run the swift commands for the next 24 hours without supplying your user name and password.
 
@@ -53,7 +51,7 @@ What you need is the **StorageURL** and the **Auth Token**. You can use these tw
 
 For example:
         
-.. image:: /Images/list_token.png
+.. image:: /Images/list.png
 
 What you can do is for example:
 

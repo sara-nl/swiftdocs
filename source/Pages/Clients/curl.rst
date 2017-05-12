@@ -27,7 +27,7 @@ Authentication
 ==============
 
 
-First you need to get a token that is valid for 24 hours that can be used instead of user name and password. Authentication is don through keystone. There are two versions supported, V2.0 and V3. Using V2.0, a token is created in the following manner:
+First you need to get a token that is valid for 24 hours that can be used instead of user name and password. Authentication is done through keystone. There are two versions supported, V2.0 and V3. Using V2.0, a token is created in the following manner:
 
 .. image:: /Images/v2auth.png
 

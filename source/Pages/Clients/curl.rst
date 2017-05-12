@@ -27,19 +27,221 @@ Authentication
 ==============
 
 
-First you need to get a token that is valid for 24 hours that can be used instead of user name  and password. This goes as follows:
+First you need to get a token that is valid for 24 hours that can be used instead of user name and password. Authentication is don through keystone. There are two versions supported, V2.0 and V3. Using V2.0, a token is created in the following manner:
 
 .. code-block:: console
 
-    curl -i -H "X-Auth-User: <user name>" -H "X-Auth-Key: <password>" https://proxy.swift.surfsara.nl/auth/v1.0
-       .
-       .
-    X-Storage-Url: https://proxy.swift.surfsara.nl/v1/AUTH_ron
-    X-Auth-Token: <token>
-       .
-       .
+    curl -s -H "Content-Type: application/json" -d '{    "auth" : {        "passwordCredentials" : {            "username" : "<user name>",            "password" : "<password"        },        "tenantName" : "<project name>"    } }' https://proxy.swift.surfsara.nl:5000/v2.0/tokens | json_pp
 
-Here **X-Auth-Token** is the token and **X-Storage-Url** is the storage URL that you will need later on.
+Here the **json_pp** is just for the pretty print of the JSON output. Typical output looks like this:
+
+.. code-block:: console
+
+    {
+       "access" : {
+          "metadata" : {
+             "roles" : [
+                "3c126a7986f04f9ebf2a27f083b8ffde"
+             ],
+             "is_admin" : 0
+          },
+          "token" : {
+             "audit_ids" : [
+                "Kg369Aq0TKWeX2jTohDiiA"
+             ],
+             "expires" : "2017-05-12T14:27:12.000000Z",
+             "issued_at" : "2017-05-12T13:27:12.000000Z",
+             "id" : "gAAAAABZFbgwBuJ1qKVbn2kVC_2rCHJl7t6TI7kH2U1VueIDfLMA9-CNcngf6NcwU-SK3TtKnxaKv7Df7HkaUYeD3ZHX2mhxKKP2m6u5gVhLph58oqrJXhePImrIL4LXF7CV2-ccKd-IBM5JCnb7xcbz7kkY-uObZv1Q-M-o7RAQmvwtJnaZ3R0",
+             "tenant" : {
+                "name" : "<project name>",
+                "id" : "05b2aafab5a745eab2726d88649d95fe",
+                "description" : "some project",
+                "enabled" : true
+             }
+          },
+          "user" : {
+             "username" : "<user name>",
+             "roles_links" : [],
+             "roles" : [
+                {
+                   "name" : "admin"
+                }
+             ],
+             "name" : "<user name>",
+             "id" : "bd4a4a9ea29344ccb828ab4a818e8576"
+          },
+          "serviceCatalog" : [
+             {
+                "endpoints" : [
+                   {
+                      "id" : "2e0acde93b2d4989a7a08a5b15f2e7f7",
+                      "publicURL" : "https://proxy.swift.surfsara.nl/v1/KEY_05b2aafab5a745eab2726d88649d95fe",
+                      "region" : "RegionOne",
+                      "internalURL" : "https://proxy.swift.surfsara.nl/v1/KEY_05b2aafab5a745eab2726d88649d95fe",
+                      "adminURL" : "https://proxy.swift.surfsara.nl/v1"
+                   }
+                ],
+                "name" : "swift",
+                "endpoints_links" : [],
+                "type" : "object-store"
+             },
+             {
+                "endpoints_links" : [],
+                "endpoints" : [
+                   {
+                      "publicURL" : "https://proxy.swift.surfsara.nl:5000/v3/",
+                      "id" : "02a84a77a5534c0899ddb923eff58fd4",
+                      "adminURL" : "https://proxy.swift.surfsara.nl:35357/v3/",
+                      "internalURL" : "https://proxy.swift.surfsara.nl:5000/v3/",
+                      "region" : "RegionOne"
+                   }
+                ],
+                "name" : "keystone",
+                "type" : "identity"
+             }
+          ]
+       }
+    }
+
+If you look at "token", you see the "id" which is your token and "expires" gives you the time when the token will expire. In the "serviceCatalog" at the "endpoints" of the "type: object-store", you see the "publicURL". The is the <storage url> you will need later on.
+
+V3 authentication works a bit different. Here the token is returned in the http header. The script below should give you the right information:
+
+.. code-block:: bash
+
+    #!//bin/sh
+
+    TMPFILE=`mktemp`
+    chmod 600 ${TMPFILE}
+
+    curl -i \
+      -H "Content-Type: application/json" \
+      -o ${TMPFILE} \
+      -d '
+    { "auth": {
+        "identity": {
+          "methods": ["password"],
+          "password": {
+            "user": {
+              "name": "<user name>",
+              "domain": { "id": "default" },
+              "password": "<password>"
+            }
+          }
+        }
+      }
+    }' \
+     https://proxy.swift.surfsara.nl:5000/v3/auth/tokens
+
+    echo
+    cat ${TMPFILE} | grep 'X-Subject-Token:'
+
+    echo
+    tail -1 ${TMPFILE} | json_pp
+    rm -f ${TMPFILE}
+
+An example of the outut this script generates is below:
+
+.. code-block:: console
+
+    X-Subject-Token: gAAAAABZFbvo0zph96oF8E8J2oyndXFS9tNfxVFi9MSxpO7-hWL99_7Z7UTi_YlRLk1VHAosqZJpFoAvY62mJuRU6Z1S0tSqBP9I3MrVQeNNZDcLpCbyxIpbjsywM0KHm7kHeG_7AXKU6fMP13RbrUdU9cfHfSSWs_tZC-uSgfKbYBp7au8EJmM
+
+    {
+       "token" : {
+          "issued_at" : "2017-05-12T13:43:04.000000Z",
+          "project" : {
+             "id" : "05b2aafab5a745eab2726d88649d95fe",
+             "name" : "<project name>",
+             "domain" : {
+                "id" : "default",
+                "name" : "Default"
+             }
+          },
+          "expires_at" : "2017-05-12T14:43:04.000000Z",
+          "methods" : [
+             "password"
+          ],
+          "user" : {
+             "domain" : {
+                "id" : "default",
+                "name" : "Default"
+             },
+             "id" : "bd4a4a9ea29344ccb828ab4a818e8576",
+             "name" : "<user name>",
+             "password_expires_at" : null
+          },
+          "roles" : [
+             {
+                "id" : "3c126a7986f04f9ebf2a27f083b8ffde",
+                "name" : "admin"
+             }
+          ],
+          "is_domain" : false,
+          "audit_ids" : [
+             "DMMZHCIPRo6rQ6qI6p_jVA"
+          ],
+          "catalog" : [
+             {
+                "endpoints" : [
+                   {
+                      "url" : "https://proxy.swift.surfsara.nl:35357/v3/",
+                      "region_id" : "RegionOne",
+                      "region" : "RegionOne",
+                      "interface" : "admin",
+                      "id" : "02a84a77a5534c0899ddb923eff58fd4"
+                   },
+                   {
+                      "region" : "RegionOne",
+                      "interface" : "public",
+                      "id" : "b6c4d54a4e7a455f800cabfa68ebb941",
+                      "region_id" : "RegionOne",
+                      "url" : "https://proxy.swift.surfsara.nl:5000/v3/"
+                   },
+                   {
+                      "region_id" : "RegionOne",
+                      "url" : "https://proxy.swift.surfsara.nl:5000/v3/",
+                      "interface" : "internal",
+                      "region" : "RegionOne",
+                      "id" : "f386325000a0458badb40c81f92f33ca"
+                   }
+                ],
+                "id" : "9c3fe3a4a5f5409abf48513c72c5fa48",
+                "name" : "keystone",
+                "type" : "identity"
+             },
+             {
+                "endpoints" : [
+                   {
+                      "id" : "2e0acde93b2d4989a7a08a5b15f2e7f7",
+                      "interface" : "admin",
+                      "region" : "RegionOne",
+                      "region_id" : "RegionOne",
+                      "url" : "https://proxy.swift.surfsara.nl/v1"
+                   },
+                   {
+                      "region" : "RegionOne",
+                      "interface" : "internal",
+                      "id" : "c91a92ab40f7456894ecdce931fd655f",
+                      "region_id" : "RegionOne",
+                      "url" : "https://proxy.swift.surfsara.nl/v1/KEY_05b2aafab5a745eab2726d88649d95fe"
+                   },
+                   {
+                      "interface" : "public",
+                      "region" : "RegionOne",
+                      "id" : "d1dfdf1eaf2e4092afe271afcfd2d998",
+                      "url" : "https://proxy.swift.surfsara.nl/v1/KEY_05b2aafab5a745eab2726d88649d95fe",
+                      "region_id" : "RegionOne"
+                   }
+                ],
+                "type" : "object-store",
+                "name" : "swift",
+                "id" : "fd2cc7f02b6a4d389ef61ed2dc5a3362"
+             }
+          ]
+       }
+    }
+
+The line with "X-Subject-Token:" gives you the token. In the JSON output you will find the token expiration time,"expires at". In the "catalog" section at the "endpoints" of "type" : "object-store" and "name" : "swift", you have to look for the "interface" : "public" and there you find the <storage url> "url" : "https://proxy.swift.surfsara.nl/v1/KEY_05b2aafab5a745eab2726d88649d95fe".
 
 Now you can run curl commands using:
 

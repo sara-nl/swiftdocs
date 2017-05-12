@@ -31,7 +31,7 @@ First you need to get a token that is valid for 24 hours that can be used instea
 
 .. image:: /Images/v2auth.png
 
-Here the **json_pp** is just for the pretty print of the JSON output. Typical output looks like this:
+Here the **json_pp** is just for the pretty print of the JSON output.
 
 If you look at "token", you see the "id" which is your token and "expires" gives you the time when the token will expire. In the "serviceCatalog" at the "endpoints" of the "type: object-store", you see the "publicURL". This is the <storage url> you will need later on.
 

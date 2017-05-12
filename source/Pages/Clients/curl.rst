@@ -29,81 +29,11 @@ Authentication
 
 First you need to get a token that is valid for 24 hours that can be used instead of user name and password. Authentication is don through keystone. There are two versions supported, V2.0 and V3. Using V2.0, a token is created in the following manner:
 
-.. code-block:: console
-
-    curl -s -H "Content-Type: application/json" -d '{    "auth" : {        "passwordCredentials" : {            "username" : "<user name>",            "password" : "<password"        },        "tenantName" : "<project name>"    } }' https://proxy.swift.surfsara.nl:5000/v2.0/tokens | json_pp
+.. image:: /Images/v2auth.png
 
 Here the **json_pp** is just for the pretty print of the JSON output. Typical output looks like this:
 
-.. code-block:: console
-
-    {
-       "access" : {
-          "metadata" : {
-             "roles" : [
-                "3c126a7986f04f9ebf2a27f083b8ffde"
-             ],
-             "is_admin" : 0
-          },
-          "token" : {
-             "audit_ids" : [
-                "Kg369Aq0TKWeX2jTohDiiA"
-             ],
-             "expires" : "2017-05-12T14:27:12.000000Z",
-             "issued_at" : "2017-05-12T13:27:12.000000Z",
-             "id" : "gAAAAABZFbgwBuJ1qKVbn2kVC_2rCHJl7t6TI7kH2U1VueIDfLMA9-CNcngf6NcwU-SK3TtKnxaKv7Df7HkaUYeD3ZHX2mhxKKP2m6u5gVhLph58oqrJXhePImrIL4LXF7CV2-ccKd-IBM5JCnb7xcbz7kkY-uObZv1Q-M-o7RAQmvwtJnaZ3R0",
-             "tenant" : {
-                "name" : "<project name>",
-                "id" : "05b2aafab5a745eab2726d88649d95fe",
-                "description" : "some project",
-                "enabled" : true
-             }
-          },
-          "user" : {
-             "username" : "<user name>",
-             "roles_links" : [],
-             "roles" : [
-                {
-                   "name" : "admin"
-                }
-             ],
-             "name" : "<user name>",
-             "id" : "bd4a4a9ea29344ccb828ab4a818e8576"
-          },
-          "serviceCatalog" : [
-             {
-                "endpoints" : [
-                   {
-                      "id" : "2e0acde93b2d4989a7a08a5b15f2e7f7",
-                      "publicURL" : "https://proxy.swift.surfsara.nl/v1/KEY_05b2aafab5a745eab2726d88649d95fe",
-                      "region" : "RegionOne",
-                      "internalURL" : "https://proxy.swift.surfsara.nl/v1/KEY_05b2aafab5a745eab2726d88649d95fe",
-                      "adminURL" : "https://proxy.swift.surfsara.nl/v1"
-                   }
-                ],
-                "name" : "swift",
-                "endpoints_links" : [],
-                "type" : "object-store"
-             },
-             {
-                "endpoints_links" : [],
-                "endpoints" : [
-                   {
-                      "publicURL" : "https://proxy.swift.surfsara.nl:5000/v3/",
-                      "id" : "02a84a77a5534c0899ddb923eff58fd4",
-                      "adminURL" : "https://proxy.swift.surfsara.nl:35357/v3/",
-                      "internalURL" : "https://proxy.swift.surfsara.nl:5000/v3/",
-                      "region" : "RegionOne"
-                   }
-                ],
-                "name" : "keystone",
-                "type" : "identity"
-             }
-          ]
-       }
-    }
-
-If you look at "token", you see the "id" which is your token and "expires" gives you the time when the token will expire. In the "serviceCatalog" at the "endpoints" of the "type: object-store", you see the "publicURL". The is the <storage url> you will need later on.
+If you look at "token", you see the "id" which is your token and "expires" gives you the time when the token will expire. In the "serviceCatalog" at the "endpoints" of the "type: object-store", you see the "publicURL". This is the <storage url> you will need later on.
 
 V3 authentication works a bit different. Here the token is returned in the http header. The script below should give you the right information:
 

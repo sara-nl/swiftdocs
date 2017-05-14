@@ -39,7 +39,7 @@ V3 authentication works a bit different. Here the token is returned in the http 
 
 .. code-block:: bash
 
-    #!//bin/sh
+    #!/bin/sh
 
     TMPFILE=`mktemp`
     chmod 600 ${TMPFILE}
@@ -172,6 +172,85 @@ An example of the outut this script generates is below:
     }
 
 The line with "X-Subject-Token:" gives you the token. In the JSON output you will find the token expiration time,"expires at". In the "catalog" section at the "endpoints" of "type" : "object-store" and "name" : "swift", you have to look for the "interface" : "public" and there you find the <storage url> "url" : "https://proxy.swift.surfsara.nl/v1/KEY_05b2aafab5a745eab2726d88649d95fe".
+
+The script below gives you just the token and the storage url using V3 authentication:
+
+.. code-block:: bash
+
+    #!/bin/sh
+
+    TMPFILE=`mktemp`
+    chmod 600 ${TMPFILE}
+
+    PYTHONSCRIPT=`mktemp`
+
+    if [ -f ${HOME}/.swiftrc ]; then
+        . ${HOME}/.swiftrc
+    fi
+
+    input="OK"
+    if [ -z ${OS_USERNAME} ]; then
+        >&2 echo "Environment variable OS_USERNAME not set"
+        input="NOTOK"
+    fi
+    if [ -z ${OS_PASSWORD} ]; then
+        >&2 echo "Environment variable OS_PASSWORD not set"
+        input="NOTOK"
+    fi
+    if [ -z ${OS_AUTH_URL} ]; then
+        >&2 echo "Environment variable OS_AUTH_URL not set"
+        input="NOTOK"
+    fi
+    if [ "${input}" = "NOTOK" ]; then
+        exit 1
+    fi
+
+
+    cat > ${PYTHONSCRIPT} << EOF
+    #!/usr/bin/env python
+    import sys, json, re
+    list=json.load(sys.stdin)["token"]["catalog"]
+    for i in list:
+        if i["type"]=="object-store" and re.search('swift',i["name"])!=None:
+            for j in i["endpoints"]:
+                if j["interface"]=="public":
+                    print "export OS_STORAGE_URL="+j["url"]
+    EOF
+    chmod 755 ${PYTHONSCRIPT}
+
+    JSONFILE=`mktemp`
+    chmod 600 ${JSONFILE}
+
+    cat >${JSONFILE} <<EOF
+    { "auth": {
+        "identity": {
+          "methods": ["password"],
+          "password": {
+            "user": {
+              "name": "${OS_USERNAME}",
+              "domain": { "id": "default" },
+              "password": "${OS_PASSWORD}"
+            }
+          }
+        }
+      }
+    }
+    EOF
+
+
+    curl -i  \
+      -H "Content-Type: application/json" \
+      -o ${TMPFILE} \
+      -d @${JSONFILE} \
+     ${OS_AUTH_URL}/auth/tokens 2>/dev/null
+
+    echo
+    token=`cat ${TMPFILE} | grep 'X-Subject-Token:' | awk '{print $2}'`
+    echo "export OS_AUTH_TOKEN="${token}
+
+    echo
+    tail -1 ${TMPFILE} | ${PYTHONSCRIPT}
+    rm -f ${TMPFILE} ${PYTHONSCRIPT} ${JSONFILE}
 
 Now you can run curl commands using:
 

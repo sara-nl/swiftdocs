@@ -33,6 +33,12 @@ Add these lines to your .profile:
     export PATH=~/Library/Python/2.7/bin:$PATH
     export MANPATH=~/Library/Python/2.7/share/man:$MANPATH
 
+Reload your profile:
+
+.. code-block:: console
+
+    source .profile
+
 Then create a file ~/Library/Python/2.7/lib/python/site-packages/fix_mac_path.pth with this line:
 
 .. code-block:: console

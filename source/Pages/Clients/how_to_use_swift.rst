@@ -18,7 +18,7 @@ There is a swift commandline client written in python. You may find more informa
 OS X
 ----
 
-If you use Apple OS X, you may run into "System Integrity Protection" making installation hard. The easiest way, is to install the swift client into your home dir with --user, and make sure ython uses that instead of the system version.
+If you use Apple OS X, you may run into "System Integrity Protection" making installation hard. The easiest way, is to install the swift client into your home dir with --user, and make sure python uses that instead of the system version.
 
 First, install your personnal version of setuptools:
 

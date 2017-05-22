@@ -26,7 +26,7 @@ First, install your personal version of setuptools:
 
     pip install --ignore-installed --user setuptools
 
-Add these lines to your .profile:
+Add these lines to your ``.profile``:
 
 .. code-block:: console
 

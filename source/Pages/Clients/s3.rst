@@ -17,9 +17,9 @@ Authentication
 --------------
 Make sure that in the same directory where the s3curl.pl script is that there is also a file callen **.s3curl** with a content like:
 
-.. code-block:: console
+.. code-block:: perl
 
-    \%awsSecretAccessKeys = (
+    %awsSecretAccessKeys = (
        # personal account
        AUTH_<user name> => {
            id => '<user name',

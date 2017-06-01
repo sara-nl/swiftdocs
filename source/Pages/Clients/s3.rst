@@ -19,13 +19,13 @@ Make sure that in the same directory where the s3curl.pl script is that there is
 
 .. code-block:: console
 
-       %awsSecretAccessKeys = (
+    \%awsSecretAccessKeys = (
        # personal account
        AUTH_<user name> => {
            id => '<user name',
            key => '<s3 api key>'
        }
-   );
+    );
 
 Further, on line 37 of **s3curl.pl** there is a line like:
 

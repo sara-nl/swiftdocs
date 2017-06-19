@@ -27,6 +27,7 @@ Cyberduck configuration:
     Secret Key: <YourPassword>
 
 .. image:: /Images/cyberduck_config.png
+           :width: 650px
 
 =====
 Video

@@ -13,8 +13,30 @@ Cyberduck offers a GUI to connect to almost a gazillion different storage system
 It can also be used to connect to Openstack SWIFT.
 Cyberduck can be downloaded from https://cyberduck.io/. 
 
+======
+Config
+======
+
+Cyberduck configuration:
+
+.. code-block:: console
+
+    Server: proxy.swift.surfsara.nl
+    Port: 5000
+    Tenant ID/Access Key: <ProjectName>:<Username>
+    Secret Key: <YourPassword>
+
+.. image:: /Images/cyberduck_config.png
+
+=====
+Video
+=====
+
 The video below shows you how to set things up.
 
 .. raw:: html
 
     <iframe width="1120" height="630" src="https://www.youtube.com/embed/Dk1-l6yROes" frameborder="0" allowfullscreen></iframe>
+
+
+

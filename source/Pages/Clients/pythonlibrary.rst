@@ -32,7 +32,18 @@ One example of **stat** is given below:
 
 First you need to set some environment variables for the authentication:
 
-.. image:: /Images/stat_service_api_auth.png
+.. code-block:: bash
+
+    export OS_PROJECT_DOMAIN_NAME=<project domain>
+    export OS_USER_DOMAIN_NAME=<user domain>
+    export OS_PROJECT_NAME=<project>
+    export OS_USERNAME=<user>
+    export OS_PASSWORD=<password>
+    export OS_AUTH_URL=https://proxy.swift.surfsara.nl:5000/v3
+    export OS_IDENTITY_API_VERSION=3
+    export OS_AUTH_VERSION=3
+
+If you are a keystone user with a local account, then both the project and user domain are **Default**. If you are a keystone user with a SURFsara Central User Administration account, then both the project and user domain are **CuaUsers**.
 
 Having done this you can run your script to do a **stat** on an object in a container.
 

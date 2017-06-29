@@ -14,12 +14,9 @@ Swift Command line client
 =========================
 There is a swift commandline client written in python. You may find more information about this at: https://www.swiftstack.com/docs/integration/python-swiftclient.html. This page will provide information on how to install the client and how to use it.
 
-For extra information on how to install de swift commandline client on Mac OSX, please, hava a look at: :ref:`Installation Instructions of the Python SWIFT Client on OSX <python-swift-client-osx>`.
+For extra information on how to install de swift commandline client on Mac OSX, please, have a look at: :ref:`Installation Instructions of the Python SWIFT Client on OSX <python-swift-client-osx>`.
 
-Examples
---------
-
-On this page there are some examples about how to use the :ref:`Python SWIFT client <python-swift-client>`.
+On this page there is info on how to use the :ref:`Python SWIFT client <python-swift-client>`.
 
 ====
 Curl
@@ -29,6 +26,7 @@ Information about accessing SWIFT through the **curl** command is given on the :
 ==========
 S3 clients
 ==========
+At the moment SWIFT can be accessed through S3. 
 S3curl can be downloaded from https://github.com/rtdp/s3curl.
 
 More information on S3 clients may be found at the :ref:`S3 <s3>` page.

@@ -37,6 +37,13 @@ The following environment variables are useful to set if you don't want them to 
     export OS_AUTH_URL=https://proxy.swift.surfsara.nl:5000/v3
     export OS_IDENTITY_API_VERSION=3
 
+This holds for local keystone users. Users using their account in the SURFsara Central User Administration through keystone need the specify the following:
+
+.. code-block:: console
+
+    export OS_PROJECT_DOMAIN_NAME=CuaUsers
+    export OS_USER_DOMAIN_NAME=CuaUsers
+
 Apart from using your user name and password, it is also possible to generate a token that is valid for 24 hours. This may be handy if you are running the script elsewhere on a batch system and you don't want to send you username and password with your batch job. You can use this token to access your data in SWIFT.
 
 You can get a token in the following way:
@@ -248,3 +255,25 @@ Object expiration
 =================
 
 You can set object to expire. This means that object will be automatically deleted after a certain period of time. More information on this may be found at: https://docs.openstack.org/user-guide/cli-swift-set-object-expiration.html.
+
+==============
+Temporary URLs
+==============
+
+With the **TempURL** mechanism it is possible to provide temporary access to objects. This can be really usefull if large opjects need to be downloaded from SWIFT storage that does not have public access.
+
+First you have to create a key:
+
+.. code-block:: console
+
+swift post -m 'Temp-URL-Key: <some random string you make up yourself>'
+
+Then you create the **TempURL**.
+
+.. code-block:: console
+
+swift tempurl <method> <seconds> <path> <key>
+
+An example may be found below:
+
+.. image:: /Images/tempurl.png

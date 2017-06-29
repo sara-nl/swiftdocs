@@ -266,13 +266,13 @@ First you have to create a key:
 
 .. code-block:: console
 
-swift post -m 'Temp-URL-Key: <some random string you make up yourself>'
+    swift post -m 'Temp-URL-Key: <some random string you make up yourself>'
 
 Then you create the **TempURL**.
 
 .. code-block:: console
 
-swift tempurl <method> <seconds> <path> <key>
+    swift tempurl <method> <seconds> <path> <key>
 
 Here **method** may be PUT, GET, HEAD, POST and  DELETE. The amount of seconds that an TempURL is valid is given by **seconds**. The **path** is last part of the url of the **StorageURL** after hostname. Finally the **key** is the random string you have made up yourself.
 

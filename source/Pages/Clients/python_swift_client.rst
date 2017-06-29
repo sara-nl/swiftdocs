@@ -274,6 +274,8 @@ Then you create the **TempURL**.
 
 swift tempurl <method> <seconds> <path> <key>
 
+Here **method** may be PUT, GET, HEAD, POST and  DELETE. The amount of seconds that an TempURL is valid is given by **seconds**. The **path** is last part of the url of the **StorageURL** after hostname. Finally the **key** is the random string you have made up yourself.
+
 An example may be found below:
 
 .. image:: /Images/tempurl.png

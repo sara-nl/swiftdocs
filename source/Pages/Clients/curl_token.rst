@@ -12,6 +12,11 @@ The script below should give you the right information:
 
     #!/bin/sh
 
+    export OS_USER_DOMAIN_NAME=<user domain name>
+    export OS_USERNAME=<user name>
+    export OS_PASSWORD=<password>
+    export OS_AUTH_URL=https://proxy.swift.surfsara.nl:5000/v3
+
     TMPFILE=`mktemp`
     chmod 600 ${TMPFILE}
 
@@ -24,15 +29,15 @@ The script below should give you the right information:
           "methods": ["password"],
           "password": {
             "user": {
-              "name": "<user name>",
-              "domain": { "name": "Default" },
-              "password": "<password>"
+              "name": "${OS_USERNAME}",
+              "domain": { "name": "${OS_USER_DOMAIN_NAME}" },
+              "password": "${OS_PASSWORD}"
             }
           }
         }
       }
     }' \
-     https://proxy.swift.surfsara.nl:5000/v3/auth/tokens
+     ${OS_AUTH_URL}/auth/tokens
 
     echo
     cat ${TMPFILE} | grep 'X-Subject-Token:'
@@ -41,7 +46,7 @@ The script below should give you the right information:
     tail -1 ${TMPFILE} | json_pp
     rm -f ${TMPFILE}
 
-An example of the outut this script generates is below:
+An example of the output this script generates is below:
 
 .. code-block:: console
 
@@ -144,18 +149,17 @@ An example of the outut this script generates is below:
 
 The line with "X-Subject-Token:" gives you the token. In the JSON output you will find the token expiration time,"expires at". In the "catalog" section at the "endpoints" of "type" : "object-store" and "name" : "swift", you have to look for the "interface" : "public" and there you find the <storage url> "url" : "https://proxy.swift.surfsara.nl/v1/KEY_05b2aafab5a745eab2726d88649d95fe".
 
-For users using keystone and their SURFsara Central User Administration account 
-hould replace:
+For users using keystone with a local acount should set:
 
 .. code-block:: bash
 
-              "domain": { "name": "Default" },
+    export OS_USER_DOMAIN_NAME="Default"
 
-by:
+Users using keystone in combination with SURFsara Central User Administration account shoudl set:
 
 .. code-block:: bash
 
-              "domain": { "name": "CuaUsers" },
+    export OS_USER_DOMAIN_NAME="CuaUsers"
 
 The script below gives you just the token and the storage url using V3 authentication:
 
@@ -163,32 +167,15 @@ The script below gives you just the token and the storage url using V3 authentic
 
     #!/bin/sh
 
+    export OS_USER_DOMAIN_NAME=<user domain name>
+    export OS_USERNAME=<user name>
+    export OS_PASSWORD=<password>
+    export OS_AUTH_URL=https://proxy.swift.surfsara.nl:5000/v3
+
     TMPFILE=`mktemp`
     chmod 600 ${TMPFILE}
 
     PYTHONSCRIPT=`mktemp`
-
-    if [ -f ${HOME}/.swiftrc ]; then
-        . ${HOME}/.swiftrc
-    fi
-
-    input="OK"
-    if [ -z ${OS_USERNAME} ]; then
-        >&2 echo "Environment variable OS_USERNAME not set"
-        input="NOTOK"
-    fi
-    if [ -z ${OS_PASSWORD} ]; then
-        >&2 echo "Environment variable OS_PASSWORD not set"
-        input="NOTOK"
-    fi
-    if [ -z ${OS_AUTH_URL} ]; then
-        >&2 echo "Environment variable OS_AUTH_URL not set"
-        input="NOTOK"
-    fi
-    if [ "${input}" = "NOTOK" ]; then
-        exit 1
-    fi
-
 
     cat > ${PYTHONSCRIPT} << EOF
     #!/usr/bin/env python
@@ -212,7 +199,7 @@ The script below gives you just the token and the storage url using V3 authentic
           "password": {
             "user": {
               "name": "${OS_USERNAME}",
-              "domain": { "name": "Default" },
+              "domain": { "name": "${OS_USER_DOMAIN_NAME}" },
               "password": "${OS_PASSWORD}"
             }
           }

@@ -355,3 +355,39 @@ Object expiration
 =================
 
 You can set object to expire. This means that object will be automatically deleted after a certain period of time. More information on this may be found at: https://docs.openstack.org/user-guide/cli-swift-set-object-expiration.html. This web page holds information about the swift commandline client. But it is straight forward to set the X-Delete-At and X-Delete-After headers in a curl command.
+
+==============
+Temporary URLs
+==============
+
+With the **TempURL** mechanism it is possible to provide temporary access to objects. This can be really usefull if large opjects need to be downloaded from SWIFT storage that does not have public access.
+
+First you have to create a key:
+
+.. code-block:: console
+
+    curl -i -X POST ${OS_STORAGE_URL} -H "X-Account-Meta-Temp-URL-Key:<some string you have to make up yourself>" -H "X-Auth-Token: ${OS_AUTH_TOKEN}"
+
+Then you create the **TempURL**.
+
+.. code-block:: bash
+
+    #!/bin/bash
+
+    seconds=<number of seconds until url expires>
+    method='<method>'
+    expires=$(( $(date '+%s') + $seconds ))
+    path='<container>/<object>'
+    fullpath=`echo $OS_STORAGE_URL | sed 's/http.*\/v1/\/v1/'`"/"$path
+    key='<some string you have to make up yourself>'
+
+    sig=`printf '%s\n%s\n%s' $method $expires $fullpath  | openssl sha1 -hmac $key | awk '{print $2}'`
+    
+    # print the URL
+    echo "${OS_STORAGE_URL}/${path}?temp_url_sig=${sig}&temp_url_expires=${expires}"
+
+Here **method** may be PUT, GET, HEAD, POST and  DELETE. The amount of seconds that an TempURL is valid is given by **seconds**. The **path** is last part of the url of the **StorageURL** after hostname. Finally the **key** is the random string you have made up yourself.
+
+An example is below:
+
+.. image:: /Images/tempcurl.png

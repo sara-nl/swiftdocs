@@ -15,6 +15,8 @@ In this page you will find documentation about the S3 clients.
 S3curl
 ======
 
+S3curl can be downloaded from https://github.com/rtdp/s3curl.
+
 Authentication
 --------------
 Make sure that in the same directory where the s3curl.pl script is that there is also a file callen **.s3curl** with a content like:

@@ -173,6 +173,41 @@ An example of the outut this script generates is below:
 
 The line with "X-Subject-Token:" gives you the token. In the JSON output you will find the token expiration time,"expires at". In the "catalog" section at the "endpoints" of "type" : "object-store" and "name" : "swift", you have to look for the "interface" : "public" and there you find the <storage url> "url" : "https://proxy.swift.surfsara.nl/v1/KEY_05b2aafab5a745eab2726d88649d95fe".
 
+For users using keystone and their SURFsara Central User Administration account can use the following script:
+
+.. code-block:: bash
+
+    #!/bin/sh
+
+    TMPFILE=`mktemp`
+    chmod 600 ${TMPFILE}
+
+    curl -i \
+      -H "Content-Type: application/json" \
+      -o ${TMPFILE} \
+      -d '
+    { "auth": {
+        "identity": {
+          "methods": ["password"],
+          "password": {
+            "user": {
+              "name": "<user name>",
+              "domain": { "name": "CuaUsers" },
+              "password": "<password>"
+            }
+          }
+        }
+      }
+    }' \
+     https://proxy.swift.surfsara.nl:5000/v3/auth/tokens
+
+    echo
+    cat ${TMPFILE} | grep 'X-Subject-Token:'
+
+    echo
+    tail -1 ${TMPFILE} | json_pp
+    rm -f ${TMPFILE}
+
 The script below gives you just the token and the storage url using V3 authentication:
 
 .. code-block:: bash

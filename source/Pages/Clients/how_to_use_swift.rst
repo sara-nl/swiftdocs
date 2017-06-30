@@ -46,10 +46,11 @@ API
 ===
 SWIFT offers a REST API. Information about this API and some examples are described at the :ref:`API <api>` page.
 
-=========
-Cloudfuse
-=========
-It is possible to mount SWIFT object storage as a file system. The :ref:`cloudfuse <cloudfuse>` page has more information.
+.. Since Cloudfuse does not support V3 authN, we do not advocate it.
+.. =========
+.. Cloudfuse
+.. =========
+.. It is possible to mount SWIFT object storage as a file system. The :ref:`cloudfuse <cloudfuse>` page has more information.
 
 =========
 Duplicity

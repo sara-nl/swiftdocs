@@ -51,7 +51,7 @@ Cloudfuse
 =========
 It is possible to mount SWIFT object storage as a file system. The :ref:`cloudfuse <cloudfuse>` page has more information.
 
-.. note:: **Note:** Since Cloudfuse only supports keystone V2 authentication, this will only work for users having a local keystone account.
+.. note:: **Important:** Since Cloudfuse only supports keystone V2 authentication, this will only work for users having a local keystone account.
 
 =========
 Duplicity

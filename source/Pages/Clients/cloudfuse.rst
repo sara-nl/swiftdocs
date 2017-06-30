@@ -6,6 +6,8 @@ Cloudfuse
 
 In this page you will find documentation on how to mount SWIFT object storage as a normal file system through **cloudfuse**.
 
+.. note:: **Important:** Since Cloudfuse only supports keystone V2 authentication, this will only work for users having a local keystone account.
+
 .. contents:: 
     :depth: 4
 
@@ -46,3 +48,5 @@ Don't forget:
 .. code-block:: console
 
     cloudfuse -o auto_unmount /path/to/mount
+
+The **auto_unmount** flag may be useful because as soon as the cloudfuse daemon dies, the file system is unmounted.

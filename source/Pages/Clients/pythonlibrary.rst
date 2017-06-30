@@ -45,9 +45,41 @@ First you need to set some environment variables for the authentication:
 
 If you are a keystone user with a local account, then both the project and user domain are **Default**. If you are a keystone user with a SURFsara Central User Administration account, then both the project and user domain are **CuaUsers**.
 
-Having done this you can run your script to do a **stat** on an object in a container.
+Having done this you can run your script to do,for example, a **stat** on an object in a container. Such a script could look like this:
 
-.. image:: /Images/stat_service_api.png
+.. code-block:: bash
+
+    #!/usr/bin/env python
+
+    import logging
+    import pprint
+
+    from swiftclient.service import SwiftService
+    from sys import argv
+
+    logging.basicConfig(level=logging.ERROR)
+    logging.getLogger("requests").setLevel(logging.CRITICAL)
+    logging.getLogger("swiftclient").setLevel(logging.CRITICAL)
+    logger = logging.getLogger(__name__)
+
+    _opts = {'object_dd_threads': 20}
+    with SwiftService(options=_opts) as swift:
+        container = argv[1]
+        objects = argv[2:]
+        header_data = {}
+        stats_it = swift.stat(container=container, objects=objects)
+        for stat_res in stats_it:
+            if stat_res['success']:
+                header_data[stat_res['object']] = stat_res['headers']
+            else:
+                logger.error(
+                    'Failed to retrieve stats for %s' % stat_res['object']
+                )
+        pprint.pprint(header_data)
+
+Running this you could get something like this:
+
+..image:: /Images/pythonstat.png
 
 ==============
 Connection API
@@ -63,11 +95,43 @@ One example of **stat** is given below:
 
 The script looks like this:
 
-.. image:: /Images/stat_connection_api_script.png
+.. code-block:: bash
 
-Running this, you would get:
+    #!/usr/bin/python
 
-.. image:: /Images/stat_connection_api.png
+    from swiftclient.client import Connection
+
+    _authurl = 'https://proxy.swift.surfsara.nl:5000/v3'
+    _auth_version = '3'
+    _user = <user name>
+    _project = <project name>
+    _key = <password>
+
+    #For local keystone accounts
+    _user_domain='Default'
+    _project_domain='Default'
+
+    #For keystone accounts coupled to SURFsara CUA accounts
+    #_user_domain='CuaUsers'
+    #_project_domain='CuaUsers'
+
+    _os_options = {
+        'user_domain_name': _user_domain,
+        'project_domain_name': _project_domain,
+        'project_name': _project
+    }
+
+    conn = Connection(
+        authurl=_authurl,
+        user=_user,
+        key=_key,
+        os_options=_os_options,
+        auth_version=_auth_version
+    )
+
+    #Create a container
+    container_name = 'my-new-container'
+    conn.put_container(container_name)
 
 .. Links:
 

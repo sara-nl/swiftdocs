@@ -22,13 +22,10 @@ The `Python-SwiftClient`_ has a `Service API`_ and a `Connection API`_.
 Connection API
 ==============
 
-A low level API that provides methods for authentication and methods that correspond to the individual REST API calls described in the swift documentation.
-
-For usage details see the client docs: `swiftclient.client`_.
-
+A low level API that provides methods for authentication and methods that correspond to the individual REST API calls described in the swift documentation. For usage details see the client docs: `swiftclient.client`_.
 A more detailed description and examples of the API is at the `Connection API`_ page. 
 
-One example of **stat** is given below:
+One example of creating a new container is given below:
 
 The script looks like this:
 

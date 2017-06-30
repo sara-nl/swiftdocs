@@ -41,6 +41,8 @@ Rclone needs some variables set in order to work. You can set these in a **.rclo
     storage_url = https://proxy.swift.surfsara.nl/v1/KEY_05b2aafab5a745eab2726d88649d95fe
     auth_version = 3
 
+Users using keystone coupled with their SURFsara Central User Administration (CUA) account should provide the value **CuaUsers** for *domain* and *tenant_domain*. 
+
 This file can be generated interactively by running the command:
 
 .. code-block:: console

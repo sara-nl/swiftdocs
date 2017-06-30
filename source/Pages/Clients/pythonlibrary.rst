@@ -92,7 +92,7 @@ First you need to set some environment variables for the authentication:
     export OS_IDENTITY_API_VERSION=3
     export OS_AUTH_VERSION=3
 
-If you are a keystone user with a local account, then both the project and user domain are **Default**. If you are a keystone user with a SURFsara Central User Administration account, then both the project and user domain are **CuaUsers**.
+If you are a keystone user with a local account, then both the project and user domain are **Default**. If you are a keystone user with a SURFsara Central User Administration (CUA) account, then both the project and user domain are **CuaUsers**.
 
 Having done this you can run your script to do,for example, a **stat** on an object in a container. Such a script could look like this:
 

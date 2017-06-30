@@ -17,7 +17,7 @@ Cyberduck can be downloaded from https://cyberduck.io/.
 Config
 ======
 
-Cyberduck configuration:
+Users having a local keystone account can use the keystone V2 authentication version. This comes with cyberduck in the **Swift** profile. The configuration is given below:
 
 .. code-block:: console
 
@@ -28,6 +28,19 @@ Cyberduck configuration:
 
 .. image:: /Images/cyberduck_config.png
            :width: 650px
+
+Users using their SURFsara Central User Administration (CUA) account need to use keystone V3 authentication. This does not come with cyberduck so therefore we have provided it for you. You can download it from: :download:`surfswift cyberduck profile </Script/cyberduck_profile/surfswift.cyberduckprofile`. The configuration is given below:
+
+.. code-block:: console
+
+    Server: proxy.swift.surfsara.nl
+    Port: 5000
+    Project Name:User Domain:Username: <Project Name>:<User Domain>:<Username>
+    Password: <YourPassword>
+
+.. image:: /Images/cyberduckv3.png
+           :width: 650px
+
 
 =====
 Video

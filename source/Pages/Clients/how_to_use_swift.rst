@@ -12,6 +12,7 @@ In this page you will find documentation about the different SWIFT clients that 
 =========================
 Swift Command line client
 =========================
+
 There is a swift commandline client written in python. You may find more information about this at: https://www.swiftstack.com/docs/integration/python-swiftclient.html. This page will provide information on how to install the client and how to use it.
 
 For extra information on how to install de swift commandline client on Mac OSX, please, have a look at: :ref:`Installation Instructions of the Python SWIFT Client on OSX <python-swift-client-osx>`.
@@ -21,6 +22,7 @@ On this page there is info on how to use the :ref:`Python SWIFT client <python-s
 ====
 Curl
 ====
+
 Information about accessing SWIFT through the **curl** command is given on the :ref:`curl <curl>` page.
 
 ==========
@@ -34,16 +36,19 @@ Information on S3 clients may be found at the :ref:`S3 <s3>` page.
 =========
 Cyberduck
 =========
+
 Information about accessing SWIFT through Cyberduck is provided on the :ref:`cyberduck <cyberduck>` page.
 
 ==============
 Python Library
 ==============
+
 The :ref:`python library <pythonlibrary>` page gives you information on the python-swiftclient library.
 
 ===
 API
 ===
+
 SWIFT offers a REST API. Information about this API and some examples are described at the :ref:`API <api>` page.
 
 =========
@@ -57,11 +62,13 @@ It is possible to mount SWIFT object storage as a file system. The :ref:`cloudfu
 =========
 Duplicity
 =========
+
 Duplicity is a backup tool that amongst others supports cloud storage systems. More information about this can be found at the :ref:`duplicity <dupl>` page.
 
 ======
 Rclone
 ======
+
 Rclone is the rsync for cloud storage. Here is more information on how to use rclone on the :ref:`rclone <rclone>` page.
 
 It features:
@@ -80,6 +87,8 @@ It features:
 ===============================
 Owncloud and Nextcloud coupling
 ===============================
-It is possible to connect SWIFT to an Owncloud or Nextcloud sync-and-share service as external storage. How you can do this is described at the :ref:`owncloud <owncloud>` page.
 
 .. note:: **Note:** Since Nextcloud and Owncloud only support keystone V2 authentication, this will only work for users having a local keystone account.
+
+It is possible to connect SWIFT to an Owncloud or Nextcloud sync-and-share service as external storage. How you can do this is described at the :ref:`owncloud <owncloud>` page.
+

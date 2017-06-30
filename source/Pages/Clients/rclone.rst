@@ -38,7 +38,7 @@ Rclone needs some variables set in order to work. You can set these in a **.rclo
     tenant = <project name>
     tenant_domain = default
     region = RegionOne
-    storage_url = https://proxy.swift.surfsara.nl/v1/KEY_05b2aafab5a745eab2726d88649d95fe
+    storage_url = <storage url>
     auth_version = 3
 
 Users using keystone coupled with their SURFsara Central User Administration (CUA) account should provide the value **CuaUsers** for *domain* and *tenant_domain*. 

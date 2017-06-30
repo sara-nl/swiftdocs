@@ -72,7 +72,7 @@ Users having a local keystone account kan use the **Swift** profile that comes w
 
     duck -l swift://proxy.swift.surfsara.nl:5000/<container>
 
-Users using keystone together with their keystone account need to install de profile :download:`surfswift.cyberduckprofile <../../Scripts/cyberduck_profile/surfswift.cyberduckprofile>` in ~/.duck/profiles.
+Users using keystone together with their SURFsara Central User Adminitration (CUA) account need to install de profile :download:`surfswift.cyberduckprofile <../../Scripts/cyberduck_profile/surfswift.cyberduckprofile>` in ~/.duck/profiles.
 
 Getting a listing of a container is done in the following manner:
 

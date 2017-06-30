@@ -13,7 +13,7 @@ In this page you will find documentation about the different SWIFT clients that 
 Swift Command line client
 =========================
 
-There is a swift commandline client written in python. You may find more information about this at: https://www.swiftstack.com/docs/integration/python-swiftclient.html. This page will provide information on how to install the client and how to use it.
+There is a swift commandline client written in python. You may find more information about this at: https://www.swiftstack.com/docs/integration/python-swiftclient.html. This page will provide information on how to install the client and how to use it. This page tells you how to install the client on various flavours of Linux. For windows it is rather similar. You need to install python2.7 on windows, see: https://www.howtogeek.com/197947/how-to-install-python-on-windows/. Do not forget to include python in your PATH. The modern versions of Python2.7 are shipped with pip, so for the rest the linux documentation can be followed.
 
 For extra information on how to install de swift commandline client on Mac OSX, please, have a look at: :ref:`Installation Instructions of the Python SWIFT Client on OSX <python-swift-client-osx>`.
 

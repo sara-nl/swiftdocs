@@ -31,7 +31,7 @@ The script looks like this:
 
 .. code-block:: bash
 
-    #!/usr/bin/python
+    #!/usr/bin/env python
 
     from swiftclient.client import Connection
 
@@ -67,6 +67,7 @@ The script looks like this:
     container_name = 'my-new-container'
     conn.put_container(container_name)
 
+If you are a keystone user with a local account, then both the *project domain*  and *user domain* have the value **Default**. If you are a keystone user with a SURFsara Central User Administration (CUA) account, then both the *project domain* and *user domain* must be set to **CuaUsers**.
 
 ===========
 Service API
@@ -92,7 +93,6 @@ First you need to set some environment variables for the authentication:
     export OS_IDENTITY_API_VERSION=3
     export OS_AUTH_VERSION=3
 
-If you are a keystone user with a local account, then both the project and user domain are **Default**. If you are a keystone user with a SURFsara Central User Administration (CUA) account, then both the project and user domain are **CuaUsers**.
 
 Having done this you can run your script to do,for example, a **stat** on an object in a container. Such a script could look like this:
 
@@ -126,6 +126,7 @@ Having done this you can run your script to do,for example, a **stat** on an obj
                 )
         pprint.pprint(header_data)
 
+If you are a keystone user with a local account, then both the *project domain*  and *user domain* have the value **Default**. If you are a keystone user with a SURFsara Central User Administration (CUA) account, then both the *project domain* and *user domain* must be set to **CuaUsers**.
 Running this you could get something like this:
 
 .. image:: /Images/pythonstat.png

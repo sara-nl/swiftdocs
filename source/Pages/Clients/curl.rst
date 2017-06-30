@@ -300,6 +300,14 @@ Copy an object
 
     curl -i -X COPY -H "X-Auth-Token: <token>" -H "Destination: anothercontainer/myobject" <storage url>/mycontainer/myobject
 
+===============================
+Renaming containers and objects
+===============================
+
+.. note:: **Important:** It is NOT possible to rename a container. This means that you have to think really well about naming containers before you upload a PB of data. 
+
+It is possible to rename an object but not in the classical sense. First you need to copy an object using, for example, the method above and then throw the original object away.
+
 ===============
 Bulk operations
 ===============

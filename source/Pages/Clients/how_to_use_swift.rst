@@ -49,9 +49,10 @@ SWIFT offers a REST API. Information about this API and some examples are descri
 =========
 Cloudfuse
 =========
-It is possible to mount SWIFT object storage as a file system. The :ref:`cloudfuse <cloudfuse>` page has more information.
 
 .. note:: **Important:** Since Cloudfuse only supports keystone V2 authentication, this will only work for users having a local keystone account.
+
+It is possible to mount SWIFT object storage as a file system. The :ref:`cloudfuse <cloudfuse>` page has more information.
 
 =========
 Duplicity

@@ -46,11 +46,12 @@ API
 ===
 SWIFT offers a REST API. Information about this API and some examples are described at the :ref:`API <api>` page.
 
-.. Since Cloudfuse does not support V3 authN, we do not advocate it.
-.. =========
-.. Cloudfuse
-.. =========
-.. It is possible to mount SWIFT object storage as a file system. The :ref:`cloudfuse <cloudfuse>` page has more information.
+=========
+Cloudfuse
+=========
+It is possible to mount SWIFT object storage as a file system. The :ref:`cloudfuse <cloudfuse>` page has more information.
+
+.. note:: **Note:** Since Cloudfuse only supports keystone V2 authentication, this will only work for users having a local keystone account.
 
 =========
 Duplicity
@@ -79,3 +80,5 @@ It features:
 Owncloud and Nextcloud coupling
 ===============================
 It is possible to connect SWIFT to an Owncloud or Nextcloud sync-and-share service as external storage. How you can do this is described at the :ref:`owncloud <owncloud>` page.
+
+.. note:: **Note:** Since Nextcloud and Owncloud only support keystone V2 authentication, this will only work for users having a local keystone account.

@@ -41,7 +41,7 @@ Rclone needs some variables set in order to work. You can set these in a **.rclo
     storage_url = <storage url>
     auth_version = 3
 
-Users using keystone coupled with their SURFsara Central User Administration (CUA) account should provide the value **CuaUsers** for *domain* and *tenant_domain*. 
+Users using keystone coupled with their SURFsara Central User Administration (CUA) account should provide the value **CuaUsers** for *domain* and *tenant_domain*. Users having a local keystone account can leave the **default** values.
 
 This file can be generated interactively by running the command:
 

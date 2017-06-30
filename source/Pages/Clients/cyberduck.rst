@@ -33,7 +33,7 @@ Users using their SURFsara Central User Administration (CUA) account need to use
 
 .. raw:: html
 
-<p><a href="/Scripts/cyberduck_profile/surfswift.cyberduckprofile">surfswift.cyberduckprofile</a>
+    <p><a href="/Scripts/cyberduck_profile/surfswift.cyberduckprofile">surfswift.cyberduckprofile</a>
 
 The configuration is given below:
 

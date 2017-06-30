@@ -8,7 +8,11 @@ Duplicity backs directories by producing encrypted tar-format volumes and upload
 
 A large number of remote storage servers are supported. Openstack SWIFT is one of them. 
 
-More information on Duplicity may be found at the `Duplicity <http://duplicity.nongnu.org/>`_ website or at this `Ubuntu <https://help.ubuntu.com/community/DuplicityBackupHowto>`_ site.
+More information on Duplicity may be found at the `Duplicity <http://duplicity.nongnu.org/>`_ website or here: 
+
+- https://help.ubuntu.com/community/DuplicityBackupHowto
+- https://www.zetta.io/en/help/articles-tutorials/backup-linux-duply/
+- https://raymii.org/s/tutorials/Encrypted_Duplicity_Backups_to_Openstack_Swift_Objectstore.html.
 
 .. contents:: 
     :depth: 4
@@ -21,10 +25,15 @@ Duplicity requires some environment variables to be set, see below:
 
 .. code-block:: console
 
-    export SWIFT_USERNAME="project name:user name"
-    export SWIFT_PASSWORD="password"
+    export SWIFT_USERNAME=<user name>
+    export SWIFT_PASSWORD=<password>
     export SWIFT_AUTHURL="https://proxy.swift.surfsara.nl/auth/v3"
     export SWIFT_AUTHVERSION="3"
+    export SWIFT_TENANTNAME=<project name>
+    export SWIFT_USER_DOMAIN_NAME=<user domain name>
+    export SWIFT_PROJECT_DOMAIN_NAME=<project domain name>
+
+For keystone users with local account the *user domain name* and the *project domain name* is **Default**. For users using keystone coupled to their SURFsara Central User Administration (CUA) account, *user domain name* and *project domain name* must be set to **CuaUsers**.
 
 =================
 Automatic backups

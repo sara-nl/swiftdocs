@@ -29,11 +29,7 @@ Users having a local keystone account can use the keystone V2 authentication ver
 .. image:: /Images/cyberduckv2.png
            :width: 650px
 
-Users using their SURFsara Central User Administration (CUA) account need to use keystone V3 authentication. This does not come with cyberduck so therefore we have provided it for you. You can download it from:
-
-.. raw:: html
-
-    <p><a href="/Scripts/cyberduck_profile/surfswift.cyberduckprofile">surfswift.cyberduckprofile</a>
+Users using their SURFsara Central User Administration (CUA) account need to use keystone V3 authentication. This does not come with cyberduck so therefore we have provided it for you. You can download it from: :download:`surfswift.cyberduckprofile <../../Scripts/cyberduck_profile/surfswift.cyberduckprofile>`
 
 The configuration is given below:
 

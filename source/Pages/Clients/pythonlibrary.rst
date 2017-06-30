@@ -18,6 +18,58 @@ There are numerous libraries and bindings for OpenStack SWIFT. These are listed 
 The only one that is officially supported by OpenStack is the `Python-SwiftClient`_. So this is the only one we will discuss here.
 The `Python-SwiftClient`_ has a `Service API`_ and a `Connection API`_.
 
+==============
+Connection API
+==============
+
+A low level API that provides methods for authentication and methods that correspond to the individual REST API calls described in the swift documentation.
+
+For usage details see the client docs: `swiftclient.client`_.
+
+A more detailed description and examples of the API is at the `Connection API`_ page. 
+
+One example of **stat** is given below:
+
+The script looks like this:
+
+.. code-block:: bash
+
+    #!/usr/bin/python
+
+    from swiftclient.client import Connection
+
+    _authurl = 'https://proxy.swift.surfsara.nl:5000/v3'
+    _auth_version = '3'
+    _user = <user name>
+    _project = <project name>
+    _key = <password>
+
+    #For local keystone accounts
+    _user_domain='Default'
+    _project_domain='Default'
+
+    #For keystone accounts coupled to SURFsara CUA accounts
+    #_user_domain='CuaUsers'
+    #_project_domain='CuaUsers'
+
+    _os_options = {
+        'user_domain_name': _user_domain,
+        'project_domain_name': _project_domain,
+        'project_name': _project
+    }
+
+    conn = Connection(
+        authurl=_authurl,
+        user=_user,
+        key=_key,
+        os_options=_os_options,
+        auth_version=_auth_version
+    )
+
+    #Create a container
+    container_name = 'my-new-container'
+    conn.put_container(container_name)
+
 
 ===========
 Service API
@@ -79,59 +131,7 @@ Having done this you can run your script to do,for example, a **stat** on an obj
 
 Running this you could get something like this:
 
-..image:: /Images/pythonstat.png
-
-==============
-Connection API
-==============
-
-A low level API that provides methods for authentication and methods that correspond to the individual REST API calls described in the swift documentation.
-
-For usage details see the client docs: `swiftclient.client`_.
-
-A more detailed description and examples of the API is at the `Connection API`_ page. 
-
-One example of **stat** is given below:
-
-The script looks like this:
-
-.. code-block:: bash
-
-    #!/usr/bin/python
-
-    from swiftclient.client import Connection
-
-    _authurl = 'https://proxy.swift.surfsara.nl:5000/v3'
-    _auth_version = '3'
-    _user = <user name>
-    _project = <project name>
-    _key = <password>
-
-    #For local keystone accounts
-    _user_domain='Default'
-    _project_domain='Default'
-
-    #For keystone accounts coupled to SURFsara CUA accounts
-    #_user_domain='CuaUsers'
-    #_project_domain='CuaUsers'
-
-    _os_options = {
-        'user_domain_name': _user_domain,
-        'project_domain_name': _project_domain,
-        'project_name': _project
-    }
-
-    conn = Connection(
-        authurl=_authurl,
-        user=_user,
-        key=_key,
-        os_options=_os_options,
-        auth_version=_auth_version
-    )
-
-    #Create a container
-    container_name = 'my-new-container'
-    conn.put_container(container_name)
+.. image:: /Images/pythonstat.png
 
 .. Links:
 

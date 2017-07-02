@@ -12,7 +12,9 @@ The script below should give you the right information:
 
     #!/bin/sh
 
-    export OS_USER_DOMAIN_NAME=<user domain name>
+    export OS_PROJECT_DOMAIN_NAME=<project domain>
+    export OS_USER_DOMAIN_NAME=<user domain>
+    export OS_PROJECT_NAME=<project name>
     export OS_USERNAME=<user name>
     export OS_PASSWORD=<password>
     export OS_AUTH_URL=https://proxy.swift.surfsara.nl:5000/v3
@@ -20,33 +22,47 @@ The script below should give you the right information:
     TMPFILE=`mktemp`
     chmod 600 ${TMPFILE}
 
-    curl -i \
+    JSONFILE=`mktemp`
+    chmod 600 ${JSONFILE}
+
+    cat >${JSONFILE} <<EOF
+    {
+      "auth": {
+        "identity": {
+           "methods": ["password"],
+              "password": {
+                 "user": {
+                    "domain": {"name": "${OS_USER_DOMAIN_NAME}"},
+                       "name": "${OS_USERNAME}",
+                       "password": "${OS_PASSWORD}"
+                 }
+              }
+           },
+           "scope": {
+              "project": {
+                 "domain": {"name": "${OS_PROJECT_DOMAIN_NAME}"},
+                    "name": "${OS_PROJECT_NAME}"
+              }
+           }
+       }
+    }
+    EOF
+
+    curl -si  \
       -H "Content-Type: application/json" \
       -o ${TMPFILE} \
-      -d '
-    { "auth": {
-        "identity": {
-          "methods": ["password"],
-          "password": {
-            "user": {
-              "name": "${OS_USERNAME}",
-              "domain": { "name": "${OS_USER_DOMAIN_NAME}" },
-              "password": "${OS_PASSWORD}"
-            }
-          }
-        }
-      }
-    }' \
-     ${OS_AUTH_URL}/auth/tokens
+      -d @${JSONFILE} \
+    ${OS_AUTH_URL}/auth/tokens 2>/dev/null
 
     echo
     cat ${TMPFILE} | grep 'X-Subject-Token:'
 
     echo
     tail -1 ${TMPFILE} | json_pp
-    rm -f ${TMPFILE}
 
-An example of the output this script generates is below:
+    rm -f ${TMPFILE} ${JSONFILE}
+
+It can be downloaded from :download:`get_token_and_json.sh <../../Scripts/bash/get_token_and_json.sh>`. An example of the output this script generates is below:
 
 .. code-block:: console
 
@@ -154,12 +170,14 @@ For users using keystone with a local acount should set:
 .. code-block:: bash
 
     export OS_USER_DOMAIN_NAME="Default"
+    export OS_PROJECT_DOMAIN_NAME="Default"
 
 Users using keystone in combination with the SURFsara Central User Administration (CUA) account should set:
 
 .. code-block:: bash
 
     export OS_USER_DOMAIN_NAME="CuaUsers"
+    export OS_PROJECT_DOMAIN_NAME="CuaUsers"
 
 The script below gives you just the token and the storage url using V3 authentication:
 
@@ -167,7 +185,9 @@ The script below gives you just the token and the storage url using V3 authentic
 
     #!/bin/sh
 
-    export OS_USER_DOMAIN_NAME=<user domain name>
+    export OS_PROJECT_DOMAIN_NAME=<project domain>
+    export OS_USER_DOMAIN_NAME=<user domain>
+    export OS_PROJECT_NAME=<project name>
     export OS_USERNAME=<user name>
     export OS_PASSWORD=<password>
     export OS_AUTH_URL=https://proxy.swift.surfsara.nl:5000/v3
@@ -175,7 +195,34 @@ The script below gives you just the token and the storage url using V3 authentic
     TMPFILE=`mktemp`
     chmod 600 ${TMPFILE}
 
+    JSONFILE=`mktemp`
+    chmod 600 ${JSONFILE}
+
+    cat >${JSONFILE} <<EOF
+    {
+      "auth": {
+        "identity": {
+           "methods": ["password"],
+              "password": {
+                 "user": {
+                    "domain": {"name": "${OS_USER_DOMAIN_NAME}"},
+                       "name": "${OS_USERNAME}",
+                       "password": "${OS_PASSWORD}"
+                 }
+              }
+           },
+           "scope": {
+              "project": {
+                 "domain": {"name": "${OS_PROJECT_DOMAIN_NAME}"},
+                    "name": "${OS_PROJECT_NAME}"
+              }
+           }
+       }
+    }
+    EOF
+
     PYTHONSCRIPT=`mktemp`
+    chmod 755 ${PYTHONSCRIPT}
 
     cat > ${PYTHONSCRIPT} << EOF
     #!/usr/bin/env python
@@ -187,33 +234,12 @@ The script below gives you just the token and the storage url using V3 authentic
                 if j["interface"]=="public":
                     print "export OS_STORAGE_URL="+j["url"]
     EOF
-    chmod 755 ${PYTHONSCRIPT}
 
-    JSONFILE=`mktemp`
-    chmod 600 ${JSONFILE}
-
-    cat >${JSONFILE} <<EOF
-    { "auth": {
-        "identity": {
-          "methods": ["password"],
-          "password": {
-            "user": {
-              "name": "${OS_USERNAME}",
-              "domain": { "name": "${OS_USER_DOMAIN_NAME}" },
-              "password": "${OS_PASSWORD}"
-            }
-          }
-        }
-      }
-    }
-    EOF
-
-
-    curl -i  \
+    curl -si  \
       -H "Content-Type: application/json" \
       -o ${TMPFILE} \
       -d @${JSONFILE} \
-     ${OS_AUTH_URL}/auth/tokens 2>/dev/null
+    ${OS_AUTH_URL}/auth/tokens 2>/dev/null | grep 'X-Subject-Token:' | awk '{print $2}'
 
     echo
     token=`cat ${TMPFILE} | grep 'X-Subject-Token:' | awk '{print $2}'`
@@ -223,7 +249,7 @@ The script below gives you just the token and the storage url using V3 authentic
     tail -1 ${TMPFILE} | ${PYTHONSCRIPT}
     rm -f ${TMPFILE} ${PYTHONSCRIPT} ${JSONFILE}
 
-Now you can run curl commands using:
+It can be downloaded from: :download:`get_token_and_json.sh <../../Scripts/bash/get_token_and_storage_url.sh>`. Now you can run curl commands using:
 
 .. code-block:: console
 

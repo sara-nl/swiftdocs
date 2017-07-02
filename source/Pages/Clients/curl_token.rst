@@ -249,7 +249,7 @@ The script below gives you just the token and the storage url using V3 authentic
     tail -1 ${TMPFILE} | ${PYTHONSCRIPT}
     rm -f ${TMPFILE} ${PYTHONSCRIPT} ${JSONFILE}
 
-It can be downloaded from: :download:`get_token_and_json.sh <../../Scripts/bash/get_token_and_storage_url.sh>`. Now you can run curl commands using:
+It can be downloaded from: :download:`get_token_and_storage_url.sh <../../Scripts/bash/get_token_and_storage_url.sh>`. Now you can run curl commands using:
 
 .. code-block:: console
 

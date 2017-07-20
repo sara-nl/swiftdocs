@@ -79,3 +79,11 @@ Getting a listing of a container is done in the following manner:
 .. code-block:: bash
 
     duck --username <project name:CuaUsers:user name> --password <password> -q -l surfswift://proxy.swift.surfsara.nl:5000/<container>
+
+Execute the command:
+
+.. code-block:: bash
+
+    duck -h
+
+to get all the options.

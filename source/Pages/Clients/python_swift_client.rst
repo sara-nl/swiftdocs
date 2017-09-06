@@ -21,9 +21,9 @@ Now the usage of the **swift** commandline tools is like:
 
 More details and examples are provided below.
 
-=============
-Authorisation
-=============
+==============
+Authentication
+==============
 
 The following environment variables are useful to set if you don't want them to provide them all the time on the command line.
 

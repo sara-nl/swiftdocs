@@ -25,9 +25,9 @@ Make sure that in the same directory where the s3curl.pl script is that there is
 
     %awsSecretAccessKeys = (
        # personal account
-       AUTH_<user name> => {
-           id => '<user name',
-           key => '<s3 api key>'
+       KEY_<project id> => {
+           id => '<access key>',
+           key => '<secret key>'
        }
     );
 
@@ -39,12 +39,59 @@ Further, on line 37 of **s3curl.pl** there is a line like:
 
 where you have to fill in the endpoint which is **proxy.swift.surfsara.nl** in our case. 
 
+To generate the **access key** and the **secret key** you need to install the openstack python client. You can find information on how to do this at: https://pypi.python.org/pypi/python-openstackclient. 
+
+To create the credentials you do the following. The following environment variables are useful to set if you don't want them to provide them all the time on the command line.
+
+.. code-block:: console
+
+    export OS_PROJECT_DOMAIN_NAME=Default
+    export OS_USER_DOMAIN_NAME=Default
+    export OS_PROJECT_NAME=<my project>
+    export OS_USERNAME=<user name>
+    export OS_PASSWORD=<password>
+    export OS_AUTH_URL=https://proxy.swift.surfsara.nl:5000/v3
+    export OS_IDENTITY_API_VERSION=3
+
+This holds for local keystone users. Users using their account in the SURFsara Central User Administration (CUA) through keystone need the specify the following:
+
+.. code-block:: console
+
+    export OS_PROJECT_DOMAIN_NAME=CuaUsers
+    export OS_USER_DOMAIN_NAME=CuaUsers
+
+for the **OS_PROJECT_DOMAIN_NAME** and **OS_USER_DOMAIN_NAME** environment variables.
+
+Now create the **access key** and the **secret key**:
+
+.. code-block:: console
+
+    openstack ec2 credentials create
+
+and then:
+
+.. code-block:: console
+
+    openstack ec2 credentials list
+
+This produces output like this:
+
+.. code-block:: console
+
+    +----------------------------------+----------------------------------+----------------------------------+----------------------------------+
+    | Access                           | Secret                           | Project ID                       | User ID                          |
+    +----------------------------------+----------------------------------+----------------------------------+----------------------------------+
+    | 056d990fe449ea2473c798fad554ac1d | 8d8fad5c0cd24fdaa3972fabbc187002 | 05b2aafab5a745eab2726d88649d95fe | bd4a4a9ea29344ccb828ab4a818e8576 |
+    +----------------------------------+----------------------------------+----------------------------------+----------------------------------+
+
+
+
 Create a bucket
 ---------------
 
 .. code-block:: console
 
-    ./s3curl.pl --id=AUTH_<user name> --createBucket -- https://proxy.swift.surfsara.nl/mybucket
+    ./s3curl.pl --id=KEY_<project id> --createBucket -- https://proxy.swift.surfsara.nl/mybucket
 
 Upload/Download an object to/from a bucket
 ------------------------------------------
@@ -53,13 +100,13 @@ You can upload an object to a bucket by:
 
 .. code-block:: console
 
-    ./s3curl.pl --id=AUTH_<user name> --put=<file name> -- https://proxy.swift.surfsara.nl/mybucket/myobject
+    ./s3curl.pl --id=KEY_<project id> --put=<file name> -- https://proxy.swift.surfsara.nl/mybucket/myobject
 
 An object can be downloaded by:
 
 .. code-block:: console
 
-    ./s3curl.pl --id=AUTH_<user name> -- -O https://proxy.swift.surfsara.nl/mybucket/myobject
+    ./s3curl.pl --id=KEY_<project id> -- -O https://proxy.swift.surfsara.nl/mybucket/myobject
 
 Getting metadata
 ----------------
@@ -95,17 +142,12 @@ Throwing away an object:
 
 .. code-block:: console
 
-    s3curl.pl --id=AUTH_<user name> --delete -- -s -S https://proxy.swift.surfsara.nl/mybucket/myobject
+    s3curl.pl --id=KEY_<project id> --delete -- -s -S https://proxy.swift.surfsara.nl/mybucket/myobject
 
 Throwing away a bucket:
 
 .. code-block:: console
 
-    s3curl.pl --id=AUTH_<user name> --delete -- -s -S https://proxy.swift.surfsara.nl/mybucket
+    s3curl.pl --id=KEY_<project id> --delete -- -s -S https://proxy.swift.surfsara.nl/mybucket
 
 .. note:: **Important:** You can only delete an empty bucket.
-
-Get and set your own metadata for buckets and objects
------------------------------------------------------
-
-

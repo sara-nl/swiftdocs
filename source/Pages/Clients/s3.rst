@@ -6,8 +6,6 @@ S3 clients
 
 In this page you will find documentation about the S3 clients.
 
-.. note:: **Important:** This only works for users that have a swauth account, not for users with a keystone account.
-
 .. contents:: 
     :depth: 4
 

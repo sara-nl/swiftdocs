@@ -38,6 +38,7 @@ The following environment variables are useful to set if you don't want them to 
     export OS_IDENTITY_API_VERSION=3
 
 This holds for local keystone users. Users using their account in the SURFsara Central User Administration (CUA) through keystone need the specify the following:
+
 .. code-block:: console
 
     export OS_PROJECT_DOMAIN_NAME=CuaUsers

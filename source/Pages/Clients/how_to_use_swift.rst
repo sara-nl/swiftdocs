@@ -29,8 +29,6 @@ Information about accessing SWIFT through the **curl** command is given on the :
 S3 clients
 ==========
 
-.. note:: **Important:** At the moment SWIFT can be accessed through S3. But this only works for users that have a swauth account, not for users with a keystone account.
-
 Information on S3 clients may be found at the :ref:`S3 <s3>` page.
 
 =========

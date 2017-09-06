@@ -44,7 +44,7 @@ This holds for local keystone users. Users using their account in the SURFsara C
     export OS_PROJECT_DOMAIN_NAME=CuaUsers
     export OS_USER_DOMAIN_NAME=CuaUsers
 
-Apart from using your user name and password, it is also possible to generate a token that is valid for 24 hours. This may be handy if you are running the script elsewhere on a batch system and you don't want to send you username and password with your batch job. You can use this token to access your data in SWIFT.
+for the OS_PROJECT_DOMAIN_NAME and OS_USER_DOMAIN_NAME environment variables. Apart from using your user name and password, it is also possible to generate a token that is valid for 24 hours. This may be handy if you are running the script elsewhere on a batch system and you don't want to send you username and password with your batch job. You can use this token to access your data in SWIFT.
 
 You can get a token in the following way:
 

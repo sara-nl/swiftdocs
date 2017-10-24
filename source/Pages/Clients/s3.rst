@@ -37,52 +37,53 @@ Further, on line 37 of **s3curl.pl** there is a line like:
 
 where you have to fill in the endpoint which is **proxy.swift.surfsara.nl** in our case. 
 
-To generate the **access key** and the **secret key** you need to install the openstack python client. You can find information on how to do this at: https://pypi.python.org/pypi/python-openstackclient. 
+To get the necessary S3 credentials, please contact our helpdesk, helpdesk@surfsara.nl.
+.. To generate the **access key** and the **secret key** you need to install the openstack python client. You can find information on how to do this at: https://pypi.python.org/pypi/python-openstackclient. 
 
-To create the credentials you do the following. The following environment variables are useful to set if you don't want them to provide them all the time on the command line.
-
-.. code-block:: console
-
-    export OS_PROJECT_DOMAIN_NAME=Default
-    export OS_USER_DOMAIN_NAME=Default
-    export OS_PROJECT_NAME=<my project>
-    export OS_USERNAME=<user name>
-    export OS_PASSWORD=<password>
-    export OS_AUTH_URL=https://proxy.swift.surfsara.nl:5000/v3
-    export OS_IDENTITY_API_VERSION=3
-
-This holds for local keystone users. Users using their account in the SURFsara Central User Administration (CUA) through keystone need the specify the following:
+.. To create the credentials you do the following. The following environment variables are useful to set if you don't want them to provide them all the time on the command line.
 
 .. code-block:: console
 
-    export OS_PROJECT_DOMAIN_NAME=CuaUsers
-    export OS_USER_DOMAIN_NAME=CuaUsers
+..    export OS_PROJECT_DOMAIN_NAME=Default
+..    export OS_USER_DOMAIN_NAME=Default
+..    export OS_PROJECT_NAME=<my project>
+..    export OS_USERNAME=<user name>
+..    export OS_PASSWORD=<password>
+..    export OS_AUTH_URL=https://proxy.swift.surfsara.nl:5000/v3
+..    export OS_IDENTITY_API_VERSION=3
 
-for the **OS_PROJECT_DOMAIN_NAME** and **OS_USER_DOMAIN_NAME** environment variables.
-
-Now create the **access key** and the **secret key**:
-
-.. code-block:: console
-
-    openstack ec2 credentials create
-
-and then:
+.. This holds for local keystone users. Users using their account in the SURFsara Central User Administration (CUA) through keystone need the specify the following:
 
 .. code-block:: console
 
-    openstack ec2 credentials list
+..    export OS_PROJECT_DOMAIN_NAME=CuaUsers
+..    export OS_USER_DOMAIN_NAME=CuaUsers
 
-This produces output like this:
+.. for the **OS_PROJECT_DOMAIN_NAME** and **OS_USER_DOMAIN_NAME** environment variables.
+
+.. Now create the **access key** and the **secret key**:
 
 .. code-block:: console
 
-    +----------------------------------+----------------------------------+----------------------------------+----------------------------------+
-    | Access                           | Secret                           | Project ID                       | User ID                          |
-    +----------------------------------+----------------------------------+----------------------------------+----------------------------------+
-    | 056d990fe449ea2473c798fad554ac1d | 8d8fad5c0cd24fdaa3972fabbc187002 | afabdda3459e65f193626d88649d95fe | bd4a4a9ea29344ccb828ab4a818e8576 |
-    +----------------------------------+----------------------------------+----------------------------------+----------------------------------+
+..     openstack ec2 credentials create
 
-Then our **.s3curl** file looks like this:
+.. and then:
+
+.. code-block:: console
+
+..     openstack ec2 credentials list
+
+.. This produces output like this:
+
+.. code-block:: console
+
+..     +----------------------------------+----------------------------------+----------------------------------+----------------------------------+
+..     | Access                           | Secret                           | Project ID                       | User ID                          |
+..     +----------------------------------+----------------------------------+----------------------------------+----------------------------------+
+..     | 056d990fe449ea2473c798fad554ac1d | 8d8fad5c0cd24fdaa3972fabbc187002 | afabdda3459e65f193626d88649d95fe | bd4a4a9ea29344ccb828ab4a818e8576 |
+..     +----------------------------------+----------------------------------+----------------------------------+----------------------------------+
+
+Then our **.s3curl** file looks something like this:
 
 .. code-block:: perl
 

@@ -38,11 +38,12 @@ Further, on line 37 of **s3curl.pl** there is a line like:
 where you have to fill in the endpoint which is **proxy.swift.surfsara.nl** in our case. 
 
 To get the necessary S3 credentials, please contact our helpdesk, helpdesk@surfsara.nl.
+
 .. To generate the **access key** and the **secret key** you need to install the openstack python client. You can find information on how to do this at: https://pypi.python.org/pypi/python-openstackclient. 
 
 .. To create the credentials you do the following. The following environment variables are useful to set if you don't want them to provide them all the time on the command line.
 
-.. code-block:: console
+.. .. code-block:: console
 
 ..    export OS_PROJECT_DOMAIN_NAME=Default
 ..    export OS_USER_DOMAIN_NAME=Default
@@ -54,7 +55,7 @@ To get the necessary S3 credentials, please contact our helpdesk, helpdesk@surfs
 
 .. This holds for local keystone users. Users using their account in the SURFsara Central User Administration (CUA) through keystone need the specify the following:
 
-.. code-block:: console
+.. .. code-block:: console
 
 ..    export OS_PROJECT_DOMAIN_NAME=CuaUsers
 ..    export OS_USER_DOMAIN_NAME=CuaUsers
@@ -63,19 +64,19 @@ To get the necessary S3 credentials, please contact our helpdesk, helpdesk@surfs
 
 .. Now create the **access key** and the **secret key**:
 
-.. code-block:: console
+.. .. code-block:: console
 
 ..     openstack ec2 credentials create
 
 .. and then:
 
-.. code-block:: console
+.. .. code-block:: console
 
 ..     openstack ec2 credentials list
 
 .. This produces output like this:
 
-.. code-block:: console
+.. .. code-block:: console
 
 ..     +----------------------------------+----------------------------------+----------------------------------+----------------------------------+
 ..     | Access                           | Secret                           | Project ID                       | User ID                          |

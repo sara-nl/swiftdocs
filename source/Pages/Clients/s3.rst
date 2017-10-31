@@ -163,11 +163,11 @@ Throwing away a bucket:
 
 .. note:: **Important:** You can only delete an empty bucket.
 
-======
+=====
 s3cmd
-======
+=====
 
-S3curl can be downloaded from https://github.com/rtdp/s3curl.
+Information of **s3cmd** may be found at: http://s3tools.org/s3cmd
 
 Authentication
 --------------
@@ -220,7 +220,7 @@ Getting metadata
 
 The metadata of an object can be retrieved by:
 
-.. image:: /Images/s3cmd
+.. image:: /Images/s3cmdinfo.png
 
 List objects in an account
 --------------------------

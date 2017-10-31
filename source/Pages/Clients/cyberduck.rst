@@ -66,17 +66,12 @@ Information on how to use it is obtained by:
 
     duck --help
 
-Users having a local keystone account kan use the **Swift** profile that comes with duck. For example, getting a listing of objects in a container can be done by:
-
-.. code-block:: bash
-
-    duck --username <project name:user name> --password <password> -q -l swift://proxy.swift.surfsara.nl:5000/<container>
-
-Users using keystone together with their SURFsara Central User Adminitration (CUA) account need to install de profile :download:`surfswift.cyberduckprofile <../../Scripts/cyberduck_profile/surfswift.cyberduckprofile>` in ~/.duck/profiles.
+You need to install de profile :download:`surfswift.cyberduckprofile <../../Scripts/cyberduck_profile/surfswift.cyberduckprofile>` in ~/.duck/profiles.
 
 Getting a listing of a container is done in the following manner:
 
 .. code-block:: bash
 
-    duck --username <project name:CuaUsers:user name> --password <password> -q -l surfswift://proxy.swift.surfsara.nl:5000/<container>
+    duck --username <project name:DOMAIN:user name> --password <password> -q -l surfswift://proxy.swift.surfsara.nl:5000/<container>
 
+Users using keystone together with their SURFsara Central User Adminitration (CUA) account need to specify **CuaUsers** as **DOMAIN**. Users using local keystone account need to specify **default** as **DOMAIN**.

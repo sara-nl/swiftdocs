@@ -220,9 +220,7 @@ Getting metadata
 
 The metadata of an object can be retrieved by:
 
-.. code-block:: console
-
-    s3cmd info s3://mybucket/myobject
+.. image:: /Images/s3cmd
 
 List objects in an account
 --------------------------

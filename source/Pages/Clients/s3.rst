@@ -255,3 +255,30 @@ Where on the first line all objects are thrown away and on the second line the b
 Sync folders
 ------------
 
+It is possible to sync folders with their contents to buckets and vice versa. The image below shows you how.
+
+.. image:: /Images/s3cmdsync.png
+
+Encryption
+----------
+
+It is possible to let **s3cmd** encrypt your data before uploading. For this to work you have to setup gpg and add the following lines to your **.s3cfg**. 
+
+.. code-block:: console
+
+    gpg_command = /usr/bin/gpg
+    gpg_decrypt = %(gpg_command)s -d --verbose --no-use-agent --batch --yes --passphrase-fd %(passphrase_fd)s -o %(output_file)s %(input_file)s
+    gpg_encrypt = %(gpg_command)s -c --verbose --no-use-agent --batch --yes --passphrase-fd %(passphrase_fd)s -o %(output_file)s %(input_file)s
+    gpg_passphrase = <password>
+
+To upload an encrypted file you have to do the follwoing:
+
+.. code-block:: console
+
+    s3cmd put -e <file name> s3://mybucket/myobject
+
+Here the **-e** flag enforces the encryption. For downloading nothing special has to be done, so downloading the encrypted object is done by:
+
+.. code-block:: console
+
+    s3cmd get s3://mybucket/myobject

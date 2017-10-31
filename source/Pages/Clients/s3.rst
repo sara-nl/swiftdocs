@@ -4,20 +4,20 @@
 S3 clients
 **********
 
-In this page you will find documentation about the S3 clients.
+In this page you will find documentation about the S3 clients. Here we refer to **buckets**, this is the S3 term for **containers**. They are identical.
 
 .. contents:: 
     :depth: 4
 
 ======
-S3curl
+s3curl
 ======
 
 S3curl can be downloaded from https://github.com/rtdp/s3curl.
 
 Authentication
 --------------
-Make sure that in the same directory where the s3curl.pl script is that there is also a file callen **.s3curl** with a content like:
+Make sure that in the same directory where the s3curl.pl script is that there is also a file called **.s3curl** with a content like:
 
 .. code-block:: perl
 
@@ -162,3 +162,70 @@ Throwing away a bucket:
     s3curl.pl --id=KEY_<project id> --delete -- -s -S https://proxy.swift.surfsara.nl/mybucket
 
 .. note:: **Important:** You can only delete an empty bucket.
+
+======
+s3cmd
+======
+
+S3curl can be downloaded from https://github.com/rtdp/s3curl.
+
+Authentication
+--------------
+In your home directory you need to create a file called **.s3cfg** with a contents like:
+
+.. code-block:: console
+
+    [default]
+
+    access_key = <access key>
+    secret_key = <secret key>
+    host_base = proxy.swift.surfsara.nl
+    host_bucket = proxy.swift.surfsara.nl
+    signature_v2 = True
+    check_ssl_certificate = True
+    check_ssl_hostname = True
+
+
+Don't forget to:
+
+.. code-block:: console
+
+    chmod 600 ${HOME}/.s3cfg
+
+
+Create a bucket
+---------------
+
+.. code-block:: console
+
+    s3cmd mb s3://mybucket
+
+Upload/Download an object to/from a bucket
+------------------------------------------
+
+An object can be uploaded to a bucket by the following command:
+
+.. code-block:: console
+
+    s3cmd put <file name> s3://mybucket/myobject
+
+It can be downloaded by:
+
+.. code-block:: console
+
+    s3cmd get s3://mybucket/myobject
+
+Getting metadata
+----------------
+
+The metadata of an object can be retrieved by:
+
+.. code-block:: console
+
+    s3cmd info s3://mybucket/myobject
+
+List objects in an account
+--------------------------
+
+.. image:: /Images/s3cmdls.png
+

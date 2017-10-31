@@ -222,8 +222,36 @@ The metadata of an object can be retrieved by:
 
 .. image:: /Images/s3cmdinfo.png
 
-List objects in an account
+List buckets in an account
 --------------------------
 
 .. image:: /Images/s3cmdls.png
+
+List objects in a bucket
+------------------------
+
+.. image:: /Images/s3cmdlsobjects.png
+
+Throwing buckets and objects away
+---------------------------------
+
+Throwing away an object:
+
+.. code-block:: console
+
+    s3cmd rm s3://mybucket/myobject
+
+Throwing away a bucket and its contents:
+
+.. code-block:: console
+
+    s3cmd rm --force --recursive s3://mybucket
+    s3cmd rb s3://mybucket
+
+Where on the first line all objects are thrown away and on the second line the bucket itself is thrown away.
+
+.. note:: **Important:** You can only delete an empty bucket.
+
+Sync folders
+------------
 

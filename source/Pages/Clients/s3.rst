@@ -68,6 +68,20 @@ The metadata of an object can be retrieved by:
 
 .. image:: /Images/s3cmdinfo.png
 
+Setting metadata
+----------------
+
+S3cmd can be used to set custom metadata during the upload of a file. This is shown below.
+
+.. image:: /Images/s3cmdmeta.png
+
+Modifying metadata
+------------------
+
+Once set, the custom metadata can be modified in the follwoing manner:
+
+.. image:: /Images/s3cmdmodify.png
+
 List buckets in an account
 --------------------------
 

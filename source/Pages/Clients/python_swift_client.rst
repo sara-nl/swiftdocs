@@ -163,15 +163,15 @@ Delete a container with all objects in it:
 
          swift delete mycontainer
 
-========================================================
-Set and get your own metadata for containers and objects
-========================================================
+================================================
+Set your own metadata for containers and objects
+================================================
 
-To set and get metadata for an container goes in the following manner:
+To set metadata for an container goes in the following manner:
 
 .. image:: /Images/metadata_container.png
 
-Setting and getting metadata for an object works in an identical fashion.
+Setting metadata for an object works in an identical fashion.
 
 ===============
 Copying objects

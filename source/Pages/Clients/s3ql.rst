@@ -44,7 +44,7 @@ For S3:
     storage-url: s3c://proxy.swift.surfsara.nl:443/<bucket>
     fs-passphrase: <password>
 
-The **fs-passphrase** is the password on you gpg key. This makes sure that s3ql encrypts data before it uploads the data to SWIFT.
+The **fs-passphrase** is the password used to encrypt the randomly generated master key. This makes sure that s3ql encrypts data before it uploads the data to SWIFT.
 
 Don't forget:
 

@@ -1,173 +1,19 @@
 .. _s3:
 
-**********
-S3 clients
-**********
+***************************
+S3 commandline client s3cmd
+***************************
 
 In this page you will find documentation about the S3 clients. Here we refer to **buckets**, this is the S3 term for **containers**. They are identical.
 
 .. contents:: 
     :depth: 4
 
-======
-s3curl
-======
-
-S3curl can be downloaded from https://github.com/rtdp/s3curl.
-
-Authentication
---------------
-Make sure that in the same directory where the s3curl.pl script is that there is also a file called **.s3curl** with a content like:
-
-.. code-block:: perl
-
-    %awsSecretAccessKeys = (
-       # personal account
-       KEY_<project id> => {
-           id => '<access key>',
-           key => '<secret key>'
-       }
-    );
-
-Further, on line 37 of **s3curl.pl** there is a line like:
-
-.. code-block:: perl
-
-       my @endpoints = ( '<my endpoint>');
-
-where you have to fill in the endpoint which is **proxy.swift.surfsara.nl** in our case. 
-
-To get the necessary S3 credentials, please contact our helpdesk, helpdesk@surfsara.nl.
-
-.. To generate the **access key** and the **secret key** you need to install the openstack python client. You can find information on how to do this at: https://pypi.python.org/pypi/python-openstackclient. 
-
-.. To create the credentials you do the following. The following environment variables are useful to set if you don't want them to provide them all the time on the command line.
-
-.. .. code-block:: console
-
-..    export OS_PROJECT_DOMAIN_NAME=Default
-..    export OS_USER_DOMAIN_NAME=Default
-..    export OS_PROJECT_NAME=<my project>
-..    export OS_USERNAME=<user name>
-..    export OS_PASSWORD=<password>
-..    export OS_AUTH_URL=https://proxy.swift.surfsara.nl:5000/v3
-..    export OS_IDENTITY_API_VERSION=3
-
-.. This holds for local keystone users. Users using their account in the SURFsara Central User Administration (CUA) through keystone need the specify the following:
-
-.. .. code-block:: console
-
-..    export OS_PROJECT_DOMAIN_NAME=CuaUsers
-..    export OS_USER_DOMAIN_NAME=CuaUsers
-
-.. for the **OS_PROJECT_DOMAIN_NAME** and **OS_USER_DOMAIN_NAME** environment variables.
-
-.. Now create the **access key** and the **secret key**:
-
-.. .. code-block:: console
-
-..     openstack ec2 credentials create
-
-.. and then:
-
-.. .. code-block:: console
-
-..     openstack ec2 credentials list
-
-.. This produces output like this:
-
-.. .. code-block:: console
-
-..     +----------------------------------+----------------------------------+----------------------------------+----------------------------------+
-..     | Access                           | Secret                           | Project ID                       | User ID                          |
-..     +----------------------------------+----------------------------------+----------------------------------+----------------------------------+
-..     | 056d990fe449ea2473c798fad554ac1d | 8d8fad5c0cd24fdaa3972fabbc187002 | afabdda3459e65f193626d88649d95fe | bd4a4a9ea29344ccb828ab4a818e8576 |
-..     +----------------------------------+----------------------------------+----------------------------------+----------------------------------+
-
-After obtaining your credentials your **.s3curl** file looks something like this:
-
-.. code-block:: perl
-
-    %awsSecretAccessKeys = (
-       # personal account
-       KEY_afabdda34acacadabra26d88649d95fe => {
-           id => '056d990fe449dead24c798fad554ac1d',
-           key => '8d8fad5c0cd24fdaabeeffabbc187002'
-       }
-    );
-
-
-Create a bucket
----------------
-
-.. code-block:: console
-
-    ./s3curl.pl --id=KEY_<project id> --createBucket -- https://proxy.swift.surfsara.nl/mybucket
-
-Upload/Download an object to/from a bucket
-------------------------------------------
-
-You can upload an object to a bucket by:
-
-.. code-block:: console
-
-    ./s3curl.pl --id=KEY_<project id> --put=<file name> -- https://proxy.swift.surfsara.nl/mybucket/myobject
-
-An object can be downloaded by:
-
-.. code-block:: console
-
-    ./s3curl.pl --id=KEY_<project id> -- -O https://proxy.swift.surfsara.nl/mybucket/myobject
-
-Getting metadata
-----------------
-
-You can get an objects metadata by:
-
-.. image:: /Images/s3getmetadata.png
-
-Here **Content-Length** is the size in bytes and **ETag** is the md5 checksum of the object.
-
-List buckets in an account
---------------------------
-
-.. image:: /Images/s3listbuckets.png
-
-This command provides output in xml. Here **xmllint** is used to get some nicer formatting. Don't take the creation date too serious.
-
-If you are allergic to xml you can always do:
-
-.. image:: /Images/s3listbuckets2.png
-
-List objects in a bucket
-------------------------
-
-Listing the objects in a bucket:
-
-.. image:: /Images/s3listobjects.png
-
-Throwing buckets and objects away
----------------------------------
-
-Throwing away an object:
-
-.. code-block:: console
-
-    s3curl.pl --id=KEY_<project id> --delete -- -s -S https://proxy.swift.surfsara.nl/mybucket/myobject
-
-Throwing away a bucket:
-
-.. code-block:: console
-
-    s3curl.pl --id=KEY_<project id> --delete -- -s -S https://proxy.swift.surfsara.nl/mybucket
-
-.. note:: **Important:** You can only delete an empty bucket.
-
 =====
 s3cmd
 =====
 
-Information of **s3cmd** may be found at: http://s3tools.org/s3cmd
+Information of **s3cmd** may be found at http://s3tools.org/s3cmd and https://github.com/s3tools/s3cmd/blob/master/README.md. 
 
 Authentication
 --------------
@@ -251,6 +97,11 @@ Throwing away a bucket and its contents:
 Where on the first line all objects are thrown away and on the second line the bucket itself is thrown away.
 
 .. note:: **Important:** You can only delete an empty bucket.
+
+Upload large files (>5GB)
+-------------------------
+ 
+.. image:: /Images/s3cmdmultichunk.png
 
 Sync folders
 ------------

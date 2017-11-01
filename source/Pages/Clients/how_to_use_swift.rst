@@ -19,15 +19,9 @@ For extra information on how to install de swift commandline client on Mac OSX, 
 
 On this page there is info on how to use the :ref:`Python SWIFT client <python-swift-client>`.
 
-====
-Curl
-====
-
-Information about accessing SWIFT through the **curl** command is given on the :ref:`curl <curl>` page.
-
-==========
-S3 clients
-==========
+===========================
+S3 commandline client s3cmd
+===========================
 
 Information on S3 clients may be found at the :ref:`S3 <s3>` page.
 
@@ -42,6 +36,13 @@ Python Library
 ==============
 
 The :ref:`python library <pythonlibrary>` page gives you information on the python-swiftclient library.
+
+====
+Curl
+====
+
+Information about accessing SWIFT through the **curl** command is given on the :ref:`curl <curl>` page.
+
 
 ===
 API

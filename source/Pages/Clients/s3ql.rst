@@ -4,7 +4,7 @@
 S3QL
 ****
 
-In this page you will find documentation on how to mount SWIFT object storage as a normal file system through **s3ql**.
+In this page you will find documentation on how to mount SWIFT object storage as a normal file system through **s3ql** in user space.
 
 S3QL has features like compression, encryption, data de-duplication, immutable trees and snapshotting which make it especially suitable for online backup and archival.
 

@@ -23,7 +23,7 @@ On this page there is info on how to use the :ref:`Python SWIFT client <python-s
 S3 commandline client s3cmd
 ===========================
 
-Information on S3 clients may be found at the :ref:`S3 <s3>` page.
+Information on s3cmd may be found at the :ref:`S3 <s3>` page.
 
 =========
 Cyberduck

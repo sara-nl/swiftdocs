@@ -56,7 +56,13 @@ Cloudfuse
 
 .. note:: **Important:** Since Cloudfuse only supports keystone V2 authentication, this will only work for users having a local keystone account.
 
-It is possible to mount SWIFT object storage as a file system. The :ref:`cloudfuse <cloudfuse>` page has more information.
+It is possible to mount SWIFT object storage as a file system with cloudfuse. The :ref:`cloudfuse <cloudfuse>` page has more information.
+
+====
+S3QL
+====
+
+It is possible to mount SWIFT object storage as a file system with s3ql both using swift's native protocol and S3. The :ref:`s3ql <s3ql>` page has more information.
 
 =========
 Duplicity

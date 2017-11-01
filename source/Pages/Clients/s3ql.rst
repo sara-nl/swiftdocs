@@ -6,6 +6,8 @@ S3QL
 
 In this page you will find documentation on how to mount SWIFT object storage as a normal file system through **s3ql**.
 
+S3QL has features like compression, encryption, data de-duplication, immutable trees and snapshotting which make it especially suitable for online backup and archival.
+
 Using s3ql can be mounted as a filesystem using swift's own native protocol and S3 on linux systems.
 
 .. note:: **Important:** Since s3ql only supports keystone V2 authentication, this will only work for users having a local keystone account when mounting using the swift protocol. Such a limitation does not exist using S3.

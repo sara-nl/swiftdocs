@@ -62,7 +62,11 @@ It is possible to mount SWIFT object storage as a file system with cloudfuse. Th
 S3QL
 ====
 
-It is possible to mount SWIFT object storage as a file system with s3ql both using swift's native protocol and S3. The :ref:`s3ql <s3ql>` page has more information.
+It is possible to mount SWIFT object storage as a file system with s3ql both using swift's native protocol and S3. 
+
+S3QL has features like compression, encryption, data de-duplication, immutable trees and snapshotting which make it especially suitable for online backup and archival.
+
+The :ref:`s3ql <s3ql>` page has more information.
 
 =========
 Duplicity

@@ -1,7 +1,7 @@
 .. _s3ql:
 
 ****
-S3ql
+S3QL
 ****
 
 In this page you will find documentation on how to mount SWIFT object storage as a normal file system through **s3ql**.
@@ -17,7 +17,7 @@ Using s3ql can be mounted as a filesystem using swift's own native protocol and 
 Installation
 ============
 
-Documentation on how to install s3ql can be found at: https://bitbucket.org/nikratio/s3ql/wiki/Home. On linux, your distro often has the s3ql package in their repos, see: https://bitbucket.org/nikratio/s3ql/wiki/Installation. There is also a user guide: http://www.rath.org/s3ql-docs/index.html#.
+Documentation on how to install s3ql can be found at: https://bitbucket.org/nikratio/s3ql/wiki/Home. On linux, your distro often has the s3ql package in their repos, see: https://bitbucket.org/nikratio/s3ql/wiki/Installation. There is also a user guide: http://www.rath.org/s3ql-docs/index.html.
 
 ============
 Configuration
@@ -74,7 +74,7 @@ For S3:
 
 .. code-block:: console
 
-    moun3ql s3c://proxy.swift.surfsara.nl:443/<bucket> /path/to/mount
+    moun.s3ql s3c://proxy.swift.surfsara.nl:443/<bucket> /path/to/mount
 
 ==========================
 Unmounting the file system

@@ -91,7 +91,7 @@ For S3:
 
 .. code-block:: console
 
-    moun.s3ql s3c://proxy.swift.surfsara.nl:443/<bucket> /path/to/mount
+    mount.s3ql s3c://proxy.swift.surfsara.nl:443/<bucket> /path/to/mount
 
 ==========================
 Unmounting the file system

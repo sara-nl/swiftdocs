@@ -102,3 +102,4 @@ Unmounting thee file system is done by:
 .. code-block:: console
 
     umount.s3ql /path/to/mount
+

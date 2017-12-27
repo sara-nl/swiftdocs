@@ -47,7 +47,7 @@ For S3:
     storage-url: s3c://proxy.swift.surfsara.nl:443/<bucket>
     fs-passphrase: <password>
 
-The **fs-passphrase** is the password used to encrypt the randomly generated master key. This makes sure that s3ql encrypts data before it uploads the data to SWIFT.
+By default, the data will be encrypted. The **fs-passphrase** is the password used to encrypt the randomly generated master key. This makes sure that s3ql encrypts data before it uploads the data to SWIFT.
 
 The **<container name>** and **<bucket>** are the names of the container that is to be mounted. 
 
@@ -92,6 +92,8 @@ For S3:
 .. code-block:: console
 
     mount.s3ql s3c://proxy.swift.surfsara.nl:443/<bucket> /path/to/mount
+
+By default, the data will be compressed. If you do not want this then you have to use the commandline flag ***--compress none*** when mounting the storage.
 
 ==========================
 Unmounting the file system

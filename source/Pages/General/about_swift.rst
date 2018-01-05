@@ -1,5 +1,9 @@
 .. _about-swift:
 
+.. image:: /Images/objectstore3.png
+           :width: 300px
+           :align: right
+
 ***********
 About SWIFT
 ***********

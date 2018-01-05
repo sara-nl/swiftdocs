@@ -15,9 +15,6 @@
 SWIFT documentation
 ******************
 
-.. image:: /Images/OpenStack-Logo-Horizontal.png
-           :width: 300px
-
 Welcome to the documentation for using the SWIFT storage service at `SURFsara`_. The information on these pages will help you get started with SWIFT. We welcome your comments at helpdesk@surfsara.nl or your :ref:`contribution <doc-howto>` to help us improve the documentation.
 
 .. sidebar:: Need help?

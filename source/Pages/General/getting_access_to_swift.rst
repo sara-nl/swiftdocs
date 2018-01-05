@@ -1,5 +1,9 @@
 .. _getting-access-to-swift:
 
+ .. image:: /Images/objectstore3.png
+           :width: 300px
+           :align: right
+
 ***********************
 Getting access to SWIFT
 ***********************

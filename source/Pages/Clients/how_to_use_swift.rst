@@ -1,5 +1,9 @@
 .. _how-to-use-swift:
 
+.. image:: /Images/objectstore3.png
+           :width: 300px
+           :align: right
+
 ****************
 How to use SWIFT
 ****************

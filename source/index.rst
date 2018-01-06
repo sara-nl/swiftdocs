@@ -7,7 +7,7 @@
 .. _contents:
    :depth: 4
 
-.. image:: /Images/objectstore3.png
+.. image:: /Images/objectstore4.png
            :width: 300px
            :align: right
 

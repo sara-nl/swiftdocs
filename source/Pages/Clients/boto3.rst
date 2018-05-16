@@ -4,7 +4,7 @@
 Boto3
 *****
 
-In this page you will find documentation about the **boto3 S3** library by Amazon written in python you can use to access swift using the S3 API.
+In this page you will find documentation about the **boto3** library by Amazon written in python you can use to access swift using the S3 API.
 
 You can install the boto3 library by:
 

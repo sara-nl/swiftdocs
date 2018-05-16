@@ -120,7 +120,7 @@ SWIFT offers a REST API. Information about this API and some examples are descri
 Boto3
 -----
 
-Boto3 is a library written in python developed by Amazon. It contains of course an S3 part. At :ref:`Boto3 <boto3>` has information on how to use it.
+Boto3 is a library written in python developed by Amazon. It contains of course an S3 part. At :ref:`boto3 <boto3>` has information on how to use it.
 
 
 ===============================

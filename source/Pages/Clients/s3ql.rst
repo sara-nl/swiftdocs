@@ -49,7 +49,7 @@ For S3:
 
 By default, the data will be encrypted. The **fs-passphrase** is the password used to encrypt the randomly generated master key. This makes sure that s3ql encrypts data before it uploads the data to SWIFT.
 
-The **<container name>** and **<bucket>** are the names of the container that is to be mounted. 
+The **<container name>** and **<bucket>** are the names of the container that is to be mounted. They are the same.
 
 Don't forget:
 
@@ -99,7 +99,7 @@ By default, the data will be compressed. If you do not want this then you have t
 Unmounting the file system
 ==========================
 
-Unmounting thee file system is done by:
+Unmounting the file system is done by:
 
 .. code-block:: console
 

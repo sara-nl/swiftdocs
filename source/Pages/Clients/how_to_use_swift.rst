@@ -72,6 +72,14 @@ S3QL has features like compression, encryption, data de-duplication, immutable t
 
 The :ref:`s3ql <s3ql>` page has more information.
 
+====
+S3FS
+====
+
+It is possible to mount SWIFT object storage as a file system with s3fs using the S3 protocol. 
+
+The :ref:`s3fsql <s3fs>` page has more information.
+
 =========
 Duplicity
 =========

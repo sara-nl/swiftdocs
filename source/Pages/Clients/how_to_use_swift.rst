@@ -13,9 +13,12 @@ In this page you will find documentation about the different SWIFT clients that 
 .. contents:: 
     :depth: 10
 
-=========================
-Swift Command line client
-=========================
+====================
+Command line clients
+====================
+
+Swift commandline client
+------------------------
 
 There is a swift commandline client written in python. You may find more information about this at: https://www.swiftstack.com/docs/integration/python-swiftclient.html. This page will provide information on how to install the client and how to use it. This page tells you how to install the client on various flavours of Linux. For windows it is rather similar. You need to install python2.7 on windows, see: https://www.howtogeek.com/197947/how-to-install-python-on-windows/. Do not forget to include python in your PATH. The modern versions of Python2.7 are shipped with pip, so for the rest the linux documentation can be followed.
 
@@ -23,48 +26,38 @@ For extra information on how to install de swift commandline client on Mac OSX, 
 
 On this page there is info on how to use the :ref:`Python SWIFT client <python-swift-client>`.
 
-===========================
 S3 commandline client s3cmd
-===========================
+---------------------------
 
 Information on s3cmd may be found at the :ref:`S3 <s3>` page.
 
-=========
-Cyberduck
-=========
-
-Information about accessing SWIFT through Cyberduck is provided on the :ref:`cyberduck <cyberduck>` page.
-
-==============
-Python Library
-==============
-
-The :ref:`python library <pythonlibrary>` page gives you information on the python-swiftclient library.
-
-====
 Curl
-====
+----
 
 Information about accessing SWIFT through the **curl** command is given on the :ref:`curl <curl>` page.
 
+====
+GUIs
+====
 
-===
-API
-===
+Cyberduck
+---------
 
-SWIFT offers a REST API. Information about this API and some examples are described at the :ref:`API <api>` page.
+Information about accessing SWIFT through Cyberduck is provided on the :ref:`cyberduck <cyberduck>` page.
 
-=========
+====================
+Mounted file systems
+====================
+
 Cloudfuse
-=========
+---------
 
 .. note:: **Important:** Since Cloudfuse only supports keystone V2 authentication, this will only work for users having a local keystone account.
 
 It is possible to mount SWIFT object storage as a file system with cloudfuse. The :ref:`cloudfuse <cloudfuse>` page has more information.
 
-====
 S3QL
-====
+----
 
 It is possible to mount SWIFT object storage as a file system with s3ql both using swift's native protocol and S3. 
 
@@ -72,23 +65,28 @@ S3QL has features like compression, encryption, data de-duplication, immutable t
 
 The :ref:`s3ql <s3ql>` page has more information.
 
-====
 S3FS
-====
+----
 
 It is possible to mount SWIFT object storage as a file system with s3fs using the S3 protocol. 
 
-The :ref:`s3fsql <s3fs>` page has more information.
+The :ref:`s3fs <s3fs>` page has more information.
 
-=========
+=======
+Backups
+=======
+
 Duplicity
-=========
+---------
 
 Duplicity is a backup tool that amongst others supports cloud storage systems. More information about this can be found at the :ref:`duplicity <dupl>` page.
 
-======
+===============
+Synchronisation
+===============
+
 Rclone
-======
+------
 
 Rclone is the rsync for cloud storage. Here is more information on how to use rclone on the :ref:`rclone <rclone>` page.
 
@@ -103,6 +101,21 @@ It features:
 * Can sync to and from network, eg two different cloud accounts
 * Optional encryption (Crypt)
 * Optional FUSE mount (rclone mount)
+
+==================
+Libraries and APIs
+==================
+
+Python Library
+--------------
+
+The :ref:`python library <pythonlibrary>` page gives you information on the python-swiftclient library.
+
+
+REST API
+--------
+
+SWIFT offers a REST API. Information about this API and some examples are described at the :ref:`API <api>` page.
 
 
 ===============================

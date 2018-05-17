@@ -1,4 +1,4 @@
-.. _s3:
+.. _s3cmd:
 
 ***************************
 S3 commandline client s3cmd

@@ -80,7 +80,7 @@ Deleting metadata
 
 Once set, the custom metadata can be modified in the following manner:
 
-.. image:: /Images/s3removeheader.png
+.. image:: /Images/s3cmdremoveheader.png
 
 List buckets in an account
 --------------------------

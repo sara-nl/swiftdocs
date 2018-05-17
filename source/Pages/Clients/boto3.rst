@@ -31,7 +31,7 @@ Below you find a piece of example code to:
 
     #!/usr/bin/env python
     import boto3
-    import json,sys
+    import json
 
     b3bucket='boto3bucket'
     b3object='boto3object'

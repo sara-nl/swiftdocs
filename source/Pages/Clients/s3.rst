@@ -73,14 +73,14 @@ Setting metadata
 
 S3cmd can be used to set custom metadata during the upload of a file. This is shown below.
 
-.. image:: /Images/s3cmdmeta.png
+.. image:: /Images/s3cmdaddheader.png
 
-Modifying metadata
-------------------
+Deleting metadata
+-----------------
 
-Once set, the custom metadata can be modified in the follwoing manner:
+Once set, the custom metadata can be modified in the following manner:
 
-.. image:: /Images/s3cmdmodify.png
+.. image:: /Images/s3removeheader.png
 
 List buckets in an account
 --------------------------

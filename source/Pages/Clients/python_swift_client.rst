@@ -260,13 +260,17 @@ You can set object to expire. This means that object will be automatically delet
 Temporary URLs
 ==============
 
-With the **TempURL** mechanism it is possible to provide temporary access to objects. This can be really usefull if large opjects need to be downloaded from SWIFT storage that does not have public access.
+With the **TempURL** mechanism it is possible to provide temporary access to objects. This can be really useful if large objects need to be downloaded from SWIFT storage by a user that does not have public access.
 
-First you have to create a key:
+First you have to set a secret key, which can just be any random string
+you make up yourself:
 
 .. code-block:: console
 
     swift post -m 'Temp-URL-Key: <some random string you make up yourself>'
+    
+This is a one-time action. You do not need to set a new key every time
+you want to create a temporary URL for an object.
 
 Then you create the **TempURL**.
 
@@ -274,8 +278,31 @@ Then you create the **TempURL**.
 
     swift tempurl <method> <seconds> <path> <key>
 
-Here **method** may be PUT, GET, HEAD, POST and  DELETE. The amount of seconds that an TempURL is valid is given by **seconds**. The **path** is last part of the url of the **StorageURL** after hostname. Finally the **key** is the random string you have made up yourself.
+Here **method** may be PUT, GET, HEAD, POST and  DELETE and determines
+what action someone can perform with the URL. To simply share an object
+for download the GET action is what you want. 
 
-An example may be found below:
+The amount of seconds that the temporary URL is valid is given by **seconds**. 
+
+The **path** value is the last part of the regular URL of the
+object you want to make available. I.e. the part of the URL after the 
+``https://proxy.swift.surfsara.nl`` hostname. See the example below for details.
+
+Finally the **key** is the random secret key you have made up yourself 
+in the first step.
+
+An example of creating a temporary URL is shown below:
 
 .. image:: /Images/tempurl.png
+
+As the example shows the URL returned by the **swift tempurl** command
+does not provide the complete URL. It needs to be prefixed with the
+actual server URL part (``https://proxy.swift.surfsara.nl``). In case this 
+server URL changes in future you can retrieve the current value with ``swift stat -v``
+and look at the **StorageURL** field.
+
+Note that the generated temporary URL contains fields (**temp_url_sig**
+and *temp_url_expires**) that are checked against what is stored on 
+the server. In this way someone cannot forge a URL to get unauthorized
+access to files.
+

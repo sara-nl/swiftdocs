@@ -17,7 +17,9 @@ Cyberduck can be downloaded from https://cyberduck.io/ and is available for MS W
 Config
 ======
 
-Users having a local keystone account can use the keystone V2 authentication version. We have a pre-configured profile for you. You can download it from: :download:`surfswiftv2.cyberduckprofile <../../Scripts/cyberduck_profile/surfswiftv2.cyberduckprofile>`
+Users having a local keystone account can use the keystone V2 authentication version. We have a pre-configured profile for you. You can download it from: :download:`surfswiftv2.cyberduckprofile <../../Scripts/cyberduck_profile/surfswiftv2.cyberduckprofile>`.
+
+Windows users need to copy the file to %APPDATA%\Cyberduck\Profiles. Mac users need to copy it to ~/Library/Group Containers/G69SCX94XU.duck/Library/Application Support/. 
 
 It is also possible to use the default **Swift** profile that comes with Cyberduck. The configuration is given below:
 
@@ -31,7 +33,7 @@ It is also possible to use the default **Swift** profile that comes with Cyberdu
 .. image:: /Images/cyberduckv2.png
            :width: 650px
 
-Users using their SURFsara Central User Administration (CUA) account need to use keystone V3 authentication. This does not come with cyberduck so therefore we have provided a pre-configured profile for you. You can download it from: :download:`surfswiftv3.cyberduckprofile <../../Scripts/cyberduck_profile/surfswiftv3.cyberduckprofile>`
+Users using their SURFsara Central User Administration (CUA) account need to use keystone V3 authentication. This does not come with cyberduck so therefore we have provided a pre-configured profile for you. You can download it from: :download:`surfswiftv3.cyberduckprofile <../../Scripts/cyberduck_profile/surfswiftv3.cyberduckprofile>`. If you have a local account, then you can also use this profile, but **User Domain** has to be set to **Default**. For CUA users, the **User Domain** has to be set to **CuaUsers**.
 
 The configuration is given below:
 
@@ -68,7 +70,7 @@ Information on how to use it is obtained by:
 
     duck --help
 
-You need to install de profile :download:`surfswift.cyberduckprofile <../../Scripts/cyberduck_profile/surfswift.cyberduckprofile>` in ~/.duck/profiles.
+You need to install de profile :download:`surfswiftv3.cyberduckprofile <../../Scripts/cyberduck_profile/surfswiftv3.cyberduckprofile>` in ~/.duck/profiles.
 
 Getting a listing of a container is done in the following manner:
 

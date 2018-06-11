@@ -81,7 +81,7 @@ The video below shows you how to set things up.
 
 .. raw:: html
 
-    <iframe width="1120" height="630" src="https://www.youtube.com/embed/Dk1-l6yROes" frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Dk1-l6yROes" frameborder="0" allowfullscreen></iframe>
 
 ====
 Duck

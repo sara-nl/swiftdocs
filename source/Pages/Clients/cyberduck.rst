@@ -22,7 +22,7 @@ V2 authentication
 
 Users having a local keystone account can use the keystone V2 authentication version. We have a pre-configured profile for you. You can download it from: :download:`surfswiftv2.cyberduckprofile <../../Scripts/cyberduck_profile/surfswiftv2.cyberduckprofile>`.
 
-Windows users need to copy the file to %APPDATA%\Cyberduck\Profiles. Mac users need to copy it to ~/Library/Group Containers/G69SCX94XU.duck/Library/Application Support/. 
+Windows users need to copy the file to %APPDATA%\\Cyberduck\\Profiles. Mac users need to copy it to ~/Library/Group Containers/G69SCX94XU.duck/Library/Application Support/. 
 
 It is also possible to use the default **Swift** profile that comes with Cyberduck. 
 

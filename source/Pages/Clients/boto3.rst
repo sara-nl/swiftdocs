@@ -49,7 +49,7 @@ Below you find a piece of example code to:
     # Print list of buckets
     print ('Print list of buckets')
     response=resource.list_buckets()
-    print json.dumps(response, indent=4,sort_keys=True, default=str)
+    print (json.dumps(response, indent=4,sort_keys=True, default=str))
     print ('\n\n')
 
     # Create bucket
@@ -84,13 +84,13 @@ Below you find a piece of example code to:
     # Get metadata
     print ('Get metadata of '+b3object)
     response=resource.head_object(Bucket=b3bucket, Key=b3object)
-    print json.dumps(response['Metadata'], indent=4,sort_keys=True, default=str)
+    print (json.dumps(response['Metadata'], indent=4,sort_keys=True, default=str))
     print ('\n\n')
 
     # List objects in bucket
     print ('List objects in bucket '+b3bucket)
     response=resource.list_objects(Bucket=b3bucket)
-    print json.dumps(response, indent=4,sort_keys=True, default=str)
+    print (json.dumps(response, indent=4,sort_keys=True, default=str))
     print ('\n\n')
 
     # Download object

@@ -17,7 +17,9 @@ Cyberduck can be downloaded from https://cyberduck.io/ and is available for MS W
 Config
 ======
 
-Users having a local keystone account can use the keystone V2 authentication version. This comes with cyberduck in the **Swift** profile. The configuration is given below:
+Users having a local keystone account can use the keystone V2 authentication version. We have a pre-configured profile for you. You can download it from: :download:`surfswiftv2.cyberduckprofile <../../Scripts/cyberduck_profile/surfswiftv2.cyberduckprofile>`
+
+It is also possible to use the default **Swift** profile that comes with Cyberduck. The configuration is given below:
 
 .. code-block:: console
 
@@ -29,7 +31,7 @@ Users having a local keystone account can use the keystone V2 authentication ver
 .. image:: /Images/cyberduckv2.png
            :width: 650px
 
-Users using their SURFsara Central User Administration (CUA) account need to use keystone V3 authentication. This does not come with cyberduck so therefore we have provided it for you. You can download it from: :download:`surfswift.cyberduckprofile <../../Scripts/cyberduck_profile/surfswift.cyberduckprofile>`
+Users using their SURFsara Central User Administration (CUA) account need to use keystone V3 authentication. This does not come with cyberduck so therefore we have provided a pre-configured profile for you. You can download it from: :download:`surfswiftv3.cyberduckprofile <../../Scripts/cyberduck_profile/surfswiftv3.cyberduckprofile>`
 
 The configuration is given below:
 

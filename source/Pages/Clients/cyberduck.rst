@@ -17,34 +17,59 @@ Cyberduck can be downloaded from https://cyberduck.io/ and is available for MS W
 Config
 ======
 
+V2 authentication
+-----------------
+
 Users having a local keystone account can use the keystone V2 authentication version. We have a pre-configured profile for you. You can download it from: :download:`surfswiftv2.cyberduckprofile <../../Scripts/cyberduck_profile/surfswiftv2.cyberduckprofile>`.
 
 Windows users need to copy the file to %APPDATA%\Cyberduck\Profiles. Mac users need to copy it to ~/Library/Group Containers/G69SCX94XU.duck/Library/Application Support/. 
 
-It is also possible to use the default **Swift** profile that comes with Cyberduck. The configuration is given below:
+It is also possible to use the default **Swift** profile that comes with Cyberduck. 
 
-.. code-block:: console
-
-    Server: proxy.swift.surfsara.nl
-    Port: 5000
-    Tenant ID/Access Key: <ProjectName>:<Username>
-    Secret Key: <YourPassword>
+For the pre-configured profile you only need to supply the **Tenant ID** and the **Access Key**. Here the **Tenant ID** is your project name and the **Access Key** is your user name. Creating a new bookmark, for example, works as follows:
 
 .. image:: /Images/cyberduckv2.png
            :width: 650px
 
-Users using their SURFsara Central User Administration (CUA) account need to use keystone V3 authentication. This does not come with cyberduck so therefore we have provided a pre-configured profile for you. You can download it from: :download:`surfswiftv3.cyberduckprofile <../../Scripts/cyberduck_profile/surfswiftv3.cyberduckprofile>`. If you have a local account, then you can also use this profile, but **User Domain** has to be set to **Default**. For CUA users, the **User Domain** has to be set to **CuaUsers**.
+After this you are prompted for a password when you click on the bookmark.
 
-The configuration is given below:
+.. image:: /Images/cyberduckv2_2.png
+           :width: 650px
 
-.. code-block:: console
+You can choose to save your password.
 
-    Server: proxy.swift.surfsara.nl
-    Port: 5000
-    Project Name:User Domain:Username: <Project Name>:<User Domain>:<Username>
-    Password: <YourPassword>
+V3 authentication
+-----------------
+
+Users using their SURFsara Central User Administration (CUA) account need to use keystone V3 authentication. This does not come with cyberduck so therefore we have provided a pre-configured profile for you. You can download it from: :download:`surfswiftv3.cyberduckprofile <../../Scripts/cyberduck_profile/surfswiftv3.cyberduckprofile>`. 
+
+For this profile you need to supply the **Project Name**, the **User Domain** and the **User Name**. For CUA users, the **User Domain** has to be set to **CuaUsers**. If you have a local account, then you can also use this profile, but **User Domain** has to be set to **Default**.
+
+Creating a new bookmark, for example, works as follows:
 
 .. image:: /Images/cyberduckv3.png
+           :width: 650px
+
+After this you are prompted for a password when you click on the bookmark.
+
+.. image:: /Images/cyberduckv3_2.png
+           :width: 650px
+
+S3 authentication
+-----------------
+
+It is also possible to use your S3 credentials to connect Cyberduck to SWIFT. Also for this case we have prepared a pre-configured profile that can be downloaded from: :download:`surfs3.cyberduckprofile <../../Scripts/cyberduck_profile/surfs3.cyberduckprofile>`.
+
+For the profile, you need to supply your EC2 credentials, the **Access Key** and the **Secret Key**. 
+
+Creating a new bookmark, for example, works as follows:
+
+.. image:: /Images/cyberducks3.png
+           :width: 650px
+
+After this you are prompted to supply the secret key when you click on the bookmark.
+
+.. image:: /Images/cyberducks3_2.png
            :width: 650px
 
 

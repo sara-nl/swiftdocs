@@ -155,7 +155,7 @@ Make sure that everythting is world readable
 
 .. code-block:: console
 
-      swift post -r '.r:\*,.rlistings' mywebpage
+      swift post -r '.r: \* ,.rlistings' mywebpage
 
 You should be able to hit paths that have an index.html without needing to type the index.html part. So you need to set an index file directive
 

@@ -139,8 +139,6 @@ Owncloud and Nextcloud coupling
 
 It is possible to connect SWIFT to an Owncloud or Nextcloud sync-and-share service as external storage. How you can do this is described at the :ref:`owncloud <owncloud>` page.
 
-S3 koppeling erin
-
 ========================
 Serving Static Web Pages
 ========================
@@ -148,14 +146,16 @@ Serving Static Web Pages
 SWIFT offers the possibility to serve data in containers as a static web site. This can be done by following the steps below.
 
 First create a container
+
 .. code-block:: console
 
       swift post mywebpage
 
 Make sure that everythting is world readable
+
 .. code-block:: console
 
-      swift post -r '.r:*,.rlistings' mywebpage
+      swift post -r '.r:``*``,.rlistings' mywebpage
 
 You should be able to hit paths that have an index.html without needing to type the index.html part. So you need to set an index file directive
 

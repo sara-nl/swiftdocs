@@ -44,3 +44,13 @@ Enable a custom listings style sheet
 .. code-block:: console
 
       swift post -m 'web-listings-css:style.css' mywebpage
+
+.. code-block:: html
+
+    <html>
+    <h1>
+    See the web page <a href="mywebsite/page.html">here</a>.
+    </h1>
+    </html>
+
+.. image:: /Images/web1.png

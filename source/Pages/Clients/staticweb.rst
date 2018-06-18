@@ -37,7 +37,7 @@ Set custom error pages
 
       swift post -m 'web-error:error.html' mywebpage
 
-When a file is requested that does not exist, then a 404 error code is returned. The command above will make sure that a file 404error.html is returned when it is present. You can do this for all HTTP return codes.
+When a file is requested that does not exist, then a **404** error code is returned. The command above will make sure that a file **404error.html** is returned when it is present. You can do this for all HTTP return codes.
 
 Enable a custom listings style sheet
 
@@ -45,12 +45,38 @@ Enable a custom listings style sheet
 
       swift post -m 'web-listings-css:style.css' mywebpage
 
+
+=======
+Example
+=======
+
+Suppose we have the following html files **index.html** which links to **mywebpage/page.html** both shown below. The page **mywebpage/page.html** displays the image **mywebsite/surfsaragreendisklogo.png**.
+
 .. code-block:: html
 
+    <!-- index.html -->
     <html>
     <h1>
     See the web page <a href="mywebsite/page.html">here</a>.
     </h1>
     </html>
 
+.. code-block:: html
+
+    <!-- page.html -->
+    <html>
+    <img src="surfsaragreendisklogo.png">
+    </html>
+
+This web site is uploaded as follows:
+
+.. image:: /Images/upload.png
+
+Now we can view the website on: **<STORAGE_URL>/mywebpage/**.
+
 .. image:: /Images/web1.png
+
+When you click on the link you get:
+
+.. image:: /Images/web2.png
+

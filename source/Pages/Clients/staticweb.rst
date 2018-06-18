@@ -80,3 +80,23 @@ When you click on the link you get:
 
 .. image:: /Images/web2.png
 
+Suppose we create a custom **404error.html** file which looks as follows:
+
+.. code-block:: html
+
+    <html>
+    <h1>
+    This page is nowhere to be found
+    </h1>
+    </html>
+
+We upload this file:
+
+.. code-block:: console
+
+      swift upload mywebpage 404error.html
+
+Then we get the following if we request a file that does not exist.
+
+.. image:: /Images/foetsie.png
+

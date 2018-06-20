@@ -49,11 +49,7 @@ This file can be generated interactively by running the command:
 
     rclone config
 
-Here **<storage url>** is the url of the storage system that can be found using the command:
-
-.. code-block:: console
-
-    curl -i -s -H "X-Auth-User: <user name>" -H "X-Auth-Key: <password>" https://proxy.swift.surfsara.nl/auth/v1.0  | grep X-Storage-Url
+Here **<storage url>** is the url of the storage system that can be found using the swift commandline client or a script that can be downloaded from :download:`get_token_and_storage_url.sh <../../Scripts/bash/get_token_and_storage_url.sh>`
 
 By default this file resides in: **.config/rclone/rclone.conf**. 
 

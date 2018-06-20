@@ -28,11 +28,7 @@ Command line clients
 Swift command line client
 ------------------------
 
-There is a swift command line client written in python. You may find more information about this at: https://www.swiftstack.com/docs/integration/python-swiftclient.html. This page will provide information on how to install the client and how to use it. This page tells you how to install the client on various flavours of Linux. For windows it is rather similar. You need to install python2.7 on windows, see: https://www.howtogeek.com/197947/how-to-install-python-on-windows/. Do not forget to include python in your PATH. The modern versions of Python2.7 are shipped with pip, so for the rest the linux documentation can be followed.
-
-For extra information on how to install de swift command line client on Mac OSX, please, have a look at: :ref:`Installation Instructions of the Python SWIFT Client on OSX <python-swift-client-osx>`.
-
-On this page there is info on how to use the :ref:`Python SWIFT client <python-swift-client>`.
+On this page there is info on how to install and use the :ref:`Python SWIFT client <python-swift-client>`.
 
 S3 command line client s3cmd
 ---------------------------

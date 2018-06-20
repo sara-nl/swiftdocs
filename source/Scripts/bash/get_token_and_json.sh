@@ -1,7 +1,10 @@
 #!/bin/sh
 
+# For CUA users fill in "CuaUsers" here. For local user fill in "Default"
 export OS_PROJECT_DOMAIN_NAME=
+# For CUA users fill in "CuaUsers" here. For local user fill in "Default"
 export OS_USER_DOMAIN_NAME=
+
 export OS_PROJECT_NAME=
 export OS_USERNAME=
 export OS_PASSWORD=

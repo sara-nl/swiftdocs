@@ -32,7 +32,7 @@ Rclone needs some variables set in order to work. You can set these in a **.rclo
     [swift]
     type = swift
     user = <user name>
-    key = <passwurd>
+    key = <password>
     auth = https://proxy.swift.surfsara.nl:5000/v3
     domain = default
     tenant = <project name>
@@ -55,11 +55,15 @@ Here **<storage url>** is the url of the storage system that can be found using 
 
     curl -i -s -H "X-Auth-User: <user name>" -H "X-Auth-Key: <password>" https://proxy.swift.surfsara.nl/auth/v1.0  | grep X-Storage-Url
 
-Don't for get to:
+By default this file resides in: **.config/rclone/rclone.conf**. 
+
+If you want to put the **rclone.conf** file in a non-standard place, then that is possible, but then you need to run your rclone commands in the following manner:
 
 .. code-block:: console
 
-    chmod 600 ${HOME}/.rclone.conf
+    rclone --config /path/to/rclone.conf <command> .......
+
+Make sure that this file is only readable by you.
 
 ==============================================
 Copy source directory to destination container
@@ -99,3 +103,19 @@ Check if files in the source and destination match
     rclone check /my/folder swift:mycontainer
 
 Checks the files in the source and destination match. It compares sizes and hashes (MD5 or SHA1) and logs a report of files which don’t match. It doesn’t alter the source or destination.
+
+==============================================
+Use rclone to mount file systems in user space
+==============================================
+
+Using rclone to mount a file system in user space is done as follows:
+
+.. code-block:: console
+
+    rclone mount swift:[container] /path/to/local/mount
+
+You can unmount this file system by:
+
+.. code-block:: console
+
+     fusermount -u /path/to/local/mount

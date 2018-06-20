@@ -135,6 +135,8 @@ Owncloud and Nextcloud coupling
 
 It is possible to connect SWIFT to an Owncloud or Nextcloud sync-and-share service as external storage. How you can do this is described at the :ref:`owncloud <owncloud>` page.
 
+It is also possible to connect Owncloud or Nextcloud using the S3 protocol. Here the restriction to only local users does not apply.
+
 ========================
 Serving Static Web Pages
 ========================

@@ -22,7 +22,7 @@ Apart from being an rsync-type tool for cloud storage, it has the following feat
     :depth: 4
 
 =============
-Authorisation
+Configuration
 =============
 
 You can use both the SWIFT protocol as well as the S3 protocol to access the system. Rclone needs some variables set in order to work. You can set these in the **rclone.conf** file. When you use SWIFT the **rclone.conf** file can have the following contents:

@@ -25,7 +25,7 @@ Apart from being an rsync-type tool for cloud storage, it has the following feat
 Authorisation
 =============
 
-Rclone needs some variables set in order to work. You can set these in a **.rclone.conf** file in your home directory. This file can have the following contents:
+Rclone needs some variables set in order to work. You can set these in the **rclone.conf** file. This file can have the following contents:
 
 .. code-block:: console
 
@@ -57,7 +57,7 @@ Here **<storage url>** is the url of the storage system that can be found using 
 
 By default this file resides in: **.config/rclone/rclone.conf**. 
 
-If you want to put the **rclone.conf** file in a non-standard place, then that is possible, but then you need to run your rclone commands in the following manner:
+If you want to put the **rclone.conf** file in a non-standard place, then that is possible too, but then you need to run your rclone commands in the following manner:
 
 .. code-block:: console
 

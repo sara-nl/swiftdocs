@@ -27,7 +27,7 @@ Duplicity requires some environment variables to be set, see below:
 
     export SWIFT_USERNAME=<user name>
     export SWIFT_PASSWORD=<password>
-    export SWIFT_AUTHURL="https://proxy.swift.surfsara.nl/auth/v3"
+    export SWIFT_AUTHURL="https://proxy.swift.surfsara.nl:5000/v3"
     export SWIFT_AUTHVERSION="3"
     export SWIFT_TENANTNAME=<project name>
     export SWIFT_USER_DOMAIN_NAME=<user domain name>

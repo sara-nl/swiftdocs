@@ -13,9 +13,9 @@ In this page you will find documentation about the Python SWIFT client that are 
 Installation
 ============
 
-This page will provide information on how to install the python swift client and how to use it. The page `Installation Instructions of the Python SWIFT Client on Linux <python-swift-client-linux>` tells you how to install the client on various flavours of Linux.
+This page will provide information on how to install the python swift client and how to use it. The page :ref:`Installation Instructions of the Python SWIFT Client on Linux <python-swift-client-linux>` tells you how to install the client on various flavours of Linux.
 
-For windows it is rather similar. You need to install python on windows, see: https://www.howtogeek.com/197947/how-to-install-python-on-windows/. Do not forget to include python in your PATH. You can read about installation on windows at `Installation Instructions of the Python SWIFT Client on Windows <python-swift-client-windows>`
+For windows it is rather similar. You need to install python on windows, see: https://www.howtogeek.com/197947/how-to-install-python-on-windows/. Do not forget to include python in your PATH. You can read about installation on windows at :ref:`Installation Instructions of the Python SWIFT Client on Windows <python-swift-client-windows>`
 
 For information on how to install de swift command line client on Mac OSX, please, have a look at: :ref:`Installation Instructions of the Python SWIFT Client on OSX <python-swift-client-osx>`.
 

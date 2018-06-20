@@ -25,7 +25,7 @@ Apart from being an rsync-type tool for cloud storage, it has the following feat
 Authorisation
 =============
 
-Rclone needs some variables set in order to work. You can set these in the **rclone.conf** file. This file can have the following contents:
+You can use both the SWIFT protocol as well as the S3 protocol to access the system. Rclone needs some variables set in order to work. You can set these in the **rclone.conf** file. When you use SWIFT the **rclone.conf** file can have the following contents:
 
 .. code-block:: console
 
@@ -43,13 +43,29 @@ Rclone needs some variables set in order to work. You can set these in the **rcl
 
 Users using keystone coupled with their SURFsara Central User Administration (CUA) account should provide the value **CuaUsers** for *domain* and *tenant_domain*. Users having a local keystone account can leave the **default** values.
 
-This file can be generated interactively by running the command:
+Here **<storage url>** is the url of the storage system that can be found using the swift commandline client or a script that can be downloaded from :download:`get_token_and_storage_url.sh <../../Scripts/bash/get_token_and_storage_url.sh>`
+
+This **rclone.conf** can be generated interactively by running the command:
 
 .. code-block:: console
 
     rclone config
 
-Here **<storage url>** is the url of the storage system that can be found using the swift commandline client or a script that can be downloaded from :download:`get_token_and_storage_url.sh <../../Scripts/bash/get_token_and_storage_url.sh>`
+Using the S3 protocol the **rclone.conf** file looks like this:
+
+.. code-block:: console
+
+   [S3]
+   type = s3
+   env_auth = false
+   access_key_id = <access key>
+   secret_access_key = <secret key>
+   region = other-v2-signature
+   endpoint = https://proxy.swift.surfsara.nl
+   location_constraint = NL
+   acl = private
+   server_side_encryption =
+   storage_class =
 
 By default this file resides in: **.config/rclone/rclone.conf**. 
 

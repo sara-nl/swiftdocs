@@ -55,7 +55,7 @@ This should give you output like this:
 
 .. code-block:: console
 
-    \# openstack ec2 credentials create
+    # openstack ec2 credentials create
     +------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
     | Field      | Value                                                                                                                                               |
     +------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -77,7 +77,7 @@ To list all you EC2 keys you can type the follwoing command:
 
 .. code-block:: console
 
-    \# openstack ec2 credentials list
+    # openstack ec2 credentials list
     +----------------------------------+----------------------------------+----------------------------------+------------------------------------+
     | Access                           | Secret                           | Project ID                       | User ID                            |
     +----------------------------------+----------------------------------+----------------------------------+------------------------------------+
@@ -100,7 +100,7 @@ So, for example:
 
 .. code-block:: console
 
-    \# openstack ec2 credentials show 9c7ea003adef4431adef6772ff4385de
+    # openstack ec2 credentials show 9c7ea003adef4431adef6772ff4385de
     +------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
     | Field      | Value                                                                                                                                               |
     +------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -120,12 +120,13 @@ You can delete an EC2 credential in the following way:
 
 .. code-block:: console
 
-    openstack ec2 credentials delete <access key>
+    # openstack ec2 credentials delete <access key>
 
 So you have, for example:
 
 .. code-block:: console
 
-    \# openstack ec2 credentials delete 9c7ea003adef4431adef6772ff4385de
-    \# openstack ec2 credentials show 9c7ea003adef4431adef6772ff4385de
+    # openstack ec2 credentials delete 9c7ea003adef4431adef6772ff4385de
+
+    # openstack ec2 credentials show 9c7ea003adef4431adef6772ff4385de
     Could not find credential: 8983bd0b0164522463820384625c16e78f3d29c2546392dde4535d0e49066b9d. (HTTP 404) (Request-ID: req-786378da-027d-4ff2-ac2e-25c36a9cf5a5)

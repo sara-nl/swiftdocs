@@ -18,7 +18,6 @@ In this page you will find documentation about the different SWIFT clients that 
 - Support Multipart Upload (required SLO middleware support)
 - Support S3 ACL (under development)
 
-In order to be able to use the S3 protocol, you need to get to create so-called EC2 credentials, i.e. an access key and a secret key. How this works is described in :ref:`EC2 credentials for S3 <s3cred>`.
 
 .. contents:: 
     :depth: 10
@@ -26,6 +25,11 @@ In order to be able to use the S3 protocol, you need to get to create so-called 
 ====================
 Command line clients
 ====================
+
+==============
+Authentication
+==============
+In order to use the SWIFT service you need a user name and a password. But that is not the only thing that you need. SWIFT supports two versions of authentication, v2 and v3. For v2 authentication you need a so-called **tenant**. Unless we agree on something else with you, your tenant is the same as your user name. For v3 authentication, we do not have tenants but **projects**. They are the same. So, again, unless we agree upon something else, your project name is the same as your user name. In addition, in v3 authn we also have **domains** for both users and projects. If you have an account in SURFsara's Central user Administration (CUA) system, then both your **project domain** as your **user domain** is **CuaUsers**. When you only have a local account, then both domains are equal to **Default**. In order to be able to use the S3 protocol, you need to get to create so-called EC2 credentials, i.e. an access key and a secret key. How this works is described in :ref:`EC2 credentials for S3 <s3cred>`.
 
 Swift command line client
 ------------------------

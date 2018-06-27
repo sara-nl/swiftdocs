@@ -18,6 +18,8 @@ In this page you will find documentation about the different SWIFT clients that 
 - Support Multipart Upload (required SLO middleware support)
 - Support S3 ACL (under development)
 
+In order to be able to use the S3 protocol, you need to get to create so-called EC2 credentials, i.e. an access key and a secret key. How this works is described in :ref:`EC2 credentials for S3 <s3cred>`.
+
 .. contents:: 
     :depth: 10
 

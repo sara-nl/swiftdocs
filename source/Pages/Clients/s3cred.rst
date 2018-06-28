@@ -53,20 +53,7 @@ Now you can create a credential in the following way:
 
 This should give you output like this:
 
-.. code-block:: bash
-
-    #openstack ec2 credentials create
-
-    +------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-    | Field      | Value                                                                                                                                               |
-    +------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-    | access     | 9c7ea003adef4431adef6772ff4385de                                                                                                                    |
-    | links      | {u'self': u'https://proxy.swift.surfsara.nl:35357/v3/users/bd47bc49ea29344889234ffefa818e8576/credentials/OS-EC2/9c7ea003adef4431adef6772ff4385de'} |
-    | project_id | 05b2aaf3746adfe932726d88649d95fe                                                                                                                    |
-    | secret     | e330ef98dddf45885efb89a3aaf3c091                                                                                                                    |
-    | trust_id   | None                                                                                                                                                |
-    | user_id    | bd47bc49ea29344889234ffefa818e8576                                                                                                                  |
-    +------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+.. images:: /Images/ec2_create_credentials.png
 
 Here **access** is your access key and **secret** is your secret key.
 
@@ -76,15 +63,7 @@ Listing your keys
 
 To list all you EC2 keys you can type the following command:
 
-.. code-block:: bash
-
-    #openstack ec2 credentials list
-
-    +----------------------------------+----------------------------------+----------------------------------+------------------------------------+
-    | Access                           | Secret                           | Project ID                       | User ID                            |
-    +----------------------------------+----------------------------------+----------------------------------+------------------------------------+
-    | 9c7ea003adef4431adef6772ff4385de | e330ef98dddf45885efb89a3aaf3c091 | 05b2aaf3746adfe932726d88649d95fe | bd47bc49ea29344889234ffefa818e8576 |
-    +----------------------------------+----------------------------------+----------------------------------+------------------------------------+
+.. image:: /Images/ec2_list_credentials.png
 
 It is perfectly OK to have more than one key pair.
 
@@ -100,20 +79,7 @@ To show you the information about a key pair you can do the following:
 
 So, for example:
 
-.. code-block:: bash
-
-    #openstack ec2 credentials show 9c7ea003adef4431adef6772ff4385de
-
-    +------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-    | Field      | Value                                                                                                                                               |
-    +------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-    | access     | 9c7ea003adef4431adef6772ff4385de                                                                                                                    |
-    | links      | {u'self': u'https://proxy.swift.surfsara.nl:35357/v3/users/bd47bc49ea29344889234ffefa818e8576/credentials/OS-EC2/9c7ea003adef4431adef6772ff4385de'} |
-    | project_id | 05b2aaf3746adfe932726d88649d95fe                                                                                                                    |
-    | secret     | e330ef98dddf45885efb89a3aaf3c091                                                                                                                    |
-    | trust_id   | None                                                                                                                                                |
-    | user_id    | bd47bc49ea29344889234ffefa818e8576                                                                                                                  |
-    +------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+.. image:: /Images/ec2_show_credentials.png
 
 ========================
 Delete an EC2 credential
@@ -127,9 +93,4 @@ You can delete an EC2 credential in the following way:
 
 So you have, for example:
 
-.. code-block:: bash
-
-    #openstack ec2 credentials delete 9c7ea003adef4431adef6772ff4385de
-
-    #openstack ec2 credentials show 9c7ea003adef4431adef6772ff4385de
-    Could not find credential: 8983bd0b0164522463820384625c16e78f3d29c2546392dde4535d0e49066b9d. (HTTP 404) (Request-ID: req-786378da-027d-4ff2-ac2e-25c36a9cf5a5)
+.. image:: /Images/ec2_delete_credentials.png

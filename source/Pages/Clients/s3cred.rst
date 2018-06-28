@@ -65,6 +65,7 @@ Listing your keys
 To list all you EC2 keys you can type the following command:
 
 .. image:: /Images/ec2_list_credentials.png
+    :width: 1501pt
 
 It is perfectly OK to have more than one key pair.
 
@@ -81,6 +82,7 @@ To show you the information about a key pair you can do the following:
 So, for example:
 
 .. image:: /Images/ec2_show_credentials.png
+    :width: 1505pt
 
 ========================
 Delete an EC2 credential
@@ -95,3 +97,4 @@ You can delete an EC2 credential in the following way:
 So you have, for example:
 
 .. image:: /Images/ec2_delete_credentials.png
+    :width: 1493pt

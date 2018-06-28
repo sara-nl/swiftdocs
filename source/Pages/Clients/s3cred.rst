@@ -53,7 +53,7 @@ Now you can create a credential in the following way:
 
 This should give you output like this:
 
-.. images:: /Images/ec2_create_credentials.png
+.. image:: /Images/ec2_create_credentials.png
 
 Here **access** is your access key and **secret** is your secret key.
 

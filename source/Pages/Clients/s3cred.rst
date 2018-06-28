@@ -54,7 +54,7 @@ Now you can create a credential in the following way:
 This should give you output like this:
 
 .. image:: /Images/ec2_create_credentials.png
-    :scale: 100
+    :width: 1492pt
 
 Here **access** is your access key and **secret** is your secret key.
 

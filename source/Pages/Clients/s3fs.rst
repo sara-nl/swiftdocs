@@ -32,7 +32,7 @@ Documentation on how to install s3fs can be found at: https://github.com/s3fs-fu
 Configuration
 ============
 
-1. Create a file ${HOME}/.passwd-s3fs with the following content:
+1. Create a file ~/.passwd-s3fs with the following content:
 
 .. code-block:: console
 
@@ -42,7 +42,7 @@ Don't forget:
 
 .. code-block:: console
 
-    chmod 600 ${HOME}/.passwd-s3fs
+    chmod 600 ~/.passwd-s3fs
 
 ========================
 Mounting the file system

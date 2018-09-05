@@ -36,7 +36,7 @@ Don't forget to:
 
 .. code-block:: console
 
-    chmod 600 ${HOME}/.s3cfg
+    chmod 600 ~/.s3cfg
 
 
 Create a bucket

@@ -25,7 +25,7 @@ Documentation on how to install s3ql can be found at: https://bitbucket.org/nikr
 Configuration
 ============
 
-1. Create a file ${HOME}/.s3ql/authinfo2 with the following content:
+1. Create a file ~/.s3ql/authinfo2 with the following content:
 
 For swift:
 
@@ -55,7 +55,7 @@ Don't forget:
 
 .. code-block:: console
 
-    chmod 600 ${HOME}/.s3ql/authinfo2
+    chmod 600 ~/.s3ql/authinfo2
 
 ========================
 Mounting the file system

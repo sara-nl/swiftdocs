@@ -21,7 +21,7 @@ Documentation on how to install cloudfuse can be found at: https://www.cloudvps.
 Configuration
 ============
 
-1. Create a file ${HOME}/.cloudfuse with the following content:
+1. Create a file ~/.cloudfuse with the following content:
 
 .. code-block:: console
 
@@ -35,7 +35,7 @@ Don't forget:
 
 .. code-block:: console
 
-    chmod 600 ${HOME}/.cloudfuse
+    chmod 600 ~/.cloudfuse
 
 2. Create a directory that is to be mounted
 

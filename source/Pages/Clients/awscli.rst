@@ -46,7 +46,7 @@ Don't forget to:
 
     chmod 600 ~/.aws/config
 
-Information on how to the **aswcli** may be found at: `s3`_ and `s3api`_.
+Information on how to use the **aswcli** may be found at: `s3`_ and `s3api`_.
 
 .. Links:
 

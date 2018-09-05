@@ -37,6 +37,8 @@ aws_secret_access_key = <secret key>
 region = NL
 s3 = 
      endpoint_url = https://proxy.swift.surfsara.nl
+s3api = 
+     endpoint_url = https://proxy.swift.surfsara.nl
 
 Don't forget to:
 
@@ -44,5 +46,9 @@ Don't forget to:
 
     chmod 600 ~/.aws/config
 
-Information on how to the **aswcli** may be found at: https://docs.aws.amazon.com/cli/latest/reference/s3/index.html. 
+Information on how to the **aswcli** may be found at: `s3`_ and `s3api`_.
 
+.. Links:
+
+.. _`s3`: https://docs.aws.amazon.com/cli/latest/reference/s3/index.html
+.. _`s3api`: https://docs.aws.amazon.com/cli/latest/reference/s3api/index.html

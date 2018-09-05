@@ -42,6 +42,11 @@ S3 command line client s3cmd
 
 Information on s3cmd may be found at the :ref:`S3cmd <s3cmd>` page.
 
+AWS S3 client
+-------------
+
+Information on AWS commandline client **awscli**  may be found at the :ref:`awscli <awscli>` page.
+
 Curl
 ----
 

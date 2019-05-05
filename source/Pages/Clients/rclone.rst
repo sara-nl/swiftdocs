@@ -124,10 +124,11 @@ Using rclone to mount a file system in user space is done as follows:
 
 .. code-block:: console
 
-    rclone mount swift:[container] /path/to/local/mount
+    rclone mount --daemon swift:[container] /path/to/local/mount
 
 You can unmount this file system by:
 
 .. code-block:: console
 
      fusermount -u /path/to/local/mount
+

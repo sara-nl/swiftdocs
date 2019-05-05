@@ -18,6 +18,8 @@ In this page you will find documentation about the different SWIFT clients that 
 - Support Multipart Upload (required SLO middleware support)
 - Support S3 ACL (under development)
 
+More detailed information on what is and is not supported may be found at: https://docs.openstack.org/swift/latest/s3_compat.html
+
 
 .. contents:: 
     :depth: 10
@@ -154,3 +156,4 @@ Serving Static Web Pages
 ========================
 
 SWIFT offers the possibility to serve data in containers as a static web site. The :ref:`staticweb <staticweb>` page has more.
+

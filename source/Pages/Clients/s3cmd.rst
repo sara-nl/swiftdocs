@@ -101,7 +101,7 @@ Objects in a bucket can be listed using **s3cmd ls** like is shown below:
 
 .. image:: /Images/s3cmdlsobjects.png
 
-If the bucket was, for example, used to store a hierarchy of folders and files, then you need the **--recursive** flag in order to see the contents of a bucket.
+If the bucket was, for example, used to store a hierarchy of folders and files, then you need the **--recursive** flag in order to see the full contents of a bucket.
 
 .. image:: /Images/s3cmdlsobjects2.png
 

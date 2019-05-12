@@ -128,7 +128,7 @@ Where on the first line all objects are thrown away and on the second line the b
 Upload large files (>5GB)
 -------------------------
 
-For files > 5GB files need to be uploaded in parts. Below you can see how this works.
+For files > 5GB files need to be uploaded in parts. This is called multipart uploading. Below you can see how this works.
  
 .. image:: /Images/s3cmdmultipart.png
 

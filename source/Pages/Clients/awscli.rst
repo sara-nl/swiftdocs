@@ -37,8 +37,12 @@ First you need to create a file ~/.aws/config with the following content:
        region = NL
        s3 = 
             endpoint_url = https://proxy.swift.surfsara.nl
+            addressing_style = path
+            signature_version = s3
        s3api = 
             endpoint_url = https://proxy.swift.surfsara.nl
+            addressing_style = path
+            signature_version = s3
 
 Don't forget to:
 

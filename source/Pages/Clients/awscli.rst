@@ -38,11 +38,13 @@ First you need to create a file ~/.aws/config with the following content:
        s3 = 
             endpoint_url = https://proxy.swift.surfsara.nl
             addressing_style = path
-            signature_version = s3
+            signature_version = s3v4
+            payload_signing_enabled = true
        s3api = 
             endpoint_url = https://proxy.swift.surfsara.nl
             addressing_style = path
-            signature_version = s3
+            signature_version = s3v4
+            payload_signing_enabled = true
 
 Don't forget to:
 

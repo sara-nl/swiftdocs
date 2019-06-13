@@ -67,13 +67,6 @@ Information about accessing SWIFT through Cyberduck is provided on the :ref:`cyb
 Mounted file systems
 ====================
 
-Cloudfuse
----------
-
-.. note:: **Important:** Since Cloudfuse only supports keystone V2 authentication, this will only work for users having a local keystone account.
-
-It is possible to mount SWIFT object storage as a file system with cloudfuse. The :ref:`cloudfuse <cloudfuse>` page has more information.
-
 S3QL
 ----
 

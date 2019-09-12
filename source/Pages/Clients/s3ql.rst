@@ -27,18 +27,6 @@ Configuration
 
 1. Create a file ~/.s3ql/authinfo2 with the following content:
 
-For swift:
-
-.. code-block:: console
-
-    [swift]
-    backend-login: <project name>:<user name>
-    backend-password: <password>
-    storage-url: swiftks://proxy.swift.surfsara.nl:5000/RegionOne:<container name>
-    fs-passphrase: <password>
-
-For S3:
-
 .. code-block:: console
 
     [s3]

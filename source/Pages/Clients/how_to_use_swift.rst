@@ -137,15 +137,15 @@ Boto3
 Boto3 is the AWS SDK for python developed by Amazon. It contains of course an S3 part to access object stores. At :ref:`boto3 <boto3>` has information on how to use it.
 
 
-===============================
-Owncloud and Nextcloud coupling
-===============================
+.. ===============================
+   Owncloud and Nextcloud coupling
+   ===============================
 
-.. note:: **Note:** Since Nextcloud and Owncloud only support keystone V2 authentication, this will only work for users having a local keystone account.
+..   .. note:: **Note:** Since Nextcloud and Owncloud only support keystone V2 authentication, this will only work for users having a local keystone account.
 
-It is possible to connect SWIFT to an Owncloud or Nextcloud sync-and-share service as external storage. How you can do this is described at the :ref:`owncloud <owncloud>` page.
+..   It is possible to connect SWIFT to an Owncloud or Nextcloud sync-and-share service as external storage. How you can do this is described at the :ref:`owncloud <owncloud>` page.
 
-It is also possible to connect Owncloud or Nextcloud using the S3 protocol. Here the restriction to only local users does not apply.
+..   It is also possible to connect Owncloud or Nextcloud using the S3 protocol. Here the restriction to only local users does not apply.
 
 ========================
 Serving Static Web Pages

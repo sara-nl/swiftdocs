@@ -27,7 +27,7 @@ Authentication
 ==============
 
 
-First you need to get a token that is valid for 24 hours that can be used instead of user name and password. Authentication is done through keystone. There are two versions supported, V2.0 and V3. We will only describe V3 here. Information on how to generate a token using curl is at: :ref:`Create token using curl <curl-token>`
+First you need to get a token that can be used instead of user name and password. Authentication is done through keystone. Keystone supports V3 authentication. Information on how to generate a token using curl is at: :ref:`Create token using curl <curl-token>`
 
 ==================
 Create a container

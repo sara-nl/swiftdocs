@@ -10,8 +10,6 @@ S3QL has features like compression, encryption, data de-duplication, immutable t
 
 Using s3ql can be mounted as a filesystem using swift's own native protocol and S3 on linux systems.
 
-.. note:: **Important:** Since s3ql only supports keystone V2 authentication, this will only work for users having a local keystone account when mounting using the swift protocol. Such a limitation does not exist using S3.
-
 .. contents:: 
     :depth: 4
 

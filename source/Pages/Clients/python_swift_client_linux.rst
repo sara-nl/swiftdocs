@@ -8,9 +8,9 @@ For Ubuntu and Debian:
 
 .. code-block:: console
 
-    sudo apt-get install python-pip
-    sudo pip install python-swiftclient
-    sudo pip install python-openstackclient
+    sudo apt-get install python3-pip
+    sudo pip3 install python-swiftclient
+    sudo pip3 install python-openstackclient
 
 For CentOS, Redhat and Fedora:
 

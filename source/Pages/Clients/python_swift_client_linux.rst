@@ -16,8 +16,8 @@ For CentOS, Redhat and Fedora:
 
 .. code-block:: console
 
-    sudo yum install python-setuptools
-    sudo easy_install pip
-    sudo pip install python-swiftclient
-    sudo pip install python-openstackclient
+    sudo yum install python3-setuptools
+    sudo yum install python3-pip
+    sudo pip-3 install python-swiftclient
+    sudo pip-3 install python-openstackclient
 

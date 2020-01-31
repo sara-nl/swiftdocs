@@ -364,9 +364,9 @@ Object expiration
 
 You can set object to expire. This means that object will be automatically deleted after a certain period of time. More information on this may be found at: https://docs.openstack.org/user-guide/cli-swift-set-object-expiration.html. This web page holds information about the swift commandline client. But it is straight forward to set the X-Delete-At and X-Delete-After headers in a curl command.
 
-=====================
-Temporary/Signed URLs
-=====================
+=========================
+Temporary/Pre-signed URLs
+=========================
 
 For **SWIFT** these are called **TempURLs** and for **S3** they are called **Signed URLs**. These are urls that give temporary access to objects. How this 
 works is described below.

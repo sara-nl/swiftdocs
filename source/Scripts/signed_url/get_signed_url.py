@@ -54,7 +54,7 @@ def expire_seconds(x):
     return x
 
 # Parse command line arguments
-parser=argparse.ArgumentParser(description='Create a signed s3 url.')
+parser=argparse.ArgumentParser(description='Create a signed s3 url.',formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument('-b','--bucket',required=True,
                     help='supply bucket name')
 parser.add_argument('-o','--object',required=True,

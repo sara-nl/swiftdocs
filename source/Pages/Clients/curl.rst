@@ -364,11 +364,17 @@ Object expiration
 
 You can set object to expire. This means that object will be automatically deleted after a certain period of time. More information on this may be found at: https://docs.openstack.org/user-guide/cli-swift-set-object-expiration.html. This web page holds information about the swift commandline client. But it is straight forward to set the X-Delete-At and X-Delete-After headers in a curl command.
 
-==============
-Temporary URLs
-==============
+=====================
+Temporary/Signed URLs
+=====================
 
-With the **TempURL** mechanism it is possible to provide temporary access to objects. This can be really usefull if large opjects need to be downloaded from SWIFT storage that does not have public access.
+For **SWIFT** these are called **TempURLs** and for **S3** they are called **Signed URLs**. These are urls that give temporary access to objects. How this 
+works is described below.
+
+SWIFT TempURLs
+--------------
+
+With the **TempURL** mechanism it is possible to provide temporary access to objects. This can be really useful if large opjects need to be downloaded from SWIFT storage that does not have public access.
 
 First you have to create a key:
 
@@ -399,3 +405,39 @@ Here **method** may be PUT, GET, HEAD, POST and  DELETE. The amount of seconds t
 An example is below:
 
 .. image:: /Images/tempcurl.png
+
+S3 Signed URLs
+--------------
+A **signed url** gives temporary access to objects. For S3 this is a bit more involved than for SWIFT. Therefore we provide you with a script that generates such an URL. It can be downloaded from: :download:`gen_signed_url.py <../../Scripts/signed_url/gen_signed_url.py>`. 
+It will run for python2 and python3. 
+
+.. code-block:: console
+
+     usage: get_signed_url.py [-h] -b BUCKET -o OBJECT -m {put,get} [-e EXPIRATION]
+
+     Create a signed s3 url.
+
+     optional arguments:
+       -h, --help            show this help message and exit
+       -b BUCKET, --bucket BUCKET
+                             supply bucket name (default: None)
+       -o OBJECT, --object OBJECT
+                             supply object name (default: None)
+       -m {put,get}, --method {put,get}
+                             supply http method (default: None)
+       -e EXPIRATION, --expiration EXPIRATION
+                             supply expiration in seconds (default: 86400)
+
+This script returns a signed URL (SIGNED_URL) that can be used to upload an object like:
+
+.. code-block:: console
+
+     curl --upload-file OBJECT 'SIGNED_URL'
+
+or download an object like:
+
+.. code-block:: console
+
+     curl 'SIGNED_URL' -o OBJECT
+
+Do **NOT** forget the **'**s.

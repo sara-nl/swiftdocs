@@ -408,7 +408,7 @@ An example is below:
 
 S3 Signed URLs
 --------------
-A **signed url** gives temporary access to objects. For S3 this is a bit more involved than for SWIFT. Therefore we provide you with a script that generates such an URL. It can be downloaded from: :download:`gen_signed_url.py <../../Scripts/signed_url/gen_signed_url.py>`. 
+A **signed url** gives temporary access to objects. For S3 this is a bit more involved than for SWIFT. Therefore we provide you with a script that generates such an URL. It can be downloaded from: :download:`get_signed_url.py <../../Scripts/signed_url/get_signed_url.py>`. 
 It will run for python2 and python3. 
 
 .. code-block:: console

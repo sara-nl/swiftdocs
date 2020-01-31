@@ -406,16 +406,16 @@ An example is below:
 
 .. image:: /Images/tempcurl.png
 
-S3 Signed URLs
---------------
-A **signed url** gives temporary access to objects. For S3 this is a bit more involved than for SWIFT. Therefore we provide you with a script that generates such an URL. It can be downloaded from: :download:`get_signed_url.py <../../Scripts/signed_url/get_signed_url.py>`. 
+S3 pre-signed URLs
+------------------
+A **pre-signed url** gives temporary access to objects. For S3 this is a bit more involved than for SWIFT. Therefore we provide you with a script that generates such an URL. It can be downloaded from: :download:`get_presigned_url.py <../../Scripts/presigned_url/get_presigned_url.py>`. 
 It will run for python2 and python3. 
 
 .. code-block:: console
 
-     usage: get_signed_url.py [-h] -b BUCKET -o OBJECT -m {put,get} [-e EXPIRATION]
+     usage: get_presigned_url.py [-h] -b BUCKET -o OBJECT -m {put,get} [-e EXPIRATION]
 
-     Create a signed s3 url.
+     Create a presigned s3 url.
 
      optional arguments:
        -h, --help            show this help message and exit
@@ -428,16 +428,16 @@ It will run for python2 and python3.
        -e EXPIRATION, --expiration EXPIRATION
                              supply expiration in seconds (default: 86400)
 
-This script returns a signed URL (SIGNED_URL) that can be used to upload an object like:
+This script returns a pre-signed URL **PRESIGNED_URL** that can be used to upload an object like:
 
 .. code-block:: console
 
-     curl --upload-file OBJECT 'SIGNED_URL'
+     curl --upload-file OBJECT 'PRESIGNED_URL'
 
 or download an object like:
 
 .. code-block:: console
 
-     curl 'SIGNED_URL' -o OBJECT
+     curl 'PRESIGNED_URL' -o OBJECT
 
 Do **NOT** forget the **'** s.

@@ -440,4 +440,4 @@ or download an object like:
 
      curl 'SIGNED_URL' -o OBJECT
 
-Do **NOT** forget the **'**s.
+Do **NOT** forget the **'** s.

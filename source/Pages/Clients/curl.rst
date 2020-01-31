@@ -368,7 +368,7 @@ You can set object to expire. This means that object will be automatically delet
 Temporary/Pre-signed URLs
 =========================
 
-For **SWIFT** these are called **TempURLs** and for **S3** they are called **Signed URLs**. These are urls that give temporary access to objects. How this 
+For **SWIFT** these are called **TempURLs** and for **S3** they are called **Pre-signed URLs**. These are urls that give temporary access to objects. How this 
 works is described below.
 
 SWIFT TempURLs

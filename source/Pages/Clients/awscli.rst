@@ -52,9 +52,55 @@ Don't forget to:
 
     chmod 600 ~/.aws/config
 
+=====
+Usage
+=====
+
 Information on how to use the **aswcli** may be found at: `s3`_ and `s3api`_.
+
+====================
+S3 Bucket versioning
+====================
+
+It is possible to enable S3 bucket versioning. This can be enabled per bucket. 
+If you do this then when you overwrite an existing object, then you can still retrieve the previous overwritten version. 
+In addition, when you accidentally delete an object, then you can still restore the deleted object when you have bucket versioning enabled.
+
+.. note:: **Note:** No object will ever be thrown away. This means that you may end up with a lot of data in buckets where there is a lot of overwriting and deleting going on. So a manual cleanup may be necessary. Unfortunately, at the time of writing it is not possible to impose a life cycle policy so that versions are automatically cleaned up.
+
+More detailed information on this may be found at: `s3versioning`_. Below we 
+will provide an example on how to do this with the AWS commandline client.
+
+Enabling and suspending bucket versioning
+-----------------------------------------
+
+You can enable versioning on the bucket in the following way:
+
+.. image:: /Images/enabling_bucket_versioning.png
+
+It is not possible to turn off bucket versioning completely. However, it is possible to suspend it. This can be done for example by:
+
+.. code-block:: console
+
+    aws s3api put-bucket-versioning --bucket <bucket name> --versioning-configuration Status=Suspended
+
+Restoring a deleted object
+--------------------------
+
+Now if you by accident delete an object, then you can still retrieve it. Suppose we do the following:
+
+.. image:: /Images/accidental_file_deletion.png
+
+What you can do next is list the versions of the object that are available:
+
+.. image:: /Images/list_versions.png
+
+Here you see a so-called "Delete Marker" indicating that the object has been deleted. In order to retrieve the object you simply have to delete this Delete Marker and you will have your object back. This is done in the following way:
+
+.. image:: /Images/retrieve_lost_file.png
 
 .. Links:
 
 .. _`s3`: https://docs.aws.amazon.com/cli/latest/reference/s3/index.html
 .. _`s3api`: https://docs.aws.amazon.com/cli/latest/reference/s3api/index.html
+.. _`s3versioning`: https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html

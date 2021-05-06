@@ -63,7 +63,7 @@ S3 Bucket versioning
 ====================
 
 It is possible to enable S3 bucket versioning. This can be enabled per bucket. 
-If you do this then when you overwrite an existing object, then you can still retrieve the previous overwritten version. 
+If you do this then when you overwrite an existing object, then you can still retrieve the previously overwritten version. 
 In addition, when you accidentally delete an object, then you can still restore the deleted object when you have bucket versioning enabled.
 
 .. note:: **Note:** No object will ever be thrown away. This means that you may end up with a lot of data in buckets where there is a lot of overwriting and deleting going on. So a manual cleanup may be necessary. Unfortunately, at the time of writing it is not possible to impose a life cycle policy so that versions are automatically cleaned up.
@@ -78,7 +78,7 @@ You can enable versioning on the bucket in the following way:
 
 .. image:: /Images/enabling_bucket_versioning.png
 
-It is not possible to turn off bucket versioning completely. However, it is possible to suspend it. This can be done for example by:
+It is not possible to turn off bucket versioning completely. However, it is possible to suspend it. This can be done by:
 
 .. code-block:: console
 
@@ -87,7 +87,7 @@ It is not possible to turn off bucket versioning completely. However, it is poss
 Restoring a deleted object
 --------------------------
 
-Now if you by accident delete an object, then you can still retrieve it. Suppose we do the following:
+Now if you, by accident, delete an object, then you can still retrieve it. Suppose we do the following:
 
 .. image:: /Images/accidental_file_deletion.png
 
@@ -95,7 +95,7 @@ What you can do next is list the versions of the object that are available:
 
 .. image:: /Images/list_versions.png
 
-Here you see a so-called "Delete Marker" indicating that the object has been deleted. In order to retrieve the object you simply have to delete this Delete Marker and you will have your object back. This is done in the following way:
+Here you see a so-called "Delete Marker" indicating that the object has been deleted. In order to retrieve the deleted object you simply have to delete this Delete Marker and you will have your object back. This is done in the following way:
 
 .. image:: /Images/retrieve_lost_file.png
 

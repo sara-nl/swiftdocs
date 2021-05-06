@@ -99,6 +99,10 @@ Here you see a so-called "Delete Marker" indicating that the object has been del
 
 .. image:: /Images/retrieve_lost_file.png
 
+Restore a previous version
+--------------------------
+TODO
+
 .. Links:
 
 .. _`s3`: https://docs.aws.amazon.com/cli/latest/reference/s3/index.html

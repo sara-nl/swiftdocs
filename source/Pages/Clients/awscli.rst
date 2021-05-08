@@ -121,7 +121,7 @@ Listing version information
 ---------------------------
 You can list all available versions of a particular file including the version id, modification time and if it is the most current version or not in the following way
 
-..image:: /Images/listing_versions3.png
+.. image:: /Images/listing_versions3.png
 
 Cleaning up a versioned bucket
 ------------------------------

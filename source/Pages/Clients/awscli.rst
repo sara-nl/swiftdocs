@@ -95,12 +95,36 @@ What you can do next is list the versions of the object that are available:
 
 .. image:: /Images/list_versions.png
 
-Here you see a so-called "Delete Marker" indicating that the object has been deleted. In order to retrieve the deleted object you simply have to delete this Delete Marker and you will have your object back. This is done in the following way:
+Here you see a so-called "Delete Marker" indicating that the object has been deleted. In order to restore the deleted object you simply have to delete this Delete Marker and you will have your object back. This is done in the following way:
 
 .. image:: /Images/retrieve_lost_file.png
 
-Restore a previous version
---------------------------
+Working with multiple versions
+------------------------------
+Suppose we are uploading different versions of a file with the same name as shown below
+
+.. image:: /Images/multipleversions.png
+
+After that we can list these versions by:
+
+.. image:: /Images/listing_versions2.png
+
+Then we can get the most current version by:
+
+.. image:: /Images/get_current_version.png
+
+You can retrieve an earlier version by:
+
+.. image:: /Images/get_other_version.png
+
+Listing version information
+---------------------------
+You can list all available versions of a particular file including the version id, modification time and if it is the most current version or not in the following way
+
+..image:: /Images/listing_versions3.png
+
+Cleaning up a versioned bucket
+------------------------------
 TODO
 
 .. Links:

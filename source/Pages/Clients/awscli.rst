@@ -142,7 +142,7 @@ If you want to completely remove a bucket with versioning enabled, then you need
 
     aws s3 rb s3://<bucket name>
 
-A script that can be used to delete all object, versions of objects and delete markers is provided at: :download:`delete_all_versions.py <../../Scripts/bash/delete_all_versions.py>`. Please use at your own risk.
+A script that can be used to delete all objects, versions of objects and delete markers is provided at: :download:`delete_all_versions.py <../../Scripts/bash/delete_all_versions.py>`. Please use at your own risk.
 
 
 .. Links:

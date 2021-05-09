@@ -127,7 +127,14 @@ A maximum of 1000 objects are returned at one time. If you have more than 1000 o
 
 Cleaning up a versioned bucket
 ------------------------------
-If you want to completely remove a bucket with versioning enabled, then you need to cleanup all versions of the objects and delete markers first. After that you can remove the bucket.
+If you want to completely remove a bucket with versioning enabled, then you need to cleanup all versions of the objects and delete markers first. After that you can remove the bucket using:
+
+.. code-block:: console
+
+    aws s3 rb s3://<bucket name>
+
+A script that can be used to delete all object, versions of objects and delete markers is provided at: `delete_all_versions.py <../../Scripts/bash/delete_all_versions.py>`. Please use at your own risk.
+
 
 .. Links:
 

@@ -33,7 +33,7 @@ if [ $# -eq 2 ]; then
     key=$2
 fi
 
-# Check is bucket exists and has versionign enabled
+# Check is bucket exists and has versioning enabled
 error_log=`mktemp`
 output=`mktemp`
 retval=`aws s3api get-bucket-versioning --bucket ${bucket_name} 2>${error_log} 1>${output}; echo $?`

@@ -123,9 +123,11 @@ You can list all available versions of a particular file including the version i
 
 .. image:: /Images/listing_versions3.png
 
+A maximum of 1000 objects are returned at one time. If you have more than 1000 objects in a bucket you may want to use a script like the one that is provided at: :download:`versions_listing.sh <../../Scripts/bash/versions_listing.sh>`
+
 Cleaning up a versioned bucket
 ------------------------------
-TODO
+If you want to completely remove a bucket with versioning enabled, then you need to cleanup all versions of the objects and delete markers first. After that you can remove the bucket.
 
 .. Links:
 

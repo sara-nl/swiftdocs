@@ -153,3 +153,10 @@ Serving Static Web Pages
 
 SWIFT offers the possibility to serve data in containers as a static web site. The :ref:`staticweb <staticweb>` page has more.
 
+==========
+Static web
+==========
+
+You can host a static web site directly in Swift.
+
+Information on static web may be found at the :ref:`static web <static-web>` page.

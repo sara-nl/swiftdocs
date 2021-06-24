@@ -1,7 +1,7 @@
 .. _multiuser_buckets:
 
 *****************
-Multiuser buckets
+Delegating access
 *****************
 
 .. contents::

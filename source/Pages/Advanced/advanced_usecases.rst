@@ -14,3 +14,8 @@ Multi-user buckets with S3 access
 *********************************
 
 Information on this usecase may be found at the :ref:`multi-user buckets <multiuser_buckets>` page.
+
+Delegating access using S3 credentials
+**************************************
+
+Information on this usecase may be found at the :ref:`delegating access <delegating_access>` page.

@@ -4,8 +4,8 @@
 Multiuser buckets
 *****************
 
-.. contents:: 
-    :depth: 10
+.. contents::
+    :depth: 2
 
 Consider the following usecase:
 

@@ -10,7 +10,7 @@ Advanced usecases
 
 Information about more advanced usecases
 
-.. toctree::
-   :maxdepth: 1
-   
-   Pages/Advanced/multiuser_buckets
+Multi-user buckets with S3 access
+---------------------------------
+
+Information on this usecase may be found at the :ref:`Multi-user buckets <multiuser_buckets>` page.

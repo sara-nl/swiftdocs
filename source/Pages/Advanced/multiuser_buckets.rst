@@ -27,7 +27,7 @@ Assigning users their role is done by the objectstore administrators.
 
 A user with the 'operator' role can use ACLs to provide access to users with the 'user' role. Note that there are *Swift* ACLs, not S3 ACLs.
 
-These ACLs work on the container level, users can have read-only or read-write access, also listings can be enabled or disabled. 
+These ACLs work on the container level, users can have read-only or read/write access. 
 
 In practice
 

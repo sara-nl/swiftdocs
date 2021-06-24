@@ -4,6 +4,9 @@
 Multiuser buckets
 *****************
 
+.. contents:: 
+    :depth: 10
+
 Consider the following usecase:
 
 * There is a single Swift project
@@ -205,7 +208,7 @@ When using S3 the ACLs are enforced in the same manner. In this example the aws-
     $ aws s3 cp test.txt s3://readwrite/test3.txt
     upload: ./test.txt to s3://readwrite/test3.txt 
 
-    $ aws --profile=jm3-keystone s3 ls s3://readwrite
+    $ aws s3 ls s3://readwrite
     2021-06-24 14:17:37 16 test.txt
     2021-06-23 17:12:51 16 test2.txt
     2021-06-23 17:09:50 16 test3.txt

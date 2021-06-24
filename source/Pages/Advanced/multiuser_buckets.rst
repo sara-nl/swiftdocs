@@ -1,8 +1,8 @@
 .. _multiuser_buckets:
 
-*****************
-Delegating access
-*****************
+******************
+Multi-user buckets
+******************
 
 .. contents::
     :depth: 2

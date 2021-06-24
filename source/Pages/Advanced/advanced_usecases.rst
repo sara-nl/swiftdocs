@@ -11,6 +11,6 @@ Advanced usecases
 Information about more advanced usecases
 
 Multi-user buckets with S3 access
----------------------------------
+*********************************
 
 Information on this usecase may be found at the :ref:`Multi-user buckets <multiuser_buckets>` page.

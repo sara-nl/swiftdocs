@@ -76,6 +76,7 @@ We also have a second, local,  keystone user:
 We can add this user a as swiftoperator to the project:
 ::
     # openstack role add --user 237ab7ef9d9c473abe02bce488fe0818 --project 57549dbccee745289c9d6967da211854 swiftoperator
+.. note::  This needs to be done by a SURF admin.
 
 This user now has full access to the project.
 ::
@@ -91,6 +92,7 @@ This user now has full access to the project.
 To revoke access for this user:
 ::
     # openstack role remove --user 237ab7ef9d9c473abe02bce488fe0818 --project 75e0e9efc598123c98a339e871e819b1 swiftoperator
+.. note::  This needs to be done by a SURF admin.
 
 In the environment variables domains must be made explicit, since we are now mixing domains:
 ::
@@ -134,10 +136,12 @@ We add the user to the project, with the 'user' role:
     | swiftoperator | user2@Default   |       | testproject@CuaUsers |        |        | False     |
     | user          | user3@Default   |       | testproject@CuaUsers |        |        | False     |
     +---------------+-----------------+-------+----------------------+--------+--------+-----------+
+.. note::  This needs to be done by a SURF admin.
 
 The user also needs the default project set to the project in question:
 ::
     # openstack user set --project 75e0e9efc598123c98a339e871e819b1 user3
+.. note::  This needs to be done by a SURF admin.
 
 At this point the user can't do anything, first the ACLs must be set. This can be done by a user with the 'swiftoperator' role.
 

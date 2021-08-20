@@ -63,9 +63,10 @@ Download a folder with contents to a directory
 Creating and deleting buckets and objects, listing buckets and objects
 ----------------------------------------------------------------------
 
-:ref:`awscli <awscli>` client
-
 For these operations we recommend to use an other s3 client like :ref:`awscli <awscli>`.
+
+Large files
+-----------
 
 .. note:: **Important:** By default **s5cmd** spawns 256 workers to do its tasks in parallel. This tool is really well suited for transferring a large number of small files. For larger files (>= 1GB) we have found it beneficial to reduce the number of workers to a smaller number, like for example 20, in order to reduce the load on the client side. To do that use the commandline flag **--numworkers <value>**. An example is shown below:
 

@@ -52,15 +52,15 @@ AWS S3 client
 
 Information on AWS commandline client **awscli**  may be found at the :ref:`awscli <awscli>` page.
 
-Curl
-----
-
-Information about accessing SWIFT through the **curl** command is given on the :ref:`curl <curl>` page.
-
 S3 command line client s5cmd
 ----------------------------
 
 Information on s5cmd may be found at the :ref:`S5cmd <s5cmd>` page.
+
+Curl
+----
+
+Information about accessing SWIFT through the **curl** command is given on the :ref:`curl <curl>` page.
 
 ====
 GUIs

@@ -4,6 +4,16 @@
 awscli
 ******
 
+In this page you will find documentation about an S3 client. Here we refer to **buckets**, this is the S3 term for **containers**. They are identical.
+
+.. contents::
+    :depth: 4
+
+
+------
+awscli
+------
+
 In this page you will find documentation about the AWS commandline client.
 
 .. contents:: 

@@ -4,6 +4,12 @@
 S3 commandline client s5cmd
 ***************************
 
+In this page you will find documentation about an S3 client. Here we refer to **buckets**, this is the S3 term for **containers**. They are identical.
+
+.. contents::
+    :depth: 4
+
+
 =====
 s5cmd
 =====

@@ -4,7 +4,7 @@
 S3 commandline client s3cmd
 ***************************
 
-In this page you will find documentation about the S3 clients. Here we refer to **buckets**, this is the S3 term for **containers**. They are identical.
+In this page you will find documentation about an S3 client. Here we refer to **buckets**, this is the S3 term for **containers**. They are identical.
 
 .. contents:: 
     :depth: 4

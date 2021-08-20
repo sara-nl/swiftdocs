@@ -54,7 +54,7 @@ Upload a folder with contents to a bucket
 
     s5cmd --endpoint-url https://proxy.swift.surfsara.nl cp  --destination-region NL <folder name> s3://mybucket
 
-Download a folder with contents to a directory
+Download a bucket with contents to a directory
 ----------------------------------------------
 
 .. code-block:: console

@@ -44,7 +44,7 @@ It can be downloaded by:
 
 .. code-block:: console
 
-    s5cmd --endpoint-url https://proxy.swift.surfsara.nl cp  --source-region NL <file name> s3://mybucket/myobject <file name>
+    s5cmd --endpoint-url https://proxy.swift.surfsara.nl cp  --source-region NL s3://mybucket/myobject filename
 
 
 Upload a folder with contents to a bucket
@@ -52,14 +52,14 @@ Upload a folder with contents to a bucket
 
 .. code-block:: console
 
-    s5cmd --endpoint-url https://proxy.swift.surfsara.nl cp  --destination-region NL <folder name> s3://mybucket
+    s5cmd --endpoint-url https://proxy.swift.surfsara.nl cp  --destination-region NL /path/to/my/folder s3://mybucket
 
 Download a bucket with contents to a directory
 ----------------------------------------------
 
 .. code-block:: console
 
-    s5cmd --endpoint-url https://proxy.swift.surfsara.nl cp  --source-region NL s3://mybucket/* <folder name>/.
+    s5cmd --endpoint-url https://proxy.swift.surfsara.nl cp  --source-region NL s3://mybucket/* /path/to/my/folder/.
 
 Creating and deleting buckets and objects, listing buckets and objects
 ----------------------------------------------------------------------
@@ -69,8 +69,8 @@ For these operations we recommend to use an other s3 client like :ref:`awscli <a
 Large files
 -----------
 
-.. note:: **Important:** By default **s5cmd** spawns 256 workers to do its tasks in parallel. This tool is really well suited for transferring a large number of small files. For larger files (>= 1GB) we have found it beneficial to reduce the number of workers to a smaller number, like for example 20, in order to reduce the load on the client side. To do that use the commandline flag **--numworkers <value>**. An example is shown below:
+.. note:: **Important:** By default **s5cmd** spawns 256 workers to do its tasks in parallel. This tool is really well suited for transferring a large number of small files. For larger files (>= 1GB) we have found it beneficial to reduce the number of workers to a smaller number, like for example 20, in order to reduce the load on the client side. To do that use the commandline flag :literal:`--numworkers <value>`. An example is shown below:
 
 .. code-block:: console
 
-    s5cmd --endpoint-url https://proxy.swift.surfsara.nl --numworkers 20 cp  --destination-region NL <file name> s3://mybucket/myobject
+    s5cmd --endpoint-url https://proxy.swift.surfsara.nl --numworkers 20 cp  --destination-region NL /path/to/my/folder/with/big/files s3://mybucket

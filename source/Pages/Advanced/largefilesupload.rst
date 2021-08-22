@@ -10,6 +10,6 @@ it parallelises the upload of a single large file as well resulting in a very go
 
 .. code-block:: console
 
-    s5cmd --endpoint-url https://proxy.swift.surfsara.nl cp -c 64 --destination-region NL /path/to/my/huge/file s3://<mybucket>/<mybigfile>
+    s5cmd --endpoint-url https://proxy.swift.surfsara.nl cp -c 64 --destination-region NL /path/to/my/huge/file s3://mybucket/mybigfile
 
 In the example above the large file is concurrently uploaded in 64 chunks. But you may play around with this value to see what gives you the best performance.

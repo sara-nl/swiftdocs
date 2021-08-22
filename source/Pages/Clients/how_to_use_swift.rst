@@ -65,10 +65,10 @@ It is possible to mount SWIFT object storage as a file system with s3fs using th
 
 The :ref:`s3fs <s3fs>` page has more information.
 
-RCLONE
+Rclone
 ------
 
-Using :literal:`rclone mount` you use :ref:`rclone <rclone>` to mount SWIFT using the native SWIFT protocol as well as S3.
+Using :literal:`rclone mount` you can use :ref:`rclone <rclone>` to mount SWIFT using the native SWIFT protocol as well as S3.
 
 =======
 Backups

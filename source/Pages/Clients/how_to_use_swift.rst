@@ -10,7 +10,7 @@ How to use SWIFT
 
 In this page you will find documentation about the different SWIFT clients that are available. SWIFT can be addressed with its own native protocol and with the S3 protocol. 
 
-More detailed information on the compatibility with AWS S3 may be found at: https://docs.openstack.org/swift/latest/s3_compat.html
+More detailed information on the compatibility of the SWIFT S3 implementation with AWS S3 may be found at: https://docs.openstack.org/swift/latest/s3_compat.html
 
 .. contents:: 
     :depth: 10

@@ -33,8 +33,6 @@ Apart from being an rsync-type tool for cloud storage, it has the following feat
 .. contents:: 
     :depth: 4
 
-.. _rcloneconfiguration:
-
 =============
 Configuration
 =============

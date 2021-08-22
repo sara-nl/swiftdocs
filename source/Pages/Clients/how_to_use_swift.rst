@@ -40,7 +40,7 @@ Command line clients
 * Swift
    * :ref:`Python SWIFT client <python-swift-client>`.
    * :ref:`Curl <curl>`
-   * :ref:`rclone <rclone#rcloneconfiguration>`
+   * :ref:`rclone <rclone>`
 
 * S3
    * :ref:`S3cmd <s3cmd>`

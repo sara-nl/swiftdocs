@@ -6,7 +6,7 @@ Uploading large files
 
 When you want to upload a small number of large files (>1GB) then :ref:`s5cmd <s5cmd>` would be a good choice. This tools uses parallelism in its uploads. 
 Not only in terms of many concurrent uploads of a large number of files but 
-it parallelises the upload of a single large file as well resulting in a very good performance. This can be done using the **-c** or **:literal:`--concurrency`** flag. This works as follows:
+it parallelises the upload of a single large file as well resulting in a very good performance. This can be done using the **-c** or :literal:`--concurrency` flag. This works as follows:
 
 .. code-block:: console
 

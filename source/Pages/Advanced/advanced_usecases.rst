@@ -29,3 +29,9 @@ Uploading large files
 *********************
 
 When you want to upload some large files you may want to have a look at :ref:`this page <largefilesupload>`.
+
+Uploading many small files
+**************************
+
+When you want to upload a folder with many small files, then you may want to have a look at :ref:`this page <manysmallfilesupload>`.
+

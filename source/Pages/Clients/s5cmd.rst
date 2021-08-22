@@ -16,7 +16,7 @@ s5cmd
 
 The tool **s5cmd** allows you to parallelise workloads like data transfers. This is very convenient when you want to copy a whole directory with its contents to an S3 bucket or vice versa. More information may be found at https://github.com/peak/s5cmd, https://joshua-robinson.medium.com/s5cmd-for-high-performance-object-storage-7071352cc09d and https://aws.amazon.com/blogs/opensource/parallelizing-s2-workloads-s5cmd/. 
 
-The key quality of **s5cmd** is its greatly improved performanc as compared to s3cmd and aws cli etc. 
+The key benefit of **s5cmd** is its greatly improved performance as compared to s3cmd and aws cli etc. 
 
 Installation
 ------------

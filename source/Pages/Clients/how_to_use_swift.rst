@@ -42,18 +42,21 @@ Swift command line client
 
 On this page there is info on how to install and use the :ref:`Python SWIFT client <python-swift-client>`.
 
-S3 command line client s3cmd
-----------------------------
+S3 command line clients
+-----------------------
+
+S3cmd
+^^^^^
 
 Information on s3cmd may be found at the :ref:`S3cmd <s3cmd>` page.
 
 AWS S3 client
--------------
+^^^^^^^^^^^^^
 
 Information on AWS commandline client **awscli**  may be found at the :ref:`awscli <awscli>` page.
 
-S3 command line client s5cmd
-----------------------------
+S5cmd
+^^^^^
 
 Information on s5cmd may be found at the :ref:`S5cmd <s5cmd>` page.
 

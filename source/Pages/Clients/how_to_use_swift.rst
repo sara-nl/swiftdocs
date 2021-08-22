@@ -47,19 +47,13 @@ Command line clients
 
    * :ref:`S5cmd <s5cmd>`, for parallel file transfers
 
-Curl
-----
-
-Information about accessing SWIFT through the **curl** command is given on the :ref:`curl <curl>` page.
+* :ref:`Curl <curl>`
 
 ====
 GUIs
 ====
 
-Cyberduck
----------
-
-Information about accessing SWIFT through Cyberduck is provided on the :ref:`cyberduck <cyberduck>` page.
+* :ref:`Cyberduck <cyberduck>`
 
 ====================
 Mounted file systems

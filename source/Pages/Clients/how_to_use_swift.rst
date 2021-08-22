@@ -40,13 +40,13 @@ Command line clients
 * Swift
    * :ref:`Python SWIFT client <python-swift-client>`.
    * :ref:`Curl <curl>`
-   * :ref:`rclone <rclone#rclone_configuration>`
+   * :ref:`rclone <rclone>`
 
 * S3
    * :ref:`S3cmd <s3cmd>`
    * AWS S3 client (:ref:`awscli <awscli>`)
    * :ref:`S5cmd <s5cmd>`, for parallel file transfers
-   * :ref:`rclone <rclone#rclone_configuration>`
+   * :ref:`rclone <rclone>`
 
 
 ====
@@ -92,18 +92,6 @@ Rclone
 ------
 
 Rclone is the rsync for cloud storage. Here is more information on how to use rclone on the :ref:`rclone <rclone>` page.
-
-It features:
-
-* MD5/SHA1 hashes checked at all times for file integrity
-* Timestamps preserved on files
-* Partial syncs supported on a whole file basis
-* Copy mode to just copy new/changed files
-* Sync (one way) mode to make a directory identical
-* Check mode to check for file hash equality
-* Can sync to and from network, eg two different cloud accounts
-* Optional encryption (Crypt)
-* Optional FUSE mount (rclone mount)
 
 ==================
 Libraries and APIs

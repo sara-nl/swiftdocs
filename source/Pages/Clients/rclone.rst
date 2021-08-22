@@ -4,7 +4,19 @@
 rclone
 ******
 
-In this page you will find documentation about rclone. Rclone is the rsync for cloud storage. Information on how to install rclone and other things may be found at: https://rclone.org. More swift related information is available at: https://rclone.org/swift.
+In this page you will find documentation about rclone. Rclone is the rsync for cloud storage. It features:
+
+* MD5/SHA1 hashes checked at all times for file integrity
+* Timestamps preserved on files
+* Partial syncs supported on a whole file basis
+* Copy mode to just copy new/changed files
+* Sync (one way) mode to make a directory identical
+* Check mode to check for file hash equality
+* Can sync to and from network, eg two different cloud accounts
+* Optional encryption (Crypt)
+* Optional FUSE mount (rclone mount)
+
+Information on how to install rclone and other things may be found at: https://rclone.org. More swift related information is available at: https://rclone.org/swift.
 
 Apart from being an rsync-type tool for cloud storage, it has the following features:
 

@@ -38,7 +38,7 @@ Command line clients
 ====================
 
 * Swift
-   *:ref:`Python SWIFT client <python-swift-client>`.
+   * :ref:`Python SWIFT client <python-swift-client>`.
    * :ref:`Curl <curl>`
    * :ref:`rclone <rclone#id3>`
 

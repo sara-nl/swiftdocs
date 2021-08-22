@@ -8,22 +8,12 @@
 How to use SWIFT
 ****************
 
-In this page you will find documentation about the different SWIFT clients that are available. SWIFT can be addressed with its own native protocol and with the S3 protocol. With respect to S3 the following is supported:
+In this page you will find documentation about the different SWIFT clients that are available. SWIFT can be addressed with its own native protocol and with the S3 protocol. 
 
-
-- Support AWS Signature Version 2, 4 (Version 4 is ready for only keystone)
-- Support Services APIs (GET)
-- Support Bucket APIs (GET/PUT/DELETE/HEAD)
-- Support Object APIs (GET/PUT/DELETE/HEAD)
-- Support Multipart Upload (required SLO middleware support)
-- Support S3 ACL (under development)
-
-More detailed information on what is and is not supported may be found at: https://docs.openstack.org/swift/latest/s3_compat.html
-
+More detailed information on the compatibility with AWS S3 may be found at: https://docs.openstack.org/swift/latest/s3_compat.html
 
 .. contents:: 
     :depth: 10
-
 
 ==============
 Authentication

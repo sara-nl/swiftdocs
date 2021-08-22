@@ -40,13 +40,13 @@ Command line clients
 * Swift
    * :ref:`Python SWIFT client <python-swift-client>`.
    * :ref:`Curl <curl>`
-   * :ref:`rclone <rclone#id3>`
+   * :ref:`rclone <rclone#rclone_configuration>`
 
 * S3
    * :ref:`S3cmd <s3cmd>`
    * AWS S3 client (:ref:`awscli <awscli>`)
    * :ref:`S5cmd <s5cmd>`, for parallel file transfers
-   * :ref:`rclone <rclone#id3>`
+   * :ref:`rclone <rclone#rclone_configuration>`
 
 
 ====

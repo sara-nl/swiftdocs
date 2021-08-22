@@ -4,7 +4,7 @@
 rclone
 ******
 
-In this page you will find documentation about rclone. Rclone is the rsync for cloud storage. It features:
+In this page you will find documentation about rclone. Rclone is a command line programme to manage files on cloud storages. It runs on various platforms like Windows, Linux and OSX. It features:
 
 * MD5/SHA1 hashes checked at all times for file integrity
 * Timestamps preserved on files

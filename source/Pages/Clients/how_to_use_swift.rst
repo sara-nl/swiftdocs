@@ -70,6 +70,11 @@ Rclone
 
 Using :literal:`rclone mount` you can use :ref:`rclone <rclone>` to mount SWIFT using the native SWIFT protocol as well as S3.
 
+Goofys
+------
+
+Goofys is a tool written in golang to mount S3 boject store. Information may be found at the :ref:`goofys <goofys>` page.
+
 =======
 Backups
 =======

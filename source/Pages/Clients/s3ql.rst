@@ -8,7 +8,7 @@ In this page you will find documentation on how to mount SWIFT object storage as
 
 S3QL has features like compression, encryption, data de-duplication, immutable trees and snapshotting which make it especially suitable for online backup and archival.
 
-Using s3ql can be mounted as a filesystem using swift's own native protocol and S3 on linux systems.
+Using s3ql a container/bucket can be mounted as a filesystem using swift's own native protocol and S3 on linux systems.
 
 .. contents:: 
     :depth: 4
@@ -17,7 +17,7 @@ Using s3ql can be mounted as a filesystem using swift's own native protocol and 
 Installation
 ============
 
-Documentation on how to install s3ql can be found at: https://bitbucket.org/nikratio/s3ql/wiki/Home. On linux, your distro often has the s3ql package in their repos, see: https://bitbucket.org/nikratio/s3ql/wiki/Installation. There is also a user guide: http://www.rath.org/s3ql-docs/index.html.
+Documentation on how to install s3ql can be found at: https://github.com/s3ql/s3ql/ and https://www.rath.org/s3ql-docs/installation.html. There is also a user guide: http://www.rath.org/s3ql-docs/index.html.
 
 ============
 Configuration

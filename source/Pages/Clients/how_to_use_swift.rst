@@ -37,17 +37,17 @@ In order to be able to use the S3 protocol, you need to get to create so-called 
 Command line clients
 ====================
 
-* Swift command line client :ref:`Python SWIFT client <python-swift-client>`.
+* Swift
+   *:ref:`Python SWIFT client <python-swift-client>`.
+   * :ref:`Curl <curl>`
+   * :ref:`rclone <rclone#id3>`
 
-* S3 command line clients
-
+* S3
    * :ref:`S3cmd <s3cmd>`
-
    * AWS S3 client (:ref:`awscli <awscli>`)
-
    * :ref:`S5cmd <s5cmd>`, for parallel file transfers
+   * :ref:`rclone <rclone#id3>`
 
-* :ref:`Curl <curl>`
 
 ====
 GUIs

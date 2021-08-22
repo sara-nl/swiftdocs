@@ -20,3 +20,8 @@ Multi-user buckets
 
 Information on this usecase may be found at the :ref:`multi-user buckets <multiuser_buckets>` page.
 
+Serving Static Web Pages
+************************
+
+SWIFT offers the possibility to serve data in containers as a static web site. The :ref:`staticweb <staticweb>` page has more.
+

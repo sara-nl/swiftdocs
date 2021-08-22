@@ -443,6 +443,6 @@ or download an object like:
 Do **NOT** forget the **'** s.
 
 Serving Static Web Pages
-************************
+------------------------
 
 SWIFT offers the possibility to serve data in containers as a static web site. The :ref:`staticweb <staticweb>` page has more.

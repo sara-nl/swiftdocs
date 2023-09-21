@@ -23,7 +23,7 @@ Installation
 
 Binaries can be downloaded from: https://github.com/peak/s5cmd/releases for Windows, Mac and Linux.
 
-For Openstack SWIFT, please use version 1.4.0rc1 or above since there is an issue with specifying regions with older versions. 
+For Openstack SWIFT, please use version 2.2.2 or above.
 
 Authentication
 --------------
@@ -34,17 +34,23 @@ In order to authenticate you need the same as for the :ref:`awscli <awscli>` cli
 Upload/Download an object to/from a bucket
 ------------------------------------------
 
+First you need to setup the endpoint of the service as an environment variable:
+
+.. code-block:: console
+
+    export S3_ENDPOINT_URL=https://proxy.swift.surfsara.nl
+
 An object can be uploaded to a bucket by the following command:
 
 .. code-block:: console
 
-    s5cmd --endpoint-url https://proxy.swift.surfsara.nl cp  --destination-region NL <file name> s3://mybucket/myobject
+    s5cmd cp <file name> s3://mybucket/myobject
 
 It can be downloaded by:
 
 .. code-block:: console
 
-    s5cmd --endpoint-url https://proxy.swift.surfsara.nl cp  --source-region NL s3://mybucket/myobject filename
+    s5cmd cp s3://mybucket/myobject <filename>
 
 
 Upload a folder with contents to a bucket
@@ -52,19 +58,15 @@ Upload a folder with contents to a bucket
 
 .. code-block:: console
 
-    s5cmd --endpoint-url https://proxy.swift.surfsara.nl cp  --destination-region NL /path/to/my/folder s3://mybucket
+    s5cmd cp /path/to/my/folder s3://mybucket
 
 Download a bucket with contents to a directory
 ----------------------------------------------
 
 .. code-block:: console
 
-    s5cmd --endpoint-url https://proxy.swift.surfsara.nl cp  --source-region NL s3://mybucket/* /path/to/my/folder/.
+    s5cmd cp s3://mybucket/* /path/to/my/folder/.
 
-Creating and deleting buckets and objects, listing buckets and objects
-----------------------------------------------------------------------
-
-For these operations we recommend to use an other s3 client like :ref:`awscli <awscli>`.
 
 Large files
 -----------
@@ -73,4 +75,4 @@ Large files
 
 .. code-block:: console
 
-    s5cmd --endpoint-url https://proxy.swift.surfsara.nl --numworkers 20 cp  --destination-region NL /path/to/my/folder/with/big/files s3://mybucket
+    s5cmd --numworkers 20 cp /path/to/my/folder/with/big/files s3://mybucket

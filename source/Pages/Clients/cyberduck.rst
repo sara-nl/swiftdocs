@@ -20,24 +20,20 @@ Config
 V3 authentication
 -----------------
 
-Users using their SURFsara Central User Administration (CUA) account need to use keystone V3 authentication. This does not come with cyberduck so therefore we have provided a pre-configured profile for you. You can download it from: :download:`surfswiftv3.cyberduckprofile <../../Scripts/cyberduck_profile/surfswiftv3.cyberduckprofile>`. 
+Users using their SURFsara Central User Administration (CUA) account need to use keystone V3 authentication. We have provided a pre-configured profile for you. You can download it from: :download:`surfswiftv3.cyberduckprofile <../../Scripts/cyberduck_profile/surfswiftv3.cyberduckprofile>`. Double click this file to install and register it.
 
-For this profile you need to supply the **Project Name**, the **User Domain** and the **User Name**. For CUA users, the **User Domain** has to be set to **CuaUsers**. If you have a local account, then you can also use this profile, but **User Domain** has to be set to **Default**.
+For this profile you need to supply the **Project Name**, the **User Domain** and the **User Name**. For CUA users, the **User Domain** has to be set to **CuaUsers**. If you have a local account, then you can also use this profile, but **User Domain** has to be set to **Default**. Finally you have to supply your password.
 
 Creating a new bookmark, for example, works as follows:
 
 .. image:: /Images/cyberduckv3.png
            :width: 650px
 
-After this you are prompted for a password when you click on the bookmark.
-
-.. image:: /Images/cyberduckv3_2.png
-           :width: 650px
 
 S3 authentication
 -----------------
 
-It is also possible to use your S3 credentials to connect Cyberduck to SWIFT. Also for this case we have prepared a pre-configured profile that can be downloaded from: :download:`surfs3.cyberduckprofile <../../Scripts/cyberduck_profile/surfs3.cyberduckprofile>`.
+It is also possible to use your S3 credentials to connect Cyberduck to SWIFT. Also for this case we have prepared a pre-configured profile that can be downloaded from: :download:`surfs3.cyberduckprofile <../../Scripts/cyberduck_profile/surfs3.cyberduckprofile>`. Double click this file to install and register it.
 
 For the profile, you need to supply your EC2 credentials, the **Access Key** and the **Secret Key**. 
 
@@ -45,22 +41,6 @@ Creating a new bookmark, for example, works as follows:
 
 .. image:: /Images/cyberducks3.png
            :width: 650px
-
-After this you are prompted to supply the secret key when you click on the bookmark.
-
-.. image:: /Images/cyberducks3_2.png
-           :width: 650px
-
-
-=====
-Video
-=====
-
-The video below shows you how to set things up.
-
-.. raw:: html
-
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Dk1-l6yROes" frameborder="0" allowfullscreen></iframe>
 
 ====
 Duck

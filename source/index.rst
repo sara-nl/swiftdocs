@@ -15,7 +15,7 @@
 SURF Object Store documentation
 *******************************
 
-Welcome to the documentation for using the SURF Object Store service at `SURF`_ which is based on Openstack SWIFT. The information on these pages will help you get started with SWIFT. We welcome your comments at helpdesk@surfsara.nl or your :ref:`contribution <doc-howto>` to help us improve the documentation.
+Welcome to the documentation for using the SURF Object Store service at `SURF`_ which is based on Openstack SWIFT. The information on these pages will help you get started with SWIFT. We welcome your comments at servicedesk@surf.nl or your :ref:`contribution <doc-howto>` to help us improve the documentation.
 
 .. sidebar:: Need help?
 

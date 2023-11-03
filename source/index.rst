@@ -36,4 +36,4 @@ Welcome to the documentation for using the SURF Object Store service at `SURF`_ 
 .. Links:
 
 .. _`SURF`: https://surf.nl/
-.. _`SURF Servicedesk portal`: https://servicedesk.surf.nl/jira/plugins/servlet/samlsso?redirectTo=%2Fservicedesk%2Fcustomer%2Fplugins%2Fservlet%2Fdesk%2Fportal%2F13
+.. _`SURF Servicedesk portal`: https://servicedesk.surf.nl/

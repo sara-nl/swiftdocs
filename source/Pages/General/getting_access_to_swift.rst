@@ -28,5 +28,5 @@ It is also possible to obtain an access key and secret key for S3 access.
 
 .. Links:
 
-.. _`SURF Servicedesk portal`: https://servicedesk.surf.nl/jira/plugins/servlet/samlsso?redirectTo=%2Fservicedesk%2Fcustomer%2Fplugins%2Fservlet%2Fdesk%2Fportal%2F13
+.. _`SURF Servicedesk portal`: https://servicedesk.surf.nl/
 

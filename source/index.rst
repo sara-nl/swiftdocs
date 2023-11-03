@@ -15,11 +15,11 @@
 SURF Object Store documentation
 *******************************
 
-Welcome to the documentation for using the SURF Object Store service at `SURF`_ which is based on Openstack SWIFT. The information on these pages will help you get started with SWIFT. We welcome your comments at servicedesk@surf.nl or your :ref:`contribution <doc-howto>` to help us improve the documentation.
+Welcome to the documentation for using the SURF Object Store service at `SURF`_ which is based on Openstack SWIFT. The information on these pages will help you get started with SWIFT. We welcome your comments at `SURF Servicedesk portal`_ or your :ref:`contribution <doc-howto>` to help us improve the documentation.
 
 .. sidebar:: Need help?
 
-	Do you need help with this? We are more than willing to assist! Just contact us at servicedesk@surf.nl.
+	Do you need help with this? We are more than willing to assist! Just contact us at `SURF Servicedesk portal`_.
 
 
 .. toctree::
@@ -36,3 +36,4 @@ Welcome to the documentation for using the SURF Object Store service at `SURF`_ 
 .. Links:
 
 .. _`SURF`: https://surf.nl/
+.. _`SURF Servicedesk portal`: https://servicedesk.surf.nl/jira/plugins/servlet/samlsso?redirectTo=%2Fservicedesk%2Fcustomer%2Fplugins%2Fservlet%2Fdesk%2Fportal%2F13

@@ -20,7 +20,7 @@ Config
 V3 authentication
 -----------------
 
-Users using their SURFsara Central User Administration (CUA) account need to use keystone V3 authentication. We have provided a pre-configured profile for you. You can download it from: :download:`surfswiftv3.cyberduckprofile <../../Scripts/cyberduck_profile/surfswiftv3.cyberduckprofile>`. Double click this file to install and register it.
+Users using their SURF Central User Administration (CUA) account need to use keystone V3 authentication. We have provided a pre-configured profile for you. You can download it from: :download:`surfswiftv3.cyberduckprofile <../../Scripts/cyberduck_profile/surfswiftv3.cyberduckprofile>`. Double click this file to install and register it.
 
 For this profile you need to supply the **Project Name**, the **User Domain** and the **User Name**. For CUA users, the **User Domain** has to be set to **CuaUsers**. If you have a local account, then you can also use this profile, but **User Domain** has to be set to **Default**. Finally you have to supply your password.
 
@@ -62,4 +62,4 @@ Getting a listing of a container is done in the following manner:
 
     duck --username <project name:DOMAIN:user name> --password <password> -q -l surfswift://proxy.swift.surfsara.nl:5000/<container>
 
-Users using keystone together with their SURFsara Central User Adminitration (CUA) account need to specify **CuaUsers** as **DOMAIN**. Users using local keystone account need to specify **default** as **DOMAIN**.
+Users using keystone together with their SURF Central User Adminitration (CUA) account need to specify **CuaUsers** as **DOMAIN**. Users using local keystone account need to specify **default** as **DOMAIN**.

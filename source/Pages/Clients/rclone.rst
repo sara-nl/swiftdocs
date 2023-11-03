@@ -53,7 +53,7 @@ You can use both the SWIFT protocol as well as the S3 protocol to access the sys
     storage_url = <storage url>
     auth_version = 3
 
-Users using keystone coupled with their SURFsara Central User Administration (CUA) account should provide the value **CuaUsers** for *domain* and *tenant_domain*. Users having a local keystone account can leave the **default** values.
+Users using keystone coupled with their SURF Central User Administration (CUA) account should provide the value **CuaUsers** for *domain* and *tenant_domain*. Users having a local keystone account can leave the **default** values.
 
 Here **<storage url>** is the url of the storage system that can be found using the swift commandline client or a script that can be downloaded from :download:`get_token_and_storage_url.sh <../../Scripts/bash/get_token_and_storage_url.sh>`
 

@@ -45,7 +45,7 @@ The script looks like this:
     _user_domain='Default'
     _project_domain='Default'
 
-    #For keystone accounts coupled to SURFsara CUA accounts
+    #For keystone accounts coupled to SURF CUA accounts
     #_user_domain='CuaUsers'
     #_project_domain='CuaUsers'
 
@@ -67,7 +67,7 @@ The script looks like this:
     container_name = 'my-new-container'
     conn.put_container(container_name)
 
-If you are a keystone user with a local account, then both the *project domain*  and *user domain* have the value **Default**. If you are a keystone user with a SURFsara Central User Administration (CUA) account, then both the *project domain* and *user domain* must be set to **CuaUsers**.
+If you are a keystone user with a local account, then both the *project domain*  and *user domain* have the value **Default**. If you are a keystone user with a SURF Central User Administration (CUA) account, then both the *project domain* and *user domain* must be set to **CuaUsers**.
 
 ===========
 Service API
@@ -126,7 +126,7 @@ Having done this you can run your script to do,for example, a **stat** on an obj
                 )
         pprint.pprint(header_data)
 
-If you are a keystone user with a local account, then both the *project domain*  and *user domain* have the value **Default**. If you are a keystone user with a SURFsara Central User Administration (CUA) account, then both the *project domain* and *user domain* must be set to **CuaUsers**.
+If you are a keystone user with a local account, then both the *project domain*  and *user domain* have the value **Default**. If you are a keystone user with a SURF Central User Administration (CUA) account, then both the *project domain* and *user domain* must be set to **CuaUsers**.
 Running this you could get something like this:
 
 .. image:: /Images/pythonstat.png

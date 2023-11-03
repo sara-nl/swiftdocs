@@ -172,7 +172,7 @@ For users using keystone with a local acount should set:
     export OS_USER_DOMAIN_NAME="Default"
     export OS_PROJECT_DOMAIN_NAME="Default"
 
-Users using keystone in combination with the SURFsara Central User Administration (CUA) account should set:
+Users using keystone in combination with the SURF Central User Administration (CUA) account should set:
 
 .. code-block:: bash
 

@@ -18,7 +18,7 @@ More detailed information on the compatibility of the SWIFT S3 implementation wi
 ==============
 Authentication
 ==============
-In order to use the SWIFT service you need a user name and a password. SWIFT supports so-called **v3** authentication. For v3 authentication, you have **projects**. Unless we agree upon something else, your project name is the same as your user name. In v3 authentication there are **domains** for both users and projects. If you have an account in SURFsara's Central User Administration (CUA) system, then both your **project domain** as your **user domain** is **CuaUsers**. When you only have a local account, then both domains are equal to **Default**. 
+In order to use the SWIFT service you need a user name and a password. SWIFT supports so-called **v3** authentication. For v3 authentication, you have **projects**. Unless we agree upon something else, your project name is the same as your user name. In v3 authentication there are **domains** for both users and projects. If you have an account in SURF's Central User Administration (CUA) system, then both your **project domain** as your **user domain** is **CuaUsers**. When you only have a local account, then both domains are equal to **Default**. 
 
 In order to be able to use the S3 protocol, you need to get to create so-called EC2 credentials, i.e. an access key and a secret key. How this works is described in :ref:`EC2 credentials for S3 <s3cred>`.
 

@@ -32,7 +32,7 @@ The following environment variables are useful to set if you don't want them to 
     export OS_AUTH_URL=https://proxy.swift.surfsara.nl:5000/v3
     export OS_IDENTITY_API_VERSION=3
 
-This holds for local keystone users. Users using their account in the SURFsara Central User Administration (CUA) through keystone need the specify the following:
+This holds for local keystone users. Users using their account in the SURF Central User Administration (CUA) through keystone need the specify the following:
 
 .. code-block:: console
 

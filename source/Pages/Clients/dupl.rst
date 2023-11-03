@@ -33,7 +33,7 @@ Duplicity requires some environment variables to be set, see below:
     export SWIFT_USER_DOMAIN_NAME=<user domain name>
     export SWIFT_PROJECT_DOMAIN_NAME=<project domain name>
 
-For keystone users with local account the *user domain name* and the *project domain name* is **Default**. For users using keystone coupled to their SURFsara Central User Administration (CUA) account, *user domain name* and *project domain name* must be set to **CuaUsers**.
+For keystone users with local account the *user domain name* and the *project domain name* is **Default**. For users using keystone coupled to their SURF Central User Administration (CUA) account, *user domain name* and *project domain name* must be set to **CuaUsers**.
 
 =================
 Automatic backups

@@ -221,7 +221,7 @@ Here is an example:
 
 For downloading you can just proceed as usual. For more information on this we refer to the documentation on large objects at: https://docs.openstack.org/developer/swift/overview_large_objects.html. 
 
-There are Dynamic Large Objects and Static Large Objects when it comes to large object uploads. The :ref:`curl <curl>` page has some information on this. Both type of objects have their use cases. Dynamic Large Objects may have issues with end to end integrity of data which Static Large Objects don't. Therefore we recommend to use the **--use-slo** flag. 
+There are Dynamic Large Objects and Static Large Objects when it comes to large object uploads. The :ref:`curl <curl>` page has some information on this. Both type of objects have their use cases. Dynamic Large Objects may have issues with end to end integrity of data which Static Large Objects don't. Therefore we recommend to use the **\-\-use-slo** flag. 
 
 =================
 Object versioning

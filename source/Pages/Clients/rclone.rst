@@ -16,7 +16,7 @@ In this page you will find documentation about rclone. Rclone is a command line 
 * Optional encryption (Crypt)
 * Optional FUSE mount (rclone mount)
 
-Information on how to install rclone and other things may be found at: https://rclone.org. More swift related information is available at: https://rclone.org/swift.
+Information on how to install rclone and other things may be found at: https://rclone.org. Rclone is available for various platforms like deb- or rpm-based linux distro's and Windows. More swift related information is available at: https://rclone.org/swift.
 
 Apart from being an rsync-type tool for cloud storage, it has the following features:
 
@@ -67,17 +67,17 @@ Using the S3 protocol the **rclone.conf** file looks like this:
 
 .. code-block:: console
 
-   [S3]
-   type = s3
-   env_auth = false
-   access_key_id = <access key>
-   secret_access_key = <secret key>
-   region = other-v2-signature
-   endpoint = https://proxy.swift.surfsara.nl
-   location_constraint = NL
-   acl = private
-   server_side_encryption =
-   storage_class =
+     [S3]
+     type = s3
+     env_auth = false
+     access_key_id = <access key>
+     secret_access_key = <secret key>
+     region = NL
+     endpoint = https://proxy.swift.surfsara.nl
+     location_constraint = NL
+     acl = private
+     server_side_encryption =
+     storage_class =
 
 By default this file resides in: **.config/rclone/rclone.conf**. 
 

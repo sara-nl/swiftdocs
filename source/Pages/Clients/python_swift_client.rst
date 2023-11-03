@@ -191,9 +191,9 @@ It is possible to copy objects. This goes as follows:
 
 .. code-block:: console
 
-    swift copy -- destination /newcontainer/newobject oldcontainer oldobject
+    swift copy --destination /newcontainer/newobject oldcontainer oldobject
 
-Also the object's metadata will be copied, unless you use the **--fresh-metadata** flag. 
+Also the object's metadata will be copied, unless you use the ** --fresh-metadata ** flag. 
 
 
 ===============================

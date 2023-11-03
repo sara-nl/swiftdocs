@@ -19,7 +19,7 @@ Welcome to the documentation for using the SURF Object Store service at `SURF`_ 
 
 .. sidebar:: Need help?
 
-	Do you need help with this? We are more than willing to assist! Just contact us at helpdesk@surfsara.nl.
+	Do you need help with this? We are more than willing to assist! Just contact us at servicedesk@surf.nl.
 
 
 .. toctree::

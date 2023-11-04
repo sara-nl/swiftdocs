@@ -13,7 +13,7 @@ In this page you will find documentation about the different SWIFT clients that 
 More detailed information on the compatibility of the SWIFT S3 implementation with AWS S3 may be found at: https://docs.openstack.org/swift/latest/s3_compat.html
 
 .. contents:: 
-    :depth: 10
+    :depth: 2
 
 ==============
 Authentication

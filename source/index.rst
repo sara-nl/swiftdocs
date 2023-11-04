@@ -25,9 +25,9 @@ Welcome to the documentation for using the SURF Object Store service at `SURF`_ 
 .. toctree::
    :maxdepth: 1
    
-   Pages/General/about_swift
-   Pages/General/getting_access_to_swift
-   Pages/Clients/how_to_use_swift
+   Pages/General/about_object_store
+   Pages/General/getting_access_to_object_store
+   Pages/Clients/how_to_use_object_store
    Pages/Advanced/advanced_usecases
    
 

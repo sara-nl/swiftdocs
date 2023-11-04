@@ -1,7 +1,7 @@
 .. _rclone:
 
 ******
-rclone
+Rclone
 ******
 
 In this page you will find documentation about rclone. Rclone is a command line programme to manage files on cloud storages. It runs on various platforms like Windows, Linux and OSX. It features:
@@ -15,6 +15,7 @@ In this page you will find documentation about rclone. Rclone is a command line 
 * Can sync to and from network, eg two different cloud accounts
 * Optional encryption (Crypt)
 * Optional FUSE mount (rclone mount)
+* Optional GUI
 
 Information on how to install rclone and other things may be found at: https://rclone.org. Rclone is available for various platforms like deb- or rpm-based linux distro's and Windows. More swift related information is available at: https://rclone.org/swift.
 
@@ -144,3 +145,27 @@ You can unmount this file system by:
 
      fusermount -u /path/to/local/mount
 
+====================================
+Use rclone as GUI for object storage
+====================================
+
+Rclone can also provide you with a GUI for object storage. This GUI can be 
+started from the commandline. It will startup a web server on your computer 
+to which you can connect using a browser. Then you have to connect to: 
+**http://127.0.0.1:5572**
+
+Since it starts up a web server 
+you can protect this server by a username and password that you select yourself.
+Below you can see the command to startup the web server with a user name and 
+password.
+
+.. code-block:: console
+
+    rclone rcd --rc-web-gui --rc-user <user name> --rc-pass <password>
+
+If you do not want to set a username and password for your then you can startup
+the web server by the following command:
+
+.. code-block:: console
+
+    rclone rcd --rc-web-gui --rc-no-auth

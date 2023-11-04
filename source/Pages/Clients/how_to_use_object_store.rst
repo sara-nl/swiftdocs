@@ -44,6 +44,7 @@ GUIs
 ====
 
 * :ref:`Cyberduck <cyberduck>`
+* :ref:`rclone <rclone>`
 
 ====================
 Mounted file systems

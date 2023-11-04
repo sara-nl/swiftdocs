@@ -1,4 +1,4 @@
-.. SWIFT Documentation documentation master file, created by
+.. Object Store Documentation documentation master file, created by
    sphinx-quickstart on Tue Dec 16 11:32:42 2014.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
@@ -15,7 +15,7 @@
 SURF Object Store documentation
 *******************************
 
-Welcome to the documentation for using the SURF Object Store service at `SURF`_ which is based on Openstack SWIFT. The information on these pages will help you get started with SWIFT. We welcome your comments at `SURF Servicedesk portal`_ or your :ref:`contribution <doc-howto>` to help us improve the documentation.
+Welcome to the documentation for using the SURF Object Store service at `SURF`_ which is based on Openstack SWIFT. The information on these pages will help you get started with SURF Object Store. We welcome your comments at `SURF Servicedesk portal`_ or your :ref:`contribution <doc-howto>` to help us improve the documentation.
 
 .. sidebar:: Need help?
 

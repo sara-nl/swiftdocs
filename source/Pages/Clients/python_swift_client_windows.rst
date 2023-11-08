@@ -5,6 +5,7 @@ Installation Instructions of the Python SWIFT Client on Windows
 ***************************************************************
 
 First you need to install `python`_ on Windows. This will also include **pip** which you need to install packages.
+Do not forget to include python in your PATH.
 
 Installation of the python SWIFT client on Windows goes as follows:
 

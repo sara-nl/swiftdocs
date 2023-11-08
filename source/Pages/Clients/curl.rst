@@ -156,13 +156,12 @@ which shows container metadata and gets the object data.
 Uploading large files (>5GB)
 ============================
 
-It is only possible to upload objects with the size of at most 5GB in one go to SWIFT. It is possible to up and download larger objects. For this we refer to the documentation on large objects at: https://docs.openstack.org/developer/swift/overview_large_objects.html. 
+It is only possible to upload objects with the size of at most 5GB in one go to SWIFT. It is possible to up and download larger objects. For this we refer to the documentation on large objects at: https://docs.openstack.org/swift/latest/overview_large_objects.html. 
 
 There are dynamic large objects and static large objects. 
  - **Static Large Object** - Relies on a user provided manifest file. Advantageous for use cases when the developer wants to “mashup” objects from multiple containers and reference them in a self-generated manifest file. This gives you immediate access to the concatenated object after the manifest is accepted. Uploading segments into separate containers provides the opportunity for improved concurrent upload speeds. On the downside, the concatenated object’s definition is frozen until the manifest is replaced.
  - **Dynamic Large Object** - Relies on a container-listing zero-byte manifest file. Advantageous for use cases when the developer might add/remove segments from the manifest (e.g. objects from the container) at any time. A few disadvantages include reliance on eventual consistent container listings which means there may be some delay before access to the full concatenated object is available. There is also a requirement for all segments to be in a single container, which can limit concurrent upload speeds.
 
-This page: https://docs.openstack.org/developer/swift/api/large_objects.html#comparison-of-static-and-dynamic-large-objects gives an overview of the difference between dynamic large objects and static large objects.
 
 Dynamic Large Objects
 ---------------------

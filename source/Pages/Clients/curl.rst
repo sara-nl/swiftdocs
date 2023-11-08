@@ -354,7 +354,7 @@ Here below is an example:
 ACLs
 ====
 
-There are account ACLs and container ACLs. With account ACLs you can grant different levels of access to all containers in an account. More information on this can be found at: https://www.swiftstack.com/docs/cookbooks/swift_usage/account_acl.html
+There are account ACLs and container ACLs. With account ACLs you can grant different levels of access to all containers in an account. More information on this can be found at: https://docs.openstack.org/swift/latest/overview_acl.html.
 
 There are also container ACLs. Using container ACLs you grant different levels of access to individual containers. More information on this is available at: https://www.swiftstack.com/docs/cookbooks/swift_usage/container_acl.html.
 
@@ -362,7 +362,7 @@ There are also container ACLs. Using container ACLs you grant different levels o
 Object expiration
 =================
 
-You can set object to expire. This means that object will be automatically deleted after a certain period of time. More information on this may be found at: `object_expiration_doc_link <https://docs.openstack.org/swift/latest/api/object-expiration.html>`_. This web page holds information about the swift commandline client. But it is straight forward to set the X-Delete-At and X-Delete-After headers in a curl command.
+You can set object to expire. This means that object will be automatically deleted after a certain period of time. More information on this may be found at: https://docs.openstack.org/swift/latest/api/object-expiration.html. This web page holds information about the swift commandline client. But it is straight forward to set the X-Delete-At and X-Delete-After headers in a curl command.
 
 =========================
 Temporary/Pre-signed URLs
@@ -447,7 +447,3 @@ Serving Static Web Pages
 ========================
 
 SWIFT offers the possibility to serve data in containers as a static web site. The :ref:`staticweb <staticweb>` page has more.
-
-.. Links:
-
-.. _object_expiration_doc_link: https://docs.openstack.org/swift/latest/api/object-expiration.html

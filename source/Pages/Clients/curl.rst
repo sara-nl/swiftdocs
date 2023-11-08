@@ -354,9 +354,7 @@ Here below is an example:
 ACLs
 ====
 
-There are account ACLs and container ACLs. With account ACLs you can grant different levels of access to all containers in an account. More information on this can be found at: https://docs.openstack.org/swift/latest/overview_acl.html.
-
-There are also container ACLs. Using container ACLs you grant different levels of access to individual containers. More information on this is available at: https://www.swiftstack.com/docs/cookbooks/swift_usage/container_acl.html.
+There are account ACLs and container ACLs. With account ACLs you can grant different levels of access to all containers in an account. Using container ACLs you grant different levels of access to individual containers. More information on this is available at: https://docs.openstack.org/swift/latest/overview_acl.html.
 
 =================
 Object expiration

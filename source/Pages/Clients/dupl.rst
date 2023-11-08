@@ -12,7 +12,8 @@ More information on Duplicity may be found at the `Duplicity <http://duplicity.n
 
 - https://help.ubuntu.com/community/DuplicityBackupHowto
 - https://www.zetta.io/en/help/articles-tutorials/backup-linux-duply/
-- https://raymii.org/s/tutorials/Encrypted_Duplicity_Backups_to_Openstack_Swift_Objectstore.html.
+- https://raymii.org/s/tutorials/Encrypted_Duplicity_Backups_to_Openstack_Swift_Objectstore.html
+- https://jnidzwetzki.github.io/2022/08/07/backup-to-s3-with-duplicity.html
 
 .. contents:: 
     :depth: 4

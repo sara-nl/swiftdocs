@@ -4,9 +4,13 @@
 Installation Instructions of the Python SWIFT Client on Windows
 ***************************************************************
 
-Installation on windows goes as follows:
+First you need to install **python** and **pip** on Windows. 
+
+Installation of the python SWIFT client on Windows goes as follows:
 
 .. code-block:: console
 
     pip install python-swiftclient
-    pip install python-openstackclient
+    pip install python-keystoneclient
+
+. note:: **Note:** You need to install the "Microsoft C++ Build Tools" for this to work.

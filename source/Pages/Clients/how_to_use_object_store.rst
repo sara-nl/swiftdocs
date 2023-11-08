@@ -80,6 +80,8 @@ Goofys is a tool written in golang to mount S3 object stores. Information may be
 Backups
 =======
 
+The SURF Object Store can also be used to use as backend store to store your backups. More information on how to do that may be found below.
+
 Duplicity
 ---------
 

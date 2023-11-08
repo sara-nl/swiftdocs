@@ -362,7 +362,7 @@ There are also container ACLs. Using container ACLs you grant different levels o
 Object expiration
 =================
 
-You can set object to expire. This means that object will be automatically deleted after a certain period of time. More information on this may be found at: https://docs.openstack.org/user-guide/cli-swift-set-object-expiration.html. This web page holds information about the swift commandline client. But it is straight forward to set the X-Delete-At and X-Delete-After headers in a curl command.
+You can set object to expire. This means that object will be automatically deleted after a certain period of time. More information on this may be found at: |https://docs.openstack.org/swift/latest/api/object-expiration.html|. This web page holds information about the swift commandline client. But it is straight forward to set the X-Delete-At and X-Delete-After headers in a curl command.
 
 =========================
 Temporary/Pre-signed URLs
@@ -447,3 +447,5 @@ Serving Static Web Pages
 ========================
 
 SWIFT offers the possibility to serve data in containers as a static web site. The :ref:`staticweb <staticweb>` page has more.
+
+.. |https://docs.openstack.org/swift/latest/api/object-expiration.html| raw::html

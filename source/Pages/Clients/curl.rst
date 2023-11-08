@@ -448,4 +448,6 @@ Serving Static Web Pages
 
 SWIFT offers the possibility to serve data in containers as a static web site. The :ref:`staticweb <staticweb>` page has more.
 
+.. Links:
+
 .. _object_expiration_doc_link: https://docs.openstack.org/swift/latest/api/object-expiration.html

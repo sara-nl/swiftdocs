@@ -56,6 +56,8 @@ This holds for local keystone users. Users using their account in the SURF Centr
 
 for the **OS_PROJECT_DOMAIN_NAME** and **OS_USER_DOMAIN_NAME** environment variables. Apart from using your user name and password, it is also possible to generate a token that is valid for 24 hours. This may be handy if you are running the script elsewhere on a batch system and you don't want to send you username and password with your batch job. You can use this token to access your data in SWIFT.
 
+Setting the environment variables as shown above holds for Linux and mac OSX. For Windows you may want to have a look at: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.3
+
 You can get a token in the following way:
 
 .. image:: /Images/stat.png

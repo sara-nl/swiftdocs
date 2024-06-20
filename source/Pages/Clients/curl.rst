@@ -240,20 +240,11 @@ Create the manifest file:
 
 .. code-block:: bash
 
-    MANIFEST="["
+     curl -I -s -H "X-Auth-Token: ${<token>}" "${<storage url>}/mybigfilescontainer_segments/xaa
+     curl -I -s -H "X-Auth-Token: ${<token>}" "${<storage url>}/mybigfilescontainer_segments/xab
+     curl -I -s -H "X-Auth-Token: ${<token>}" "${<storage url>}/mybigfilescontainer_segments/xac
 
-    for sp in /mybigfilescontainer_segments/xaa /mybigfilescontainer_segments/xab /mybigfilescontainer_segments/xac; do
-
-        ETAG=$(curl -I -s -H "X-Auth-Token: ${<token>}" "${<storage url>}$sp" | perl -ane '/Etag:/ and print $F[1];');
-        SIZE=$(curl -I -s -H "X-Auth-Token: ${<token>}" "${<storage url>}$sp" | perl -ane '/Content-Length:/ and print $F[1];');
-        SEGMENT="{\"path\":\"$sp\",\"etag\":\"$ETAG\",\"size_bytes\":$SIZE}";
-        [ "$MANIFEST" != "[" ] && MANIFEST="$MANIFEST,";   MANIFEST="$MANIFEST$SEGMENT";
-
-    done
-    
-    MANIFEST="${MANIFEST}]"
-
-This generates a manifest file like this:
+Now use the output of the commands above to get the etag and size (content-length) of the segments to generate a manifest file like this:
 
 .. code-block:: console
 
@@ -271,7 +262,7 @@ Then upload the manifest file like this:
 
 .. code-block:: console
 
-    curl -i -X PUT -H "X-Auth-Token: ${<token>}" ${<storage url>}/mybigfilescontainer/file?multipart-manifest=put --data-binary "$MANIFEST"
+    curl -i -X PUT -H "X-Auth-Token: ${<token>}" ${<storage url>}/mybigfilescontainer/file?multipart-manifest=put --data-binary "<manifest file>"
 
 After this you can download the file as normal.
 

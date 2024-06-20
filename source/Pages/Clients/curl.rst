@@ -240,9 +240,9 @@ Create the manifest file:
 
 .. code-block:: bash
 
-     curl -I -s -H "X-Auth-Token: ${<token>}" "${<storage url>}/mybigfilescontainer_segments/xaa
-     curl -I -s -H "X-Auth-Token: ${<token>}" "${<storage url>}/mybigfilescontainer_segments/xab
-     curl -I -s -H "X-Auth-Token: ${<token>}" "${<storage url>}/mybigfilescontainer_segments/xac
+    curl -I -s -H "x-auth-token: ${<token>}" ${<storage url>}/mybigfilescontainer_segments/xaa
+    curl -I -s -H "x-auth-token: ${<token>}" ${<storage url>}/mybigfilescontainer_segments/xab
+    curl -I -s -H "x-auth-token: ${<token>}" ${<storage url>}/mybigfilescontainer_segments/xac
 
 Now use the output of the commands above to get the etag and size (content-length) of the segments to generate a manifest file like this:
 

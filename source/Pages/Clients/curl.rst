@@ -238,7 +238,7 @@ Upload the three segments to the segments container:
 
 Create the manifest file:
 
-.. code-block:: bash
+.. code-block:: console
 
     curl -I -s -H "x-auth-token: ${<token>}" ${<storage url>}/mybigfilescontainer_segments/xaa
     curl -I -s -H "x-auth-token: ${<token>}" ${<storage url>}/mybigfilescontainer_segments/xab

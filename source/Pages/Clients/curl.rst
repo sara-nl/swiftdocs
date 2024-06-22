@@ -298,18 +298,6 @@ Renaming containers and objects
 
 It is possible to rename an object but not in the classical sense. First you need to copy an object using, for example, the method above and then throw the original object away.
 
-===============
-Bulk operations
-===============
-
-You can upload a tarball which will be extracted by SWIFT.
-
-.. image:: /Images/bulk_upload.png
-
-It is possible to do a bulk deletion. First you create a text file with all the containers and objects to be deleted. After that everything goes as follows:
-
-.. image:: /Images/bulk_deletion.png
-
 =================
 Object versioning
 =================
@@ -326,7 +314,7 @@ Then create a container for the latest version of the objects and tell SWIFT whe
 
 .. code-block:: console
 
-    curl -i -X PUT -H "X-Auth-Token: <token>" -H "X-Versions-Location: mycontainer_versions" <storage url>/mycontainer
+    curl -i -X POST -H "X-Auth-Token: <token>" -H "X-Versions-Location: mycontainer_versions" <storage url>/mycontainer
 
 If you upload an object to a container and after that, upload a newer version of an object to the same container. The older version of the object is placed an a separate container. In this case that container would be **maersk_versions** under a name like:
 

@@ -1,29 +1,24 @@
-from __future__ import print_function
+#!/usr/bin/python3
 
 import sys
+import os
+import re
 import argparse
+import textwrap
+import configparser
 import datetime
 import hashlib
 import hmac
 import requests
 from requests.utils import quote
 
-# fill in the access and secret keys
-access_key = ''
-secret_key = ''
+default_config='~/.aws/config'
+default_secrets='~/.aws/credentials'
+host_regexp=re.compile('http[s]{0,1}://(.+)')
 
-# request elements
-region = 'NL'
-endpoint = 'proxy.swift.surfsara.nl'
-host = endpoint
-endpoint = 'https://' + host
 
 def encode(x):
-# Check for encoding if we have python2 or python3
-    if sys.version_info >= (3,0):
-        return x.encode('utf-8')
-    else:
-        return x
+    return x.encode('utf-8')
 
 # hashing methods
 def hash(key, msg):
@@ -53,8 +48,33 @@ def expire_seconds(x):
         raise argparse.ArgumentTypeError("Expiration period must be a positive number of seconds")
     return x
 
+def get_config(config,profile):
+    if not os.path.exists(config): return None,None
+    cfgparser = configparser.RawConfigParser()
+    cfgparser.read(config)
+    if profile not in cfgparser.sections(): return None,None
+    endpoint=cfgparser.get(profile,'endpoint_url')
+    region=cfgparser.get(profile,'region')
+    del cfgparser
+    return endpoint,region
+
+def get_secrets(secrets,profile):
+    if not os.path.exists(secrets): return None,None
+    cfgparser = configparser.RawConfigParser()
+    cfgparser.read(secrets)
+    if profile not in cfgparser.sections(): return None,None
+    access_key=cfgparser.get(profile,'aws_access_key_id')
+    secret_key=cfgparser.get(profile,'aws_secret_access_key')
+    del cfgparser
+    return access_key,secret_key
+
 # Parse command line arguments
-parser=argparse.ArgumentParser(description='Create a signed s3 url.',formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+parser=argparse.ArgumentParser(description='Create a signed s3 url.',formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+        epilog=textwrap.dedent('''\
+                This script uses the standard aws config and credentials file. 
+                Setting the environment variables AWS_PROFILE, AWS_ACCESS_KEY_ID,
+                AWS_SECRET_ACCESS_KEY, AWS_ENDPOINT_URL and AWS_REGION can also
+                be used.'''))
 parser.add_argument('-b','--bucket',required=True,
                     help='supply bucket name')
 parser.add_argument('-o','--object',required=True,
@@ -65,6 +85,15 @@ parser.add_argument('-m','--method',required=True,
 parser.add_argument('-e','--expiration',required=False,
                     default=86400,type=expire_seconds,
                     help='supply expiration in seconds')
+parser.add_argument('-c','--config',required=False,
+                    default='~/.aws/config',type=str,
+                    help='supply config file name')
+parser.add_argument('-s','--secrets',required=False,
+                    default='~/.aws/credentials',type=str,
+                    help='supply credentials file name')
+parser.add_argument('-p','--profile',required=False,
+                    default='default',type=str,
+                    help='supply aws profile file name')
 
 args=vars(parser.parse_args())
 
@@ -75,11 +104,68 @@ if args['method']=='get':
 else:
     http_method='PUT'
 expiration=args['expiration']
+config=args['config']
+secrets=args['secrets']
+profile=args['profile']
+
+if config == default_config:
+    config_env=os.environ.get('AWS_CONFIG_FILE')
+    if config_env != None:
+        config=config_env
+        config_path=os.path.expanduser(config_env)
+    else:
+        config_path=os.path.expanduser(default_config)
+else:
+    config_path=os.path.expanduser(config)
+
+if secrets == default_secrets:
+    secrets_env=os.environ.get('AWS_SHARED_CREDENTIALS_FILE')
+    if secrets_env != None:
+        secrets=secrets_env
+        secrets_path=os.path.expanduser(secrets_env)
+    else:
+        secrets_path=os.path.expanduser(default_secrets)
+else:
+    secrets_path=os.path.expanduser(secrets)
+
+profile_env=os.environ.get('AWS_PROFILE')
+access_key=os.environ.get('AWS_ACCESS_KEY_ID')
+secret_key=os.environ.get('AWS_SECRET_ACCESS_KEY')
+endpoint=os.environ.get('AWS_ENDPOINT_URL')
+region=os.environ.get('AWS_REGION')
+
+if profile_env!=None: profile=profile_env
+e,r=get_config(config_path,profile)
+a,s=get_secrets(secrets_path,profile)
+
+if region==None: region=r
+if endpoint==None: endpoint=e
+if access_key==None: access_key=a
+if secret_key==None: secret_key=s
+
+err=False
+if region==None:
+    print ("region is not provided",file=sys.stderr)
+    err=True
+if endpoint==None:
+    print ("endpoint is not provided",file=sys.stderr)
+    err=True
+if access_key==None:
+    print ("access_key is not provided",file=sys.stderr)
+    err=True
+if secret_key==None:
+    print ("secret_key is not provided",file=sys.stderr)
+    err=True
+
+if err: sys.exit(1)
+
+host=host_regexp.match(endpoint).groups()[0]
 
 # Assemble the request
 time = datetime.datetime.utcnow()
 timestamp = time.strftime('%Y%m%dT%H%M%SZ')
 datestamp = time.strftime('%Y%m%d')
+
 
 standardized_querystring = ( 'X-Amz-Algorithm=AWS4-HMAC-SHA256' +
                              '&X-Amz-Credential=' + access_key + '/' + datestamp + '/' + region + '/s3/aws4_request' +

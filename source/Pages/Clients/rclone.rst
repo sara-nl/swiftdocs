@@ -88,6 +88,12 @@ If you want to put the **rclone.conf** file in a non-standard place, then that i
 
     rclone --config /path/to/rclone.conf <command> .......
 
+Another possibility is is setting an environment variable like:
+
+.. code-block:: console
+
+   export RCLONE_CONFIG=/path/to/rclone.conf
+
 Make sure that this file is only readable by you.
 
 ==============================================

@@ -31,7 +31,7 @@ The script looks like this:
 
 .. code-block:: bash
 
-    #!/usr/bin/env python
+    #!/usr/bin/python3
 
     from swiftclient.client import Connection
 
@@ -98,7 +98,7 @@ Having done this you can run your script to do,for example, a **stat** on an obj
 
 .. code-block:: bash
 
-    #!/usr/bin/env python
+    #!/usr/bin/python3
 
     import logging
     import pprint

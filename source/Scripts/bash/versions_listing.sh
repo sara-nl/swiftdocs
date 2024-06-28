@@ -72,9 +72,9 @@ do
         cat ${TMPFILE} | jq -r --arg key "$key" '.Versions[] | select(.Key==$key) .Key+";"+.VersionId+";"+.LastModified+";"+(.IsLatest|tostring)'
     fi
     if [ -z ${key} ];then
-        cat ${TMPFILE} | jq -r '.DeleteMarkers[] | .Key+";"+.VersionId+";"+.LastModified+";"+(.IsLatest|tostring)+";delete_marker"'
+        cat ${TMPFILE} | jq -r '.DeleteMarkers[]? | .Key+";"+.VersionId+";"+.LastModified+";"+(.IsLatest|tostring)+";delete_marker"'
     else
-        cat ${TMPFILE} | jq -r --arg key "$key" '.DeleteMarkers[] | select(.Key==$key) .Key+";"+.VersionId+";"+.LastModified+";"+(.IsLatest|tostring)delete_marker'
+        cat ${TMPFILE} | jq -r --arg key "$key" '.DeleteMarkers[]? | select(.Key==$key) .Key+";"+.VersionId+";"+.LastModified+";"+(.IsLatest|tostring)delete_marker'
     fi
 
 done

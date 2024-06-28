@@ -29,7 +29,7 @@ Below you find a piece of example code to:
 
 .. code-block:: python
 
-    #!/usr/bin/env python
+    #!/usr/bin/python3
     import boto3
     import json
 

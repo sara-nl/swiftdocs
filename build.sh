@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 # Usage: build.sh [output_directory [docker_image_name]]
 set -e
 # Parse the parameters
